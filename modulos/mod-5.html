@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 5. Gemini — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+60 pts</span>
+  <h1>🔷 Módulo 5. Gemini y el ecosistema Google</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>Gemini es el asistente de Google. Su ventaja diferencial está en la <strong>integración con las
+    herramientas que ya usas a diario</strong> si trabajas con cuentas de Google:</p>
+
+    <ul>
+      <li><strong>Google Workspace:</strong> puedes invocar Gemini directamente dentro de Docs, Sheets y Gmail para
+      redactar, resumir un correo largo, o generar fórmulas y análisis dentro de una hoja de cálculo, sin cambiar
+      de aplicación.</li>
+      <li><strong>Multimodalidad:</strong> puede trabajar de forma nativa con distintos tipos de contenido —texto,
+      imágenes, audio— en una misma conversación, por ejemplo describiendo el contenido de una imagen o
+      transcribiendo ideas de una nota de voz.</li>
+      <li><strong>Gemini en Sheets:</strong> es especialmente útil para quien trabaja con datos: puede ayudarte a
+      generar fórmulas, resumir columnas, o sugerir cómo estructurar una tabla dinámica a partir de una
+      descripción en lenguaje natural.</li>
+      <li><strong>Búsqueda con contexto actual:</strong> al estar conectado con la infraestructura de Google, en
+      ciertos contextos puede apoyarse en información más reciente que otros modelos que no tienen acceso a
+      internet en tiempo real.</li>
+    </ul>
+
+    <div class="tip">
+      💡 <strong>Idea clave:</strong> si ya trabajas todos los días en Gmail, Docs y Sheets, la ventaja de Gemini
+      suele ser la fricción cero: no necesitas salir de la aplicación donde ya estás trabajando.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado</h2>
+    <div class="ejemplo">Ejemplo de uso dentro de Sheets:
+"Tengo una columna con 200 fechas de facturas y otra con montos. Genera una fórmula que sume los montos de
+facturas emitidas en los últimos 30 días respecto a hoy."</div>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buen uso</strong>
+        Redactar o resumir correos directamente en Gmail, generar fórmulas o resúmenes dentro de una hoja de
+        cálculo real, describir el contenido de una imagen o gráfico.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Usar con cuidado</strong>
+        Cualquier fórmula o cálculo generado debe revisarse sobre una muestra de datos conocida antes de aplicarlo
+        a la hoja completa — un error de fórmula se puede propagar a cientos de filas sin que se note de inmediato.
+      </div>
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para desbloquear el Módulo 6.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-6.html" class="btn" id="btn-siguiente" aria-disabled="true">Módulo 6: IA en tu profesión →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 5 de 6</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Cuál es la principal ventaja diferencial de Gemini frente a otras IA?',
+    opciones: [
+      'Es la única que puede leer texto',
+      'Su integración nativa con Google Workspace (Docs, Sheets, Gmail)',
+      'No comete ningún error',
+      'Solo funciona sin internet'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '"Multimodalidad" significa que un modelo puede...',
+    opciones: [
+      'Trabajar de forma nativa con distintos tipos de contenido: texto, imágenes, audio',
+      'Funcionar en varios idiomas únicamente',
+      'Tener varias cuentas de usuario',
+      'Ejecutarse en varios dispositivos a la vez'
+    ],
+    correcta: 0
+  },
+  {
+    enunciado: 'Si le pides a Gemini en Sheets que genere una fórmula para 200 filas de datos, lo más prudente es...',
+    opciones: [
+      'Aplicarla directamente a las 200 filas sin revisar nada',
+      'Probarla primero sobre una muestra de datos conocida antes de aplicarla a toda la hoja',
+      'No usar nunca fórmulas generadas por IA',
+      'Pedirle que la aplique ella misma sin que tú la veas'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Dónde puedes invocar Gemini sin salir de la aplicación en la que ya estás trabajando?',
+    opciones: [
+      'Solo en una app aparte llamada "Gemini Standalone"',
+      'Dentro de Docs, Sheets y Gmail, entre otras herramientas de Google Workspace',
+      'No es posible integrarlo a ninguna app',
+      'Únicamente en la búsqueda de Google'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Un error en una fórmula generada por IA dentro de una hoja de cálculo grande es riesgoso principalmente porque...',
+    opciones: [
+      'Elimina la hoja completa automáticamente',
+      'Puede propagarse a cientos de filas sin que se note de inmediato',
+      'Nunca ocurre, las fórmulas de IA no fallan',
+      'Cambia el idioma de la hoja'
+    ],
+    correcta: 1
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod5',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>
