@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Constancia de finalización — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body>
+
+<a href="index.html" class="volver no-imprimir">← Volver a la ruta</a>
+
+<div class="constancia-doc" id="constancia-doc">
+  <div class="marca">Aprende IA · Ruta profesional</div>
+  <h1>Constancia de Finalización</h1>
+  <div class="sub">Formación en Inteligencia Artificial aplicada a la contaduría pública</div>
+
+  <div class="nombre" id="c-nombre">Nombre no indicado</div>
+
+  <p class="cuerpo">
+    Por haber completado satisfactoriamente los 6 módulos de la ruta <strong>Aprende IA</strong>,
+    con evaluaciones aprobadas en cada uno con 70% o más de dominio sobre el uso profesional de
+    ChatGPT, Claude y Gemini aplicado al ejercicio contable y financiero.
+  </p>
+
+  <p class="modulos-list" id="c-modulos"></p>
+
+  <div class="firma">
+    <div>Juan Carlos Reyes<br>Contador Público · Autor de la ruta</div>
+    <div id="c-fecha">Fecha</div>
+  </div>
+</div>
+
+<p style="text-align:center;margin:10px 0 40px" class="no-imprimir">
+  <button type="button" class="btn" onclick="window.print()">🖨️ Imprimir / Guardar como PDF</button>
+</p>
+
+<script src="assets/progreso.js"></script>
+<script>
+const nombre = obtenerNombreConstancia();
+document.getElementById('c-nombre').textContent = nombre || 'Nombre no indicado';
+
+document.getElementById('c-modulos').textContent =
+  MODULOS_IA.map(m => `Módulo ${m.numero}: ${m.titulo}`).join('  ·  ');
+
+const hoy = new Date();
+document.getElementById('c-fecha').textContent =
+  hoy.toLocaleDateString('es-HN', { year: 'numeric', month: 'long', day: 'numeric' });
+
+// Si aún no ha completado los 6 módulos, lo regresamos a la ruta.
+if (modulosCompletadosCount() < MODULOS_IA.length) {
+  window.location.href = 'index.html';
+}
+</script>
+</body>
+</html>
