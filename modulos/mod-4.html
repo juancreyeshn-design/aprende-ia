@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 4. Claude — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+60 pts</span>
+  <h1>🟣 Módulo 4. Claude: análisis y razonamiento</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>Claude es el asistente de Anthropic. Su fortaleza más citada es el trabajo con <strong>documentos largos y
+    razonamiento cuidadoso</strong>: es una buena opción cuando necesitas que la IA lea, analice o compare
+    documentos extensos (contratos, estados financieros completos, políticas internas) en vez de responder algo
+    breve de memoria.</p>
+
+    <ul>
+      <li><strong>Ventana de contexto amplia:</strong> puedes pegar o subir documentos largos y Claude puede
+      trabajar con todo ese contenido en una sola conversación, en vez de perder el hilo de lo que le pasaste
+      antes.</li>
+      <li><strong>Proyectos:</strong> te permiten agrupar documentos de referencia (por ejemplo, tu catálogo de
+      cuentas, tus plantillas, normativa relevante) para que Claude los tenga presentes en todas las conversaciones
+      de ese proyecto, sin que tengas que volver a pegarlos cada vez.</li>
+      <li><strong>Artifacts:</strong> cuando le pides algo que se beneficia de verse aparte del chat —una tabla,
+      un documento formateado, una hoja de cálculo, un pequeño programa— Claude lo puede generar como un panel
+      independiente que puedes revisar, editar o exportar.</li>
+      <li><strong>Tono:</strong> tiende a ser explícito sobre sus límites ("no tengo certeza sobre esto") en vez de
+      sonar seguro por defecto, lo cual es útil para trabajo donde la precisión importa.</li>
+    </ul>
+
+    <div class="tip">
+      💡 <strong>Idea clave:</strong> para "leer y analizar mucho texto de una vez" (un contrato completo, varios
+      meses de estados financieros, un manual largo), Claude suele ser una opción sólida frente a copiar y pegar
+      fragmentos pequeños en otras herramientas.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado</h2>
+    <div class="ejemplo">Ejemplo de uso con un documento largo:
+"Adjunto el estado de resultados completo de los últimos 12 meses. Identifica las cuentas de gasto con mayor
+variación acumulada, agrúpalas por tipo (operativos, administrativos, financieros) y preséntalas en una tabla
+ordenada de mayor a menor variación porcentual."</div>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buen uso</strong>
+        Analizar documentos extensos completos, comparar versiones de un contrato, mantener contexto acumulado
+        de un proyecto de trabajo en curso.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Usar con cuidado</strong>
+        Nunca subas documentos con información confidencial de clientes o datos personales sensibles sin
+        verificar primero las políticas de privacidad de tu organización y el consentimiento correspondiente.
+      </div>
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para desbloquear el Módulo 5.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-5.html" class="btn" id="btn-siguiente" aria-disabled="true">Módulo 5: Gemini →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 4 de 6</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Cuál es una fortaleza especialmente citada de Claude?',
+    opciones: [
+      'Generar únicamente imágenes',
+      'Trabajar con documentos largos y razonamiento cuidadoso',
+      'Ser la única IA que existe',
+      'No poder analizar texto'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Un "Proyecto" en Claude sirve para...',
+    opciones: [
+      'Agrupar documentos de referencia que Claude tiene presentes en todas las conversaciones de ese proyecto',
+      'Comprar una suscripción',
+      'Borrar el historial automáticamente',
+      'Cambiar el idioma de la interfaz'
+    ],
+    correcta: 0
+  },
+  {
+    enunciado: '¿Qué es un "Artifact" en Claude?',
+    opciones: [
+      'Un error del sistema',
+      'Un panel independiente donde se muestra contenido generado (tabla, documento, código) fuera del chat',
+      'Un archivo que subes tú al chat',
+      'El nombre del modelo'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Antes de subir un documento con información confidencial de un cliente a cualquier IA, deberías...',
+    opciones: [
+      'Subirlo sin pensarlo, es igual de seguro que enviarlo por correo',
+      'Verificar las políticas de privacidad de tu organización y el consentimiento correspondiente',
+      'Cambiarle el nombre al archivo',
+      'No es necesario ningún cuidado adicional'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Para analizar de una sola vez los estados financieros completos de los últimos 12 meses, conviene aprovechar principalmente...',
+    opciones: [
+      'Una ventana de contexto amplia, que permite trabajar con documentos extensos en una sola conversación',
+      'Un chat nuevo por cada página del documento',
+      'Enviar los datos por separado sin ningún contexto',
+      'No es posible hacer esto con ninguna IA'
+    ],
+    correcta: 0
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod4',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>
