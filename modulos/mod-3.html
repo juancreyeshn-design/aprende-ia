@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 3. ChatGPT — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+60 pts</span>
+  <h1>💬 Módulo 3. ChatGPT: primeros pasos</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>ChatGPT es el asistente de OpenAI y, para muchas personas, la puerta de entrada al uso cotidiano de la IA.
+    Algunas piezas de su interfaz que vale la pena conocer:</p>
+
+    <ul>
+      <li><strong>Conversaciones (chats):</strong> cada tema nuevo conviene iniciarlo en un chat distinto — mezclar
+      temas muy diferentes en un mismo hilo puede hacer que las respuestas pierdan foco.</li>
+      <li><strong>Memoria:</strong> en las versiones que la incluyen, ChatGPT puede recordar datos que le pidas
+      recordar entre conversaciones (por ejemplo, tu rol o tus preferencias de formato). Puedes revisar y borrar
+      lo que recuerda desde la configuración.</li>
+      <li><strong>Instrucciones personalizadas:</strong> una configuración donde defines, una sola vez, quién eres
+      y cómo prefieres que te responda (tono, nivel técnico, idioma), para no repetirlo en cada prompt.</li>
+      <li><strong>GPTs personalizados:</strong> versiones de ChatGPT preconfiguradas para una tarea específica
+      (por ejemplo, uno enfocado solo en redactar actas, u otro en revisar contratos).</li>
+      <li><strong>Analizar archivos:</strong> puedes subir documentos, hojas de cálculo o imágenes y pedir que los
+      analice, resuma o compare.</li>
+    </ul>
+
+    <div class="tip">
+      💡 <strong>Idea clave:</strong> invertir dos minutos en configurar bien las "instrucciones personalizadas"
+      (quién eres, qué tono prefieres, qué formato) mejora la calidad de todas tus conversaciones futuras, no solo
+      de una.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Casos de uso frecuentes</h2>
+    <div class="comparacion">
+      <div class="col bueno">
+        <strong>✅ Buen uso</strong>
+        Pedirle que te ayude a estructurar un informe, que te sugiera cómo explicar un concepto técnico a alguien
+        sin ese conocimiento, o que revise la redacción y claridad de un texto que ya escribiste.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Usar con cuidado</strong>
+        Pedirle cifras exactas de normativa vigente, fechas límite legales, o datos que cambian con frecuencia —
+        siempre confirma esto en la fuente oficial, ya que el modelo puede no tener la información más reciente
+        o puede equivocarse.
+      </div>
+    </div>
+    <div class="ejemplo">Ejemplo de instrucción personalizada:
+"Soy contador público en Honduras. Cuando te pida ayuda con textos, respóndeme en español, con tono profesional
+pero cercano, y usa ejemplos del contexto hondureño cuando sea posible. Sé conciso salvo que te pida detalle."</div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para desbloquear el Módulo 4.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-4.html" class="btn" id="btn-siguiente" aria-disabled="true">Módulo 4: Claude →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 3 de 6</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Para qué sirven las "instrucciones personalizadas" en ChatGPT?',
+    opciones: [
+      'Para cambiar el idioma del navegador',
+      'Para definir una sola vez quién eres y cómo prefieres que te responda, sin repetirlo en cada prompt',
+      'Para borrar el historial automáticamente',
+      'Es una función exclusiva para programadores'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Un "GPT personalizado" es...',
+    opciones: [
+      'Un virus informático',
+      'Una versión de ChatGPT preconfigurada para una tarea específica',
+      'El nombre técnico del modelo base',
+      'Una extensión del navegador'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Cuándo conviene tener especial cuidado y verificar la respuesta de ChatGPT en una fuente oficial?',
+    opciones: [
+      'Nunca, siempre es exacto',
+      'Cuando pide ayuda para redactar un correo interno',
+      'Cuando la respuesta involucra cifras exactas de normativa vigente o fechas legales',
+      'Solo cuando se lo pides explícitamente'
+    ],
+    correcta: 2
+  },
+  {
+    enunciado: 'Mezclar en un mismo chat temas muy distintos (por ejemplo, una receta de cocina y un análisis financiero) generalmente...',
+    opciones: [
+      'Mejora la precisión de ambas respuestas',
+      'No tiene ningún efecto',
+      'Puede hacer que las respuestas pierdan foco; es mejor separarlos en chats distintos',
+      'Está prohibido por la plataforma'
+    ],
+    correcta: 2
+  },
+  {
+    enunciado: 'Subir un documento o una hoja de cálculo a ChatGPT y pedirle que lo resuma o compare es un ejemplo de...',
+    opciones: [
+      'Analizar archivos',
+      'Memoria de largo plazo obligatoria',
+      'Una función que no existe',
+      'Instrucciones personalizadas'
+    ],
+    correcta: 0
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod3',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>
