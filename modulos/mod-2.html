@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 2. Ingeniería de Prompts — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+60 pts</span>
+  <h1>✍️ Módulo 2. Ingeniería de Prompts</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>Un <strong>prompt</strong> es simplemente la instrucción que le das a la IA. La calidad de lo que recibes
+    depende, en gran medida, de la calidad de lo que pides — igual que delegar una tarea a un colaborador: entre
+    más claro seas sobre qué necesitas, mejor será el resultado y menos vueltas tendrás que dar.</p>
+
+    <p>Un prompt efectivo suele incluir cuatro elementos. No siempre hacen falta los cuatro, pero cuando la
+    respuesta no te convence, revisa cuál te faltó:</p>
+
+    <ul>
+      <li><strong>Rol / contexto:</strong> quién eres tú o qué papel debe asumir la IA. <em>"Actúa como un
+      analista financiero explicándole a un gerente sin formación contable..."</em></li>
+      <li><strong>Tarea concreta:</strong> qué quieres exactamente, con verbos claros. No es lo mismo "habla de
+      los estados financieros" que "resume las tres variaciones más relevantes de este estado de resultados y
+      explica una posible causa de cada una".</li>
+      <li><strong>Formato de salida:</strong> cómo quieres recibirlo — una tabla, una lista, un correo, un párrafo
+      de máximo 100 palabras, con encabezados, etc.</li>
+      <li><strong>Ejemplos o restricciones:</strong> qué evitar, qué tono usar, o un ejemplo del resultado que
+      buscas ("como este párrafo, pero más breve").</li>
+    </ul>
+
+    <div class="tip">
+      💡 <strong>Idea clave:</strong> un prompt no es una "fórmula mágica" única — es una conversación. Si la
+      primera respuesta no da en el blanco, pídele ajustes específicos ("hazlo más breve", "usa un tono más formal",
+      "agrega un ejemplo numérico") en vez de empezar de cero.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Práctica: prompt malo vs. prompt bueno</h2>
+
+    <div class="comparacion">
+      <div class="col malo">
+        <strong>❌ Prompt vago</strong>
+        <div class="ejemplo" style="background:transparent;border:none;padding:0">"Ayúdame con un correo sobre el cierre contable."</div>
+        Sin contexto, la IA no sabe a quién va dirigido, qué tono usar, ni qué información del cierre incluir.
+      </div>
+      <div class="col bueno">
+        <strong>✅ Prompt específico</strong>
+        <div class="ejemplo" style="background:transparent;border:none;padding:0">"Actúa como contador general. Redacta un correo breve (máx. 120 palabras) para el gerente financiero, informando que el cierre de octubre está listo, mencionando que hay dos partidas pendientes de conciliación bancaria. Tono profesional y directo."</div>
+        Define el rol, la tarea, el largo, el contenido clave y el tono.
+      </div>
+    </div>
+
+    <p style="margin-top:16px">Otro ejemplo, ahora pidiendo análisis en vez de redacción:</p>
+    <div class="comparacion">
+      <div class="col malo">
+        <strong>❌ Prompt vago</strong>
+        <div class="ejemplo" style="background:transparent;border:none;padding:0">"¿Qué opinas de estos números?"</div>
+      </div>
+      <div class="col bueno">
+        <strong>✅ Prompt específico</strong>
+        <div class="ejemplo" style="background:transparent;border:none;padding:0">"Aquí está el balance de este mes [pegar datos]. Identifica las 3 cuentas con mayor variación respecto al mes anterior, calcula el % de cambio de cada una, y sugiere una posible explicación para cada variación. Preséntalo en una tabla."</div>
+      </div>
+    </div>
+
+    <div class="tip">
+      💡 <strong>Verificación:</strong> incluso con un buen prompt, cualquier cifra, cálculo o afirmación que la IA
+      te entregue debe revisarse contra la fuente original antes de usarla en un informe o decisión real.
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para desbloquear el Módulo 3.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-3.html" class="btn" id="btn-siguiente" aria-disabled="true">Módulo 3: ChatGPT →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 2 de 6</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Cuál de estos prompts está mejor construido?',
+    opciones: [
+      '"Escríbeme algo sobre impuestos"',
+      '"Actúa como asesor tributario y explica, en un párrafo de máximo 80 palabras y en lenguaje sencillo, qué es el ISV para un cliente que nunca ha declarado"',
+      '"Impuestos"',
+      '"Dame información"'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Si la primera respuesta de la IA no es lo que buscabas, lo más eficiente es...',
+    opciones: [
+      'Aceptarla tal cual, no se puede mejorar',
+      'Pedirle un ajuste específico sobre esa misma respuesta (tono, extensión, formato)',
+      'Cerrar el chat y no volver a intentarlo',
+      'Repetir exactamente el mismo prompt varias veces'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Qué elemento de un prompt define CÓMO quieres recibir la respuesta (tabla, lista, correo, etc.)?',
+    opciones: ['El rol', 'El formato de salida', 'La fecha', 'El idioma únicamente'],
+    correcta: 1
+  },
+  {
+    enunciado: 'Después de que la IA te entrega un análisis con cifras para un informe real, el siguiente paso correcto es...',
+    opciones: [
+      'Copiarlo y enviarlo de inmediato, ya está listo',
+      'Verificar las cifras y afirmaciones contra la fuente original antes de usarlas',
+      'Pedirle a la IA que jure que es verdad',
+      'Ignorar el análisis siempre'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Darle a la IA un rol o contexto ("actúa como...") sirve principalmente para...',
+    opciones: [
+      'Que la respuesta sea más lenta',
+      'Enmarcar el tono, el nivel técnico y el enfoque de la respuesta',
+      'Nada, es solo decorativo',
+      'Aumentar el costo del uso'
+    ],
+    correcta: 1
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod2',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>
