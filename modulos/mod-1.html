@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 1. ¿Qué es la IA? — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+50 pts</span>
+  <h1>🧠 Módulo 1. ¿Qué es la Inteligencia Artificial?</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>"Inteligencia Artificial" (IA) es un término amplio: describe sistemas capaces de realizar tareas que
+    normalmente requieren razonamiento humano, como reconocer imágenes, traducir idiomas o mantener una conversación.
+    Dentro de ese término conviven varias ideas que conviene distinguir:</p>
+
+    <div class="comparacion" style="grid-template-columns:1fr 1fr 1fr">
+      <div class="col" style="background:#eef2ff;border:1px solid #c7d2fe">
+        <strong>Inteligencia Artificial (IA)</strong>
+        El campo general: cualquier sistema que imita capacidades humanas (ver, escuchar, decidir, generar texto).
+      </div>
+      <div class="col" style="background:#eef2ff;border:1px solid #c7d2fe">
+        <strong>Machine Learning (ML)</strong>
+        Un subcampo de la IA: sistemas que aprenden patrones a partir de datos, en vez de seguir reglas escritas a mano.
+      </div>
+      <div class="col" style="background:#eef2ff;border:1px solid #c7d2fe">
+        <strong>Modelo de Lenguaje (LLM)</strong>
+        Un tipo de modelo de ML entrenado con enormes cantidades de texto para predecir la siguiente palabra.
+        Así funcionan ChatGPT, Claude y Gemini.
+      </div>
+    </div>
+
+    <p>Un <strong>modelo de lenguaje (LLM)</strong> no "sabe" hechos como una base de datos ni "piensa" como una
+    persona. En términos simples: durante su entrenamiento aprendió patrones estadísticos del lenguaje —qué palabra
+    es probable que siga a otra, dado el contexto— a partir de enormes cantidades de texto. Cuando le escribes algo,
+    genera su respuesta palabra por palabra, calculando en cada paso cuál es la continuación más coherente con todo
+    lo que llevas escrito en la conversación.</p>
+
+    <p>Esto explica dos cosas importantes para usarla bien:</p>
+    <ul>
+      <li><strong>Por qué es tan versátil:</strong> al haber visto tantísimo texto (código, contabilidad, leyes,
+      literatura, conversaciones), puede combinar patrones de todas esas áreas.</li>
+      <li><strong>Por qué puede equivocarse con seguridad:</strong> genera la respuesta más probable, no la más
+      verdadera. A esto se le llama <em>"alucinación"</em>: cuando el modelo produce información que suena coherente
+      pero es incorrecta o inventada. Nunca asumas que un dato, cifra o cita generado por una IA es correcto sin
+      verificarlo.</li>
+    </ul>
+
+    <div class="tip">
+      💡 <strong>Idea clave:</strong> pensar en la IA como un "asistente muy leído pero sin memoria perfecta ni
+      criterio propio" es más útil que pensarla como un oráculo infalible. Tú sigues siendo quien verifica y decide.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Mitos comunes</h2>
+    <div class="comparacion">
+      <div class="col malo">
+        <strong>❌ Mito</strong>
+        "La IA sabe cuándo se equivoca y me lo va a decir."
+      </div>
+      <div class="col bueno">
+        <strong>✅ Realidad</strong>
+        La IA no tiene forma de "saber" con certeza que está mal; puede sonar igual de segura acertando o
+        inventando. La verificación es tarea tuya.
+      </div>
+    </div>
+    <div class="comparacion" style="margin-top:10px">
+      <div class="col malo">
+        <strong>❌ Mito</strong>
+        "Entre más le pido, más se cansa o se pone floja."
+      </div>
+      <div class="col bueno">
+        <strong>✅ Realidad</strong>
+        No hay fatiga ni ánimo. Si una respuesta es pobre, casi siempre es porque el prompt (la instrucción) puede
+        mejorarse — tema del Módulo 2.
+      </div>
+    </div>
+    <div class="comparacion" style="margin-top:10px">
+      <div class="col malo">
+        <strong>❌ Mito</strong>
+        "Todas las IA dan exactamente el mismo resultado."
+      </div>
+      <div class="col bueno">
+        <strong>✅ Realidad</strong>
+        ChatGPT, Claude y Gemini se entrenan distinto y tienen fortalezas distintas (lo verás en los módulos 3, 4 y 5).
+      </div>
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para desbloquear el Módulo 2.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-2.html" class="btn" id="btn-siguiente" aria-disabled="true">Módulo 2: Ingeniería de Prompts →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 1 de 6</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Qué es, en términos simples, un modelo de lenguaje (LLM) como ChatGPT o Claude?',
+    opciones: [
+      'Una base de datos que busca respuestas exactas guardadas de antemano',
+      'Un sistema entrenado con mucho texto que predice la palabra más probable a partir del contexto',
+      'Un buscador de internet en tiempo real',
+      'Un programa que sigue reglas "si esto, entonces aquello" escritas a mano'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Qué es una "alucinación" en el contexto de la IA?',
+    opciones: [
+      'Un error del navegador al cargar la página',
+      'Cuando el modelo se niega a responder',
+      'Cuando el modelo genera información que suena coherente pero es incorrecta o inventada',
+      'Un tipo de imagen generada por IA'
+    ],
+    correcta: 2
+  },
+  {
+    enunciado: 'Machine Learning (ML) es...',
+    opciones: [
+      'Lo mismo que Inteligencia Artificial, son sinónimos exactos',
+      'Un subcampo de la IA en el que los sistemas aprenden patrones a partir de datos',
+      'El nombre comercial de ChatGPT',
+      'Una marca de hardware para entrenar modelos'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Si le pides varias veces la misma pregunta a una IA y notas que la respuesta no es exactamente igual cada vez, esto es...',
+    opciones: [
+      'Un error grave del sistema que debes reportar',
+      'Normal: el modelo genera la respuesta calculando probabilidades, no la recupera de una copia fija',
+      'Señal de que la IA "está de mal humor"',
+      'Imposible, siempre debería responder idéntico'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Cuál es la actitud más segura al recibir una cifra o dato específico generado por una IA para un informe profesional?',
+    opciones: [
+      'Usarlo directamente, la IA rara vez se equivoca en números',
+      'Verificar el dato contra una fuente confiable antes de usarlo',
+      'Pedirle a la misma IA que confirme si es verdad y confiar en esa segunda respuesta',
+      'Redondear el número para reducir el margen de error'
+    ],
+    correcta: 1
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod1',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>
