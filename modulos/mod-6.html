@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 6. IA en tu profesión — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+80 pts</span>
+  <h1>💼 Módulo 6. IA aplicada a tu profesión</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>Con los cinco módulos anteriores ya tienes las bases: cómo funciona la IA, cómo escribirle buenos prompts,
+    y las fortalezas particulares de ChatGPT, Claude y Gemini. Este módulo cierra la ruta conectando todo eso con
+    tareas reales de contabilidad, auditoría y finanzas.</p>
+
+    <p>Algunos usos donde la IA puede ahorrar tiempo real en el trabajo profesional:</p>
+    <ul>
+      <li><strong>Primeros borradores:</strong> un borrador inicial de un informe, un correo, una política interna
+      o una presentación — que tú revisas, corriges y haces tuyo, en vez de partir de una hoja en blanco.</li>
+      <li><strong>Explicar lo técnico a quien no lo es:</strong> traducir un hallazgo de auditoría o una variación
+      contable a un lenguaje que un gerente no financiero entienda con claridad.</li>
+      <li><strong>Análisis exploratorio:</strong> detectar patrones o variaciones llamativas en un conjunto de
+      datos financieros como punto de partida para tu propio análisis — nunca como veredicto final.</li>
+      <li><strong>Automatizar tareas repetitivas:</strong> generar fórmulas, plantillas o estructuras de documentos
+      que reutilizas con frecuencia.</li>
+    </ul>
+
+    <div class="tip">
+      💡 <strong>Idea clave:</strong> la IA es más útil como "primer borrador" o "segundo par de ojos" que como
+      fuente final de verdad. La responsabilidad profesional sobre lo que firmas o entregas sigue siendo tuya.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Dos riesgos que debes gestionar siempre</h2>
+
+    <div class="comparacion">
+      <div class="col malo">
+        <strong>⚠️ Alucinaciones</strong>
+        La IA puede generar cifras, artículos de ley o referencias normativas que suenan correctas pero son
+        inventadas. Nunca cites una norma, artículo o cifra generada por IA sin verificarla en la fuente oficial.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Confidencialidad</strong>
+        No ingreses información financiera identificable de clientes, datos personales, ni información sujeta a
+        secreto profesional en herramientas de IA sin antes verificar la política de privacidad de tu organización
+        y, cuando aplique, el consentimiento correspondiente.
+      </div>
+    </div>
+
+    <p style="margin-top:16px">Ejemplo de un buen flujo de trabajo con IA para una tarea contable:</p>
+    <div class="ejemplo">1. Pides a la IA un primer borrador (ej. explicación de una variación en el estado de resultados)
+2. Revisas el borrador contra los datos y la normativa reales
+3. Corriges lo que sea impreciso o esté mal citado
+4. El resultado final que entregas o firmas es tuyo, no una copia sin revisar</div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego final: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para completar la ruta.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="../index.html" class="btn">🏆 Ver mi progreso completo</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 6 de 6</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: 'La forma más responsable de usar un análisis financiero generado por IA es tratarlo como...',
+    opciones: [
+      'El veredicto final, listo para entregar sin revisión',
+      'Un punto de partida o "primer borrador" que tú revisas, corriges y validas',
+      'Algo que nunca debe usarse en el trabajo',
+      'Un reemplazo completo de tu criterio profesional'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Antes de citar un artículo de ley o una norma que la IA menciona en su respuesta, debes...',
+    opciones: [
+      'Confiar en que es correcto, la IA no se equivoca en temas legales',
+      'Verificarlo directamente en la fuente normativa oficial',
+      'Cambiar el número de artículo por otro similar',
+      'No es necesario si suena convincente'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Qué información NUNCA deberías ingresar en una IA sin antes verificar la política de privacidad de tu organización?',
+    opciones: [
+      'Una plantilla vacía de estado financiero',
+      'Información financiera identificable de un cliente o datos personales sensibles',
+      'Una pregunta general sobre contabilidad',
+      'El nombre de un principio contable'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Un buen uso de la IA para "explicar lo técnico a quien no lo es" sería...',
+    opciones: [
+      'Enviar el informe técnico completo sin adaptarlo',
+      'Traducir un hallazgo de auditoría a un lenguaje claro para un gerente no financiero',
+      'Evitar explicar cualquier cosa a personas no técnicas',
+      'Usar más términos técnicos de los necesarios'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Al final del día, la responsabilidad profesional sobre un informe o análisis que firmas o entregas...',
+    opciones: [
+      'Pasa a ser de la IA que lo ayudó a generar',
+      'Sigue siendo tuya, sin importar qué herramienta usaste para el borrador',
+      'No aplica si usaste IA',
+      'Se comparte automáticamente con el proveedor de la IA'
+    ],
+    correcta: 1
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod6',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz'
+});
+</script>
+</body>
+</html>
