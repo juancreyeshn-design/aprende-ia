@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aprende IA — Ruta profesional | Juan Carlos Reyes</title>
+<meta name="description" content="Ruta profesional para dominar la Inteligencia Artificial (ChatGPT, Claude, Gemini) aplicada al ejercicio de la contaduría pública, con práctica, evaluaciones y constancia de finalización.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="marca">🎓 Aprende IA <span class="tag">Ruta profesional</span></div>
+  <div class="estado">
+    <span class="nivel-pill" id="topbar-nivel">Nivel: —</span>
+    <span class="pts-pill" id="topbar-pts">0 pts</span>
+  </div>
+</div>
+
+<header class="hero">
+  <span class="kicker">Formación continua · 6 módulos</span>
+  <h1>Inteligencia Artificial aplicada a la contaduría pública</h1>
+  <p class="desc">Una ruta estructurada para incorporar ChatGPT, Claude y Gemini a tu ejercicio profesional con criterio técnico: cómo funcionan, cómo formular instrucciones efectivas, y cómo usarlos sin comprometer la calidad ni la confidencialidad de tu trabajo.</p>
+
+  <div class="stats-row">
+    <div class="stat-pill"><b>6</b><span>Módulos</span></div>
+    <div class="stat-pill"><b>~3 h</b><span>Duración total</span></div>
+    <div class="stat-pill"><b>3</b><span>Especializaciones</span></div>
+  </div>
+
+  <div class="progreso-wrap">
+    <div class="progreso-bar"><div class="progreso-fill" id="progreso-fill"></div></div>
+    <div class="progreso-txt" id="progreso-txt">Cargando progreso…</div>
+  </div>
+</header>
+
+<div class="continuar-wrap">
+  <div class="continuar-card" id="continuar-card"></div>
+</div>
+
+<main>
+
+  <nav class="ruta-nav" id="ruta-nav" aria-label="Ruta de módulos"></nav>
+
+  <h2 class="section-title">¿Cómo funciona esta ruta?</h2>
+  <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+    <div class="card" style="border-top-color:var(--navy-600)">
+      <h3>📘 Concepto</h3>
+      <p>Cada módulo abre con una explicación clara, sin tecnicismos innecesarios, de la herramienta o la idea que vas a aplicar.</p>
+    </div>
+    <div class="card" style="border-top-color:var(--oro)">
+      <h3>⚡ Práctica</h3>
+      <p>Ejemplos concretos, comparaciones de "prompt correcto vs. incorrecto" y casos aplicados al ejercicio contable y financiero.</p>
+    </div>
+    <div class="card" style="border-top-color:var(--ok)">
+      <h3>🎯 Evaluación</h3>
+      <p>Un breve cuestionario mide lo aprendido. Con <strong>70% o más</strong> se desbloquea el siguiente módulo.</p>
+    </div>
+  </div>
+
+  <div class="tip" style="margin-top:18px">
+    💡 <strong>Tu progreso se guarda solo en este navegador</strong> (no se envía a ningún servidor). Si cambias de computadora o navegador, empiezas de nuevo. Los módulos funcionan <strong>sin conexión a internet</strong> una vez cargados.
+  </div>
+
+  <h2 class="section-title">Módulos de la ruta<span class="sub">Fundamentos → Herramientas → Aplicación profesional</span></h2>
+  <div class="cards" id="lista-modulos"></div>
+
+  <h2 class="section-title">Especializaciones por herramienta<span class="sub">Profundiza en cada plataforma</span></h2>
+  <div class="especializaciones" id="lista-especializaciones"></div>
+
+  <h2 class="section-title">Reconocimiento</h2>
+  <div class="constancia-card" id="constancia-card"></div>
+
+  <p style="text-align:center;margin-top:30px">
+    <a href="#" onclick="reiniciarProgreso();return false;" style="font-size:.82rem;color:var(--gris-suave)">Reiniciar mi progreso</a>
+  </p>
+
+</main>
+
+<footer>
+  Aprende IA — un proyecto personal de formación continua de Juan Carlos Reyes · Parte de
+  <a href="https://juancreyeshn-design.github.io/" style="color:var(--navy-600);font-weight:700">Recursos Educativos Interactivos</a>
+</footer>
+
+<script src="assets/progreso.js"></script>
+<script>
+const DESCRIPCIONES = {
+  mod1: { emoji:'🧠', desc:'Qué es la IA, qué es un modelo de lenguaje (LLM) y cómo "piensan" realmente herramientas como ChatGPT o Claude.', temas:['IA vs. Machine Learning vs. LLM','Cómo genera texto un modelo de lenguaje','Mitos comunes sobre la IA'] },
+  mod2: { emoji:'✍️', desc:'La habilidad que multiplica el valor de todas las demás: cómo pedirle bien las cosas a la IA.', temas:['Estructura de un buen prompt','Contexto, rol, formato y ejemplos','Iterar y refinar una respuesta'] },
+  mod3: { emoji:'💬', desc:'Primeros pasos con ChatGPT: interfaz, funciones clave y buenas prácticas de uso diario.', temas:['Chats, memoria y GPTs personalizados','Analizar archivos y datos','Casos de uso frecuentes'] },
+  mod4: { emoji:'🟣', desc:'Claude como asistente de análisis y razonamiento: ideal para documentos largos y trabajo profesional.', temas:['Proyectos y Artifacts','Trabajar con documentos extensos','Cuándo usar Claude en vez de otra IA'] },
+  mod5: { emoji:'🔷', desc:'Gemini y su integración con el ecosistema Google: Docs, Sheets, Gmail y contenido multimodal.', temas:['Gemini dentro de Google Workspace','Imágenes, audio y multimodalidad','Gemini en hojas de cálculo'] },
+  mod6: { emoji:'💼', desc:'Cierre práctico: cómo aplicar la IA en tareas contables, financieras y administrativas con responsabilidad.', temas:['Casos de uso en contabilidad y finanzas','Verificación de resultados (evitar alucinaciones)','Confidencialidad de datos sensibles'] },
+};
+
+const ESPECIALIZACIONES = [
+  { modId:'mod3', sigla:'GPT', color:'#0f9d78', nombre:'ChatGPT', desc:'Operación diaria: chats, GPTs personalizados y análisis de archivos.' },
+  { modId:'mod4', sigla:'C',   color:'#b5651d', nombre:'Claude',  desc:'Análisis y razonamiento sobre documentos extensos y trabajo profesional.' },
+  { modId:'mod5', sigla:'G',   color:'#2f6fed', nombre:'Gemini',  desc:'Integración nativa con Google Docs, Sheets, Gmail y contenido multimodal.' },
+  { proxima:true, sigla:'XL', color:'#1e7145', nombre:'Excel + IA', desc:'Fórmulas, conciliaciones y análisis de datos asistidos por IA.' },
+  { proxima:true, sigla:'AR', color:'#5b6472', nombre:'Automatización de reportes', desc:'Plantillas y flujos para acelerar cierres e informes financieros.' },
+];
+
+function crearBadge(mod, desbloqueado, completado) {
+  const a = document.createElement('a');
+  const span = document.createElement('span');
+  span.className = 'badge' + (desbloqueado ? '' : ' bloqueado');
+  span.textContent = completado ? '✓' : mod.numero;
+  span.title = mod.titulo;
+  span.style.background = desbloqueado ? mod.color : '';
+  if (desbloqueado) {
+    a.href = mod.archivo;
+    a.appendChild(span);
+    return a;
+  }
+  return span;
+}
+
+function crearTarjeta(mod, desbloqueado, completado) {
+  const info = DESCRIPCIONES[mod.id];
+  const div = document.createElement('div');
+  div.className = 'card' + (desbloqueado ? '' : ' bloqueada');
+  div.style.borderTopColor = mod.color;
+
+  const temasHtml = info.temas.map(t => `<li><span class="ok">${completado ? '✓' : '•'}</span> ${t}</li>`).join('');
+
+  let boton;
+  if (!desbloqueado) {
+    boton = `<a href="#" class="btn" aria-disabled="true">🔒 Bloqueado</a>`;
+  } else if (completado) {
+    boton = `<a href="${mod.archivo}" class="btn completo">Repasar ✓</a>`;
+  } else {
+    boton = `<a href="${mod.archivo}" class="btn">Comenzar →</a>`;
+  }
+
+  div.innerHTML = `
+    <span class="bloque-tag">${mod.bloque}</span>
+    <span class="xp-pill">+${mod.xp} pts</span>
+    <h3>${info.emoji} Módulo ${mod.numero}. ${mod.titulo}</h3>
+    <p>${info.desc}</p>
+    <ul class="mod-list">${temasHtml}</ul>
+    ${boton}
+  `;
+  return div;
+}
+
+function renderRuta() {
+  const nav = document.getElementById('ruta-nav');
+  nav.innerHTML = '';
+  MODULOS_IA.forEach((mod, i) => {
+    const desbloqueado = estaDesbloqueado(mod.id);
+    const completado = estaCompletado(mod.id);
+    if (i > 0) {
+      const linea = document.createElement('div');
+      linea.className = 'linea' + (estaCompletado(MODULOS_IA[i - 1].id) ? ' hecha' : '');
+      nav.appendChild(linea);
+    }
+    nav.appendChild(crearBadge(mod, desbloqueado, completado));
+  });
+}
+
+function renderModulos() {
+  const lista = document.getElementById('lista-modulos');
+  lista.innerHTML = '';
+  MODULOS_IA.forEach(mod => {
+    const desbloqueado = estaDesbloqueado(mod.id);
+    const completado = estaCompletado(mod.id);
+    lista.appendChild(crearTarjeta(mod, desbloqueado, completado));
+  });
+}
+
+function renderEspecializaciones() {
+  const cont = document.getElementById('lista-especializaciones');
+  cont.innerHTML = '';
+  ESPECIALIZACIONES.forEach(esp => {
+    const div = document.createElement('div');
+    const proxima = !!esp.proxima;
+    const desbloqueada = !proxima && estaDesbloqueado(esp.modId);
+    const completado = !proxima && estaCompletado(esp.modId);
+    div.className = 'especializacion' + (proxima || !desbloqueada ? ' proximamente' : '');
+    let estadoTxt, estadoClase;
+    if (proxima) { estadoTxt = 'Próximamente'; estadoClase = 'proxima'; }
+    else if (completado) { estadoTxt = 'Completada ✓'; estadoClase = 'disponible'; }
+    else if (desbloqueada) { estadoTxt = 'Disponible'; estadoClase = 'disponible'; }
+    else { estadoTxt = 'Bloqueada'; estadoClase = 'proxima'; }
+    div.innerHTML = `
+      <div class="monograma" style="background:${esp.color}">${esp.sigla}</div>
+      <h4>${esp.nombre}</h4>
+      <p>${esp.desc}</p>
+      <span class="estado ${estadoClase}">${estadoTxt}</span>
+    `;
+    cont.appendChild(div);
+  });
+}
+
+function renderContinuar() {
+  const cont = document.getElementById('continuar-card');
+  const siguiente = siguienteModuloPendiente();
+  if (!siguiente) {
+    cont.innerHTML = `
+      <div class="icono" style="background:var(--ok)">✓</div>
+      <div class="info">
+        <div class="eyebrow">Ruta completada</div>
+        <h3>Completaste los 6 módulos</h3>
+        <p>Genera tu constancia de finalización en la sección "Reconocimiento".</p>
+      </div>
+      <a href="#constancia-card" class="btn dorado">Ver constancia</a>
+    `;
+    return;
+  }
+  const info = DESCRIPCIONES[siguiente.id];
+  const empezando = modulosCompletadosCount() === 0;
+  cont.innerHTML = `
+    <div class="icono" style="background:${siguiente.color}">${info.emoji}</div>
+    <div class="info">
+      <div class="eyebrow">${empezando ? 'Comienza tu ruta ahora' : 'Continúa donde lo dejaste'}</div>
+      <h3>Módulo ${siguiente.numero}. ${siguiente.titulo}</h3>
+      <p>${info.desc}</p>
+    </div>
+    <a href="${siguiente.archivo}" class="btn">${empezando ? 'Comenzar ruta →' : 'Continuar →'}</a>
+  `;
+}
+
+function renderConstancia() {
+  const cont = document.getElementById('constancia-card');
+  const total = MODULOS_IA.length;
+  const hechos = modulosCompletadosCount();
+  if (hechos < total) {
+    cont.innerHTML = `
+      <div class="icono">🔒</div>
+      <div class="info">
+        <h3>Constancia de finalización</h3>
+        <p>Completa los ${total} módulos de la ruta (llevas ${hechos}/${total}) para desbloquear tu constancia digital descargable.</p>
+      </div>
+    `;
+    return;
+  }
+  const nombreGuardado = obtenerNombreConstancia();
+  cont.innerHTML = `
+    <div class="icono">🏅</div>
+    <div class="info">
+      <h3>Constancia de finalización</h3>
+      <p>Completaste los ${total} módulos. Escribe el nombre con el que quieres que aparezca tu constancia.</p>
+      <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+        <input id="input-nombre-constancia" type="text" placeholder="Tu nombre completo" value="${nombreGuardado.replace(/"/g,'&quot;')}"
+          style="flex:1;min-width:200px;padding:9px 12px;border:1px solid var(--borde);border-radius:8px;font-family:inherit;font-size:.9rem">
+        <button type="button" class="btn dorado" id="btn-ver-constancia">Ver constancia →</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('btn-ver-constancia').addEventListener('click', () => {
+    const nombre = document.getElementById('input-nombre-constancia').value.trim();
+    guardarNombreConstancia(nombre);
+    window.location.href = 'certificado.html';
+  });
+}
+
+function renderTopbar() {
+  document.getElementById('topbar-nivel').textContent = 'Nivel: ' + nivelActual();
+  document.getElementById('topbar-pts').textContent = xpTotalGanado() + ' / ' + xpTotalPosible() + ' pts';
+}
+
+function render() {
+  renderTopbar();
+  renderContinuar();
+  renderRuta();
+  renderModulos();
+  renderEspecializaciones();
+  renderConstancia();
+  pintarBarraProgreso();
+}
+
+render();
+</script>
+</body>
+</html>
