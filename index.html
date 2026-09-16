@@ -20,14 +20,14 @@
 </div>
 
 <header class="hero">
-  <span class="kicker">Formación continua · 26 módulos</span>
+  <span class="kicker">Formación continua · 27 módulos</span>
   <h1>Inteligencia Artificial aplicada a la contaduría pública</h1>
   <p class="desc">Una ruta estructurada para incorporar ChatGPT, Claude y Gemini a tu ejercicio profesional con criterio técnico: cómo funcionan, cómo formular instrucciones efectivas, cómo combinarlos en flujos de trabajo, y cómo usarlos sin comprometer la calidad ni la confidencialidad de tu trabajo.</p>
 
   <div class="stats-row">
-    <div class="stat-pill"><b>26</b><span>Módulos</span></div>
-    <div class="stat-pill"><b>~13 h</b><span>Duración total</span></div>
-    <div class="stat-pill"><b>23</b><span>Especializaciones</span></div>
+    <div class="stat-pill"><b>27</b><span>Módulos</span></div>
+    <div class="stat-pill"><b>~13.5 h</b><span>Duración total</span></div>
+    <div class="stat-pill"><b>24</b><span>Especializaciones</span></div>
   </div>
 
   <div class="progreso-wrap">
@@ -113,6 +113,7 @@ const DESCRIPCIONES = {
   mod24: { emoji:'💬', desc:'Conecta WhatsApp a la API de Claude vía n8n y ten un asistente real que responde, organiza y ejecuta tareas por mensaje — de productividad, ventas, contenido o control financiero.', temas:['Las 3 piezas del flujo: Evolution API, n8n y Claude','El system prompt: la personalidad y los límites del asistente','Configuración paso a paso de Evolution API y errores comunes a evitar'] },
   mod25: { emoji:'🔗', desc:'Activa los conectores oficiales de Claude (Gmail, Drive, Calendar, Slack, GitHub, Jira, Confluence, Notion) para que actúe directamente en tus herramientas, sin copiar y pegar nada.', temas:['Qué son los conectores y el protocolo MCP','Los 8 conectores disponibles y cómo activar cada uno','Cómo combinarlos y errores comunes a evitar'] },
   mod26: { emoji:'🧠', desc:'Configura 5 skills en Claude y ChatGPT para enseñarle tu negocio, tono, formato, público y límites una sola vez, y que la IA lo recuerde en todas las conversaciones futuras.', temas:['Qué es una skill y en qué se diferencia de un system prompt','Los 5 tipos de skill: negocio, tono, formato, público y límites','Dónde configurarlas en Claude y ChatGPT, y errores comunes a evitar'] },
+  mod27: { emoji:'🎯', desc:'La fórmula RTCFR (Rol, Tarea, Contexto, Formato, Restricciones) para escribir en segundos un prompt de nivel profesional, más una biblioteca de 12 prompts listos para cierre, conciliaciones, NIIF, control interno, auditoría e impuestos.', temas:['Los 5 elementos de la fórmula RTCFR aplicados a contabilidad y auditoría','12 prompts listos, con marcadores para que tú pongas la cifra o norma exacta','Por qué nunca debes dejar que la IA invente una tasa o un artículo de ley'] },
 };
 
 const ESPECIALIZACIONES = [
@@ -139,6 +140,7 @@ const ESPECIALIZACIONES = [
   { modId:'mod24', sigla:'WA', color:'#ca8a04', nombre:'Asistente en WhatsApp', desc:'Evolution API + n8n + Claude: un asistente real en WhatsApp para productividad, ventas, contenido o finanzas personales.' },
   { modId:'mod25', sigla:'CN', color:'#4338ca', nombre:'Conectores de Claude', desc:'Gmail, Drive, Calendar, Slack, GitHub, Jira, Confluence y Notion: activa el acceso directo de Claude a tus herramientas.' },
   { modId:'mod26', sigla:'SK', color:'#6d28d9', nombre:'Skills: enseña una vez', desc:'5 skills (negocio, tono, formato, público y límites) que configuras una sola vez en Claude y ChatGPT para que la IA te entienda siempre.' },
+  { modId:'mod27', sigla:'RT', color:'#059669', nombre:'RTCFR: prompt perfecto', desc:'La fórmula Rol-Tarea-Contexto-Formato-Restricciones y una biblioteca de 12 prompts listos para tu trabajo contable y de auditoría.' },
 ];
 
 function crearBadge(mod, desbloqueado, completado) {

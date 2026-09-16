@@ -9,7 +9,7 @@ guardado en el navegador (localStorage) y desbloqueo secuencial de módulos.
 ## Estructura
 
 aprende-ia/, index.html (dashboard), certificado.html (constancia),
-modulos/mod-1.html a mod-26.html, assets/estilo.css, assets/progreso.js,
+modulos/mod-1.html a mod-27.html, assets/estilo.css, assets/progreso.js,
 assets/quiz.js, snippet-para-tu-pagina-principal.html.
 
 Módulos 1-6: fundamentos, ingeniería de prompts, ChatGPT, Claude, Gemini
@@ -88,7 +88,13 @@ prompt, los 5 tipos de skill que hay que configurar -contexto del
 negocio, tono de voz y estilo, formato de entrega, público objetivo y
 límites y restricciones- con ejemplo práctico para cada uno, dónde
 configurarlas en Claude y en ChatGPT, la regla de oro de la
-especificidad y los errores comunes a evitar).
+especificidad y los errores comunes a evitar) y RTCFR: prompt perfecto
+(la fórmula Rol-Tarea-Contexto-Formato-Restricciones para escribir en
+segundos un prompt de nivel profesional, con una biblioteca de 12
+prompts listos para cierre contable, conciliaciones, NIIF, análisis de
+estados financieros, control interno, auditoría e impuestos -estos
+últimos con marcadores entre corchetes para que el contador ponga la
+cifra o norma exacta y vigente, en vez de dejar que la IA la invente).
 Contenido inspirado en el curso Educly - Ascensión IA.
 
 ## Activar GitHub Pages
