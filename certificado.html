@@ -20,9 +20,10 @@
   <div class="nombre" id="c-nombre">Nombre no indicado</div>
 
   <p class="cuerpo">
-    Por haber completado satisfactoriamente los 6 módulos de la ruta <strong>Aprende IA</strong>,
+    Por haber completado satisfactoriamente los <span id="c-total">—</span> módulos de la ruta <strong>Aprende IA</strong>,
     con evaluaciones aprobadas en cada uno con 70% o más de dominio sobre el uso profesional de
-    ChatGPT, Claude y Gemini aplicado al ejercicio contable y financiero.
+    ChatGPT, Claude y Gemini —incluyendo planillas asistidas por IA y flujos multi-herramienta— aplicado al
+    ejercicio contable y financiero.
   </p>
 
   <p class="modulos-list" id="c-modulos"></p>
@@ -41,6 +42,7 @@
 <script>
 const nombre = obtenerNombreConstancia();
 document.getElementById('c-nombre').textContent = nombre || 'Nombre no indicado';
+document.getElementById('c-total').textContent = MODULOS_IA.length;
 
 document.getElementById('c-modulos').textContent =
   MODULOS_IA.map(m => `Módulo ${m.numero}: ${m.titulo}`).join('  ·  ');

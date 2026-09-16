@@ -20,14 +20,14 @@
 </div>
 
 <header class="hero">
-  <span class="kicker">Formación continua · 6 módulos</span>
+  <span class="kicker">Formación continua · 26 módulos</span>
   <h1>Inteligencia Artificial aplicada a la contaduría pública</h1>
-  <p class="desc">Una ruta estructurada para incorporar ChatGPT, Claude y Gemini a tu ejercicio profesional con criterio técnico: cómo funcionan, cómo formular instrucciones efectivas, y cómo usarlos sin comprometer la calidad ni la confidencialidad de tu trabajo.</p>
+  <p class="desc">Una ruta estructurada para incorporar ChatGPT, Claude y Gemini a tu ejercicio profesional con criterio técnico: cómo funcionan, cómo formular instrucciones efectivas, cómo combinarlos en flujos de trabajo, y cómo usarlos sin comprometer la calidad ni la confidencialidad de tu trabajo.</p>
 
   <div class="stats-row">
-    <div class="stat-pill"><b>6</b><span>Módulos</span></div>
-    <div class="stat-pill"><b>~3 h</b><span>Duración total</span></div>
-    <div class="stat-pill"><b>3</b><span>Especializaciones</span></div>
+    <div class="stat-pill"><b>26</b><span>Módulos</span></div>
+    <div class="stat-pill"><b>~13 h</b><span>Duración total</span></div>
+    <div class="stat-pill"><b>23</b><span>Especializaciones</span></div>
   </div>
 
   <div class="progreso-wrap">
@@ -93,14 +93,52 @@ const DESCRIPCIONES = {
   mod4: { emoji:'🟣', desc:'Claude como asistente de análisis y razonamiento: ideal para documentos largos y trabajo profesional.', temas:['Proyectos y Artifacts','Trabajar con documentos extensos','Cuándo usar Claude en vez de otra IA'] },
   mod5: { emoji:'🔷', desc:'Gemini y su integración con el ecosistema Google: Docs, Sheets, Gmail y contenido multimodal.', temas:['Gemini dentro de Google Workspace','Imágenes, audio y multimodalidad','Gemini en hojas de cálculo'] },
   mod6: { emoji:'💼', desc:'Cierre práctico: cómo aplicar la IA en tareas contables, financieras y administrativas con responsabilidad.', temas:['Casos de uso en contabilidad y finanzas','Verificación de resultados (evitar alucinaciones)','Confidencialidad de datos sensibles'] },
+  mod7: { emoji:'📊', desc:'Cómo pedirle a la IA planillas, dashboards y conciliaciones ya estructurados, con fórmulas y formato profesional.', temas:['Planillas con fórmulas y validaciones','Dashboards y conciliaciones asistidos por IA','Verificar cifras antes de usarlas en un informe real'] },
+  mod8: { emoji:'🔗', desc:'Cómo encadenar varias IA —investigación, redacción y diseño— para acelerar cierres e informes ejecutivos completos.', temas:['El concepto de flujo de IA (entrada → proceso → salida)','Flujo real para un informe al Consejo o la Gerencia','Errores comunes al combinar herramientas'] },
+  mod9: { emoji:'🎬', desc:'Cómo transformar una foto real en material listo para publicar y cómo generar video profesional describiendo la escena en texto.', temas:['De foto de producto a flyer comercial (Nano Banana)','Los 5 elementos de un buen prompt de video','Cámara, lente y movimientos de cine que la IA reconoce'] },
+  mod10: { emoji:'📊', desc:'Cómo convertir un briefing en texto en una presentación profesional completa: estructura, diseño, imágenes y narrativa listos en segundos.', temas:['Los 4 elementos de un buen prompt para presentaciones','La estructura de 8 diapositivas que funciona para todo','Cómo editar y personalizar el resultado antes de usarlo'] },
+  mod11: { emoji:'🔍', desc:'Cómo usar la IA como motor de investigación: de una pregunta genérica a un informe de nivel profesional, con niveles de profundidad y un método para ir más allá de la primera respuesta.', temas:['Los 3 niveles de profundidad de una búsqueda con IA','Los 5 elementos de un prompt de investigación profunda','El loop de profundización: de descubrimiento a aprendizaje accionable'] },
+  mod12: { emoji:'📝', desc:'Cómo redactar guiones, copies de venta, leyendas para redes y anuncios con IA: la estructura de cada formato y los 4 elementos que separan un texto genérico de uno que convierte.', temas:['Los 4 formatos de texto que la IA domina','Los 4 elementos de un buen prompt de redacción','La diferencia entre prompt genérico y prompt con contexto'] },
+  mod13: { emoji:'📊', desc:'Cómo transformar cualquier hoja de cálculo en un panel de control profesional con Lovable, alojado con URL pública, área de carga para actualizar datos y pantalla de acceso — todo en 3 prompts, sin código.', temas:['El flujo de 3 prompts: panel de control, área de carga y acceso','La regla del formato CSV: mismas columnas, mismo orden, siempre','Cómo actualizar el panel en el futuro sin volver a abrir Lovable'] },
+  mod14: { emoji:'🚀', desc:'La fórmula "Claude piensa, Lovable construye": cómo separar la estrategia (copy, persona, embudo y sistema de diseño) de la construcción técnica para crear landing pages profesionales que convierten, sin programar.', temas:['El flujo de 4 etapas: identidad y copy, sistema de diseño, prompt final y construcción','Por qué los códigos HEX exactos son obligatorios en el prompt de Lovable','Cómo el prompt final se vuelve una plantilla reutilizable'] },
+  mod15: { emoji:'📋', desc:'Cómo crear tu propio tablero Kanban con Lovable en 2 prompts — columnas de estado, tarjetas, control de tiempo por tarea y resumen de productividad, adaptable a freelancers, creadores de contenido, equipos o uso personal.', temas:['Las 3 bases de todo Kanban: columnas, tarjetas y control de tiempo','La regla del límite de trabajo en progreso (WIP): máximo 2-3 tareas a la vez','Cuatro variaciones de columnas según tu contexto de trabajo'] },
+  mod16: { emoji:'📈', desc:'Cómo crear tu propio CRM de ventas con Lovable en 2 prompts — pipeline visual de 6 etapas, alerta de seguimiento vencido, historial de contacto, valor del pipeline y botón directo a WhatsApp en cada lead.', temas:['Las 6 etapas del embudo de ventas y qué hacer en cada una','Por qué la alerta de seguimiento vencido es la funcionalidad más importante','Cuatro variaciones de etapas según tu tipo de venta'] },
+  mod17: { emoji:'💹', desc:'Cómo crear tu propio sistema financiero avanzado con Lovable en 3 prompts — flujo de caja proyectado, DRE simplificada, previsión de ingresos y alertas financieras inteligentes, sin depender de una hoja de cálculo dispersa.', temas:['Los 3 reportes fundamentales: flujo de caja, DRE y previsión de ingresos','La diferencia entre DRE (devengado) y flujo de caja (efectivo)','Rentabilidad vs. liquidez: por qué una empresa rentable puede quedarse sin efectivo'] },
+  mod18: { emoji:'🤖', desc:'Cómo pasar de usar la IA como herramienta a tener IA como agente: Claude respondiendo tus correos y analizando campañas, y GPTs personalizados en ChatGPT para control financiero, guiones y embudo de ventas — configuras una vez y trabaja para ti siempre.', temas:['Los 5 elementos de un agente: nombre, rol, tono, reglas y conocimiento','Cómo conectar Claude a Gmail vía MCP para gestionar tu correo','Siete agentes listos: correo, campañas, GPTs de negocio, contratos, exámenes médicos, conversaciones tensas y presupuestos'] },
+  mod19: { emoji:'⚙️', desc:'Flujos que se ejecutan solos, sin abrir ningún chat: describes la automatización a Claude, Claude genera el JSON del flujo y lo pegas en n8n (gratuito, 400+ integraciones, sin código) para activarlo.', temas:['Automatizaciones típicas: correos de clientes, leads de Instagram, reporte semanal de ventas, aviso de seguimiento en el CRM','Los 3 pasos: describir a Claude, generar el JSON, importar y activar en n8n','Buenas prácticas: probar con Test Workflow antes de activar, empezar simple y revisar el historial de ejecuciones cada semana'] },
+  mod20: { emoji:'🔥', desc:'Qué es un token, por qué la salida cuesta de 3 a 5 veces más que la entrada, qué es la ventana de contexto y cuánto cuesta realmente cada modelo — con la tabla de precios de Claude, ChatGPT y Gemini.', temas:['Tokens de entrada vs. de salida y por qué la diferencia de precio importa','Ventana de contexto: el límite real de cada modelo (Claude, GPT-4o, Gemini)','Precios reales por millón de tokens y cuánto cuesta analizar un contrato o generar un reporte'] },
+  mod21: { emoji:'🔌', desc:'Qué es una API (con la analogía del restaurante), cómo crear y proteger tu API key, y cuál de las principales APIs de IA usar según la tarea — todo sin escribir una línea de código.', temas:['La API key: cómo crearla en Claude, ChatGPT y Gemini, y cómo protegerla','Qué API usar según la tarea: profundidad, alto volumen, tiempo real o costo cero','El flujo completo de una llamada a la API, paso a paso'] },
+  mod22: { emoji:'🧩', desc:'Cinco herramientas visuales (n8n, Make, Zapier, Google Sheets + Apps Script y Typebot) para conectar la API de una IA a tu trabajo sin escribir código, con 5 casos reales listos para adaptar.', temas:['Comparativa de las 5 herramientas no-code y cuándo usar cada una','5 casos reales: clasificar correos, resumir reuniones, responder reseñas, IA en Google Sheets y chatbot de leads','Cómo conectar tu API key como credencial, paso a paso'] },
+  mod23: { emoji:'🎛️', desc:'8 APIs especializadas que agilizan tareas puntuales — transcripción, lectura de imágenes y PDFs, voz, traducción, búsqueda web, generación de imágenes y análisis de sentimiento — con prompts listos para cada una.', temas:['Whisper (audio a texto), Vision (leer facturas y documentos) y ElevenLabs (voz humana)','Serper (búsqueda en tiempo real), lectura de PDFs y DeepL (traducción)','DALL-E 3 (imágenes) y análisis de sentimiento a escala con Claude'] },
+  mod24: { emoji:'💬', desc:'Conecta WhatsApp a la API de Claude vía n8n y ten un asistente real que responde, organiza y ejecuta tareas por mensaje — de productividad, ventas, contenido o control financiero.', temas:['Las 3 piezas del flujo: Evolution API, n8n y Claude','El system prompt: la personalidad y los límites del asistente','Configuración paso a paso de Evolution API y errores comunes a evitar'] },
+  mod25: { emoji:'🔗', desc:'Activa los conectores oficiales de Claude (Gmail, Drive, Calendar, Slack, GitHub, Jira, Confluence, Notion) para que actúe directamente en tus herramientas, sin copiar y pegar nada.', temas:['Qué son los conectores y el protocolo MCP','Los 8 conectores disponibles y cómo activar cada uno','Cómo combinarlos y errores comunes a evitar'] },
+  mod26: { emoji:'🧠', desc:'Configura 5 skills en Claude y ChatGPT para enseñarle tu negocio, tono, formato, público y límites una sola vez, y que la IA lo recuerde en todas las conversaciones futuras.', temas:['Qué es una skill y en qué se diferencia de un system prompt','Los 5 tipos de skill: negocio, tono, formato, público y límites','Dónde configurarlas en Claude y ChatGPT, y errores comunes a evitar'] },
 };
 
 const ESPECIALIZACIONES = [
   { modId:'mod3', sigla:'GPT', color:'#0f9d78', nombre:'ChatGPT', desc:'Operación diaria: chats, GPTs personalizados y análisis de archivos.' },
   { modId:'mod4', sigla:'C',   color:'#b5651d', nombre:'Claude',  desc:'Análisis y razonamiento sobre documentos extensos y trabajo profesional.' },
   { modId:'mod5', sigla:'G',   color:'#2f6fed', nombre:'Gemini',  desc:'Integración nativa con Google Docs, Sheets, Gmail y contenido multimodal.' },
-  { proxima:true, sigla:'XL', color:'#1e7145', nombre:'Excel + IA', desc:'Fórmulas, conciliaciones y análisis de datos asistidos por IA.' },
-  { proxima:true, sigla:'AR', color:'#5b6472', nombre:'Automatización de reportes', desc:'Plantillas y flujos para acelerar cierres e informes financieros.' },
+  { modId:'mod7', sigla:'XL', color:'#1e7145', nombre:'Excel + IA', desc:'Fórmulas, conciliaciones y análisis de datos asistidos por IA.' },
+  { modId:'mod8', sigla:'AR', color:'#5b6472', nombre:'Automatización de reportes', desc:'Plantillas y flujos para acelerar cierres e informes financieros.' },
+  { modId:'mod9', sigla:'IV', color:'#c2410c', nombre:'Imágenes y video con IA', desc:'De una foto real a un flyer, y de un texto a un video profesional.' },
+  { modId:'mod10', sigla:'PR', color:'#7c3aed', nombre:'Presentaciones con IA', desc:'De un briefing en texto a una presentación profesional completa en segundos.' },
+  { modId:'mod11', sigla:'IN', color:'#0e7490', nombre:'Investigación con IA', desc:'De una pregunta genérica a un informe de nivel profesional, en 3 niveles de profundidad.' },
+  { modId:'mod12', sigla:'RD', color:'#be123c', nombre:'Redacción con IA', desc:'Guiones, copies de venta, leyendas y anuncios: la estructura de cada formato y cómo pedirlos bien.' },
+  { modId:'mod13', sigla:'DB', color:'#db2777', nombre:'Dashboards con Lovable', desc:'De una hoja de cálculo a una app profesional alojada, con área de carga y acceso — en 3 prompts, sin código.' },
+  { modId:'mod14', sigla:'LP', color:'#0369a1', nombre:'Landing pages con IA', desc:'Claude piensa la estrategia y el diseño, Lovable construye — landing pages que convierten en 4 etapas.' },
+  { modId:'mod15', sigla:'KB', color:'#4f46e5', nombre:'Kanban con Lovable', desc:'Tu propio tablero de tareas con columnas, control de tiempo y resumen de productividad, en 2 prompts sin código.' },
+  { modId:'mod16', sigla:'CRM', color:'#0f766e', nombre:'CRM de ventas con Lovable', desc:'Pipeline visual de leads con alerta de seguimiento, historial de contacto y botón directo a WhatsApp, en 2 prompts sin código.' },
+  { modId:'mod17', sigla:'SF', color:'#9333ea', nombre:'Sistema financiero avanzado', desc:'Flujo de caja proyectado, DRE simplificada, previsión de ingresos y alertas financieras inteligentes, en 3 prompts sin código.' },
+  { modId:'mod18', sigla:'AG', color:'#15803d', nombre:'Agentes de IA', desc:'De usar la IA como herramienta a tener IA como agente: Claude con acceso a Gmail y GPTs personalizados en ChatGPT, configurados una vez para trabajar siempre.' },
+  { modId:'mod19', sigla:'AU', color:'#dc2626', nombre:'Automatizaciones con n8n', desc:'Flujos "cuando X, haz Y" que se ejecutan solos: Claude genera el JSON, tú lo pegas en n8n (gratis, sin código) y lo activas.' },
+  { modId:'mod20', sigla:'TK', color:'#ea580c', nombre:'Tokens y costos de la IA', desc:'Qué es un token, por qué la salida cuesta más que la entrada y cuánto cuesta en dólares cada modelo (Claude, GPT, Gemini) en tareas reales.' },
+  { modId:'mod21', sigla:'AP', color:'#0284c7', nombre:'APIs de IA', desc:'Qué es una API, cómo crear y proteger tu API key, y qué API usar según la tarea — profundidad, volumen, velocidad o costo cero.' },
+  { modId:'mod22', sigla:'NC', color:'#a21caf', nombre:'Usando API sin programar', desc:'n8n, Make, Zapier, Google Sheets y Typebot: 5 herramientas visuales y 5 casos reales para conectar la IA a tu trabajo sin código.' },
+  { modId:'mod23', sigla:'AE', color:'#0891b2', nombre:'APIs especializadas', desc:'8 APIs para tareas puntuales: transcripción, imágenes, voz, búsqueda web, PDFs, traducción, generación de imágenes y sentimiento.' },
+  { modId:'mod24', sigla:'WA', color:'#ca8a04', nombre:'Asistente en WhatsApp', desc:'Evolution API + n8n + Claude: un asistente real en WhatsApp para productividad, ventas, contenido o finanzas personales.' },
+  { modId:'mod25', sigla:'CN', color:'#4338ca', nombre:'Conectores de Claude', desc:'Gmail, Drive, Calendar, Slack, GitHub, Jira, Confluence y Notion: activa el acceso directo de Claude a tus herramientas.' },
+  { modId:'mod26', sigla:'SK', color:'#6d28d9', nombre:'Skills: enseña una vez', desc:'5 skills (negocio, tono, formato, público y límites) que configuras una sola vez en Claude y ChatGPT para que la IA te entienda siempre.' },
 ];
 
 function crearBadge(mod, desbloqueado, completado) {
@@ -203,7 +241,7 @@ function renderContinuar() {
       <div class="icono" style="background:var(--ok)">✓</div>
       <div class="info">
         <div class="eyebrow">Ruta completada</div>
-        <h3>Completaste los 6 módulos</h3>
+        <h3>Completaste los ${MODULOS_IA.length} módulos</h3>
         <p>Genera tu constancia de finalización en la sección "Reconocimiento".</p>
       </div>
       <a href="#constancia-card" class="btn dorado">Ver constancia</a>
