@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 11. Investigación profunda con IA — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+100 pts</span>
+  <h1>🔍 Módulo 11. Investigación profunda con IA</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>Un buscador tradicional te muestra páginas: tú abres cada enlace, lees, comparas y sintetizas. Una IA de
+    razonamiento como Claude hace ese trabajo por ti — lee y cruza varias fuentes, identifica patrones y te
+    entrega la comprensión ya procesada, no una lista de enlaces para revisar. La diferencia práctica es tiempo:
+    una investigación que toma varios minutos leyendo un solo artículo puede resolverse en segundos con una
+    pregunta bien estructurada, porque sales de la conversación sabiendo, no con más pestañas abiertas.</p>
+
+    <p>Investigar con Claude tiene <strong>3 niveles de profundidad</strong>, según qué tan lejos quieras llegar:</p>
+    <ul>
+      <li><strong>Nivel 1 — Búsqueda factual (superficie):</strong> quieres un hecho, un dato o una definición
+      puntual. Ejemplo: "¿Qué es margen de contribución?".</li>
+      <li><strong>Nivel 2 — Búsqueda analítica (medio):</strong> quieres entender un fenómeno, comparar opciones
+      o identificar patrones. Ejemplo: "¿Cuáles son las principales razones por las que los negocios de
+      alimentación cierran en el primer año?".</li>
+      <li><strong>Nivel 3 — Búsqueda de inteligencia (fondo):</strong> quieres descubrir lo que no está en la
+      superficie — patrones ocultos, contradicciones, lo que la gente siente pero no dice abiertamente. Ejemplo:
+      "Con base en el comportamiento del sector de educación online en los últimos 5 años, ¿cuál es el patrón
+      que antecede a la saturación de un nicho? Dame ejemplos históricos y señales de alerta".</li>
+    </ul>
+
+    <div class="tip">
+      💡 <strong>Los 5 elementos de un prompt de investigación profunda:</strong> <em>contexto</em> (quién eres y
+      por qué investigas), <em>objetivo claro</em> (qué quieres hacer con el aprendizaje), <em>preguntas
+      específicas</em> (en vez de un tema amplio), <em>formato de entrega</em> (lista, tabla, análisis
+      comparativo) y <em>profundización</em> (pedir el "por qué", ejemplos concretos y la visión contraria
+      después de la primera respuesta). Sin pedido de formato, Claude entrega en prosa corrida, más difícil de
+      usar.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado: el loop de profundización</h2>
+    <p>La mayoría hace una pregunta, recibe la respuesta y se detiene ahí. Lo que diferencia una investigación
+    superficial de una profunda es lo que haces <strong>después</strong> de la primera respuesta — cada vuelta
+    del loop baja un nivel y el resultado se vuelve exponencialmente más rico.</p>
+
+    <div class="ejemplo">Prompt inicial (los 5 elementos aplicados a un caso contable):
+"Soy [tu rol] y estoy evaluando [decisión o situación]. Quiero entender [pregunta específica sobre el tema].
+Entrégame la respuesta en [formato: lista numerada / tabla / análisis comparativo]. Sé específico y usa ejemplos
+reales donde sea posible."</div>
+
+    <p style="margin-top:16px">A partir de esa primera respuesta, el loop de profundización tiene <strong>4
+    pasos</strong>:</p>
+    <ol style="margin:10px 0 0 20px;line-height:1.7">
+      <li><strong>Haz la pregunta principal</strong> — el prompt completo con contexto, objetivo y formato.
+      Recibes la respuesta inicial, una visión general del tema.</li>
+      <li><strong>Identifica el punto más relevante</strong> — relee la respuesta y detecta qué te llamó más la
+      atención, te sorprendió o parece más crítico para tu decisión.</li>
+      <li><strong>Profundiza en ese punto</strong> — pregunta "¿por qué ocurre esto?, ¿cuáles son ejemplos
+      reales?, ¿cuál es la visión contraria?, ¿qué más está relacionado y aún no fue mencionado?".</li>
+      <li><strong>Transforma en aprendizaje</strong> — cierra siempre con: "Basándote en todo lo que discutimos,
+      ¿cuáles son los 3 aprendizajes más importantes y el primer paso que debería dar?". Eso convierte
+      descubrimiento en dirección concreta.</li>
+    </ol>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buenas prácticas</strong>
+        Comienza siempre con quién eres y por qué investigas — el contexto transforma una respuesta genérica en
+        un análisis personalizado. Pide el formato de entrega desde el inicio. Trata a Claude como un compañero
+        de razonamiento ("ayúdame a entender") y no solo como un buscador de respuestas listas ("dime"). Cierra
+        toda investigación pidiendo los aprendizajes clave y el primer paso a tomar.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Errores comunes</strong>
+        Hacer preguntas genéricas sin contexto, aceptar la primera respuesta y detenerse ahí, no pedir formato
+        de entrega (la respuesta llega en prosa difícil de usar), tratar a Claude como un buscador de respuestas
+        listas en vez de profundizar, y no transformar la investigación en acción — investigar sin cerrar con
+        un aprendizaje concreto es solo lectura interesante.
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:14px">
+      💡 Una señal clara de que estás usando bien esta herramienta: si logras hacer preguntas mejores que la
+      propia IA, tienes una ventaja que ella no tiene. La calidad de las preguntas define la calidad de los
+      resultados — el secreto no está en la herramienta, está en la pregunta.
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego final: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para completar la ruta.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-12.html" class="btn" id="btn-siguiente" aria-disabled="true">Módulo 12: Redacción con IA →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 11 de 12</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Cuál es la principal diferencia entre buscar en Google e investigar con Claude?',
+    opciones: [
+      'Claude es simplemente más rápido que Google, pero entrega lo mismo',
+      'Google te muestra enlaces para leer; Claude lee, cruza fuentes y te entrega el entendimiento ya procesado',
+      'Claude solo sirve para preguntas muy simples',
+      'Google es más preciso que Claude para cualquier tema'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Cuáles son los 3 niveles de profundidad al investigar con Claude?',
+    opciones: [
+      'Rápido, medio y lento',
+      'Fácil, intermedio y difícil',
+      'Factual (superficie), analítico (medio) y de inteligencia (fondo)',
+      'Texto, imagen y video'
+    ],
+    correcta: 2
+  },
+  {
+    enunciado: 'De los siguientes, ¿cuáles son elementos de un buen prompt de investigación profunda?',
+    opciones: [
+      'Contexto, objetivo claro, preguntas específicas, formato de entrega y profundización',
+      'Solo el tema, sin más detalles',
+      'Nombre de la empresa, logo y colores corporativos',
+      'Un emoji al inicio y otro al final del mensaje'
+    ],
+    correcta: 0
+  },
+  {
+    enunciado: '¿Qué transforma una investigación superficial en una investigación profunda?',
+    opciones: [
+      'Hacer preguntas más largas',
+      'Usar palabras técnicas en el prompt',
+      'Reiniciar la conversación en cada pregunta',
+      'Profundizar los puntos más relevantes de la primera respuesta con nuevas preguntas (el loop de profundización)'
+    ],
+    correcta: 3
+  },
+  {
+    enunciado: '¿Cuál es el cierre ideal de una investigación profunda con Claude?',
+    opciones: [
+      'Copiar toda la respuesta y guardarla sin más',
+      'Pedir los 3 aprendizajes más importantes y el primer paso concreto a tomar',
+      'Preguntar cuántas fuentes usó',
+      'Pedir que resuma todo en una sola frase'
+    ],
+    correcta: 1
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod11',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>

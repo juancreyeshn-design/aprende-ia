@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 25. Conectores de Claude — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+109 pts</span>
+  <h1>🔗 Módulo 25. Conectores de Claude</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>El Claude que usas en el chat es poderoso, pero existe una versión aún más poderosa: Claude con acceso
+    directo a tus herramientas. Los <strong>conectores</strong> son integraciones oficiales que dan a Claude
+    permiso para leer, crear y modificar contenido en tus herramientas reales — Gmail, Google Drive, Google
+    Calendar, Slack y muchas más. Los activas una vez y Claude empieza a actuar directamente en esas
+    herramientas, sin que tengas que copiar y pegar nada.</p>
+
+    <div class="comparacion">
+      <div class="col malo">
+        <strong>Sin conector</strong>
+        Copias el e-mail, lo pegas en Claude, lees la respuesta, la copias y vuelves al Gmail. Mucho trabajo
+        manual repetido cada vez.
+      </div>
+      <div class="col bueno">
+        <strong>Con conector</strong>
+        Hablas con Claude y él accede al Gmail directamente, lee el e-mail, escribe la respuesta y pregunta si
+        quieres enviarla. Confirmas con una palabra.
+      </div>
+    </div>
+
+    <p>Por debajo, el conector usa el protocolo <strong>MCP (Model Context Protocol)</strong> — una forma
+    estandarizada de dar a Claude acceso controlado a herramientas externas. Autorizas una vez, Claude recuerda
+    la conexión y la usa cuando la necesita.</p>
+
+    <div class="tip">
+      💡 Acceso con control total: Claude puede leer, crear, editar y organizar contenido en las herramientas
+      conectadas, pero NO puede tomar acciones irreversibles sin confirmación. Siempre pregunta antes de enviar
+      un e-mail, borrar un archivo o crear un evento — tienes control total.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado: activa y usa los conectores</h2>
+
+    <p><strong>Cómo activar un conector</strong> — el proceso es igual para todos, se hace una única vez por
+    herramienta:</p>
+    <ol>
+      <li><strong>Abre el ícono de herramientas</strong> (martillo) en la esquina inferior de la ventana de
+      conversación en claude.ai.</li>
+      <li><strong>Agregar integración</strong> — haz clic en "Agregar integración" o "Gestionar integraciones"
+      para ver la lista de conectores disponibles.</li>
+      <li><strong>Elige el conector</strong> que quieres activar (por ejemplo, Gmail) y haz clic en "Conectar".</li>
+      <li><strong>Autoriza la cuenta</strong> — se abre una ventana con la cuenta correspondiente (Google, Slack,
+      GitHub). Inicia sesión y autoriza los permisos solicitados.</li>
+      <li><strong>Conector activo</strong> — a partir de esta conversación y de las próximas, Claude tiene
+      acceso a la herramienta conectada.</li>
+    </ol>
+
+    <p style="margin-top:16px"><strong>Los conectores disponibles</strong> y qué habilita cada uno:</p>
+    <div class="ejemplo">GMAIL — leer e-mails, redactar respuestas, crear nuevos e-mails, buscar conversaciones
+y organizar por etiquetas.
+Ejemplo: "Verifica mis e-mails no leídos y dime cuáles necesitan respuesta hoy."
+
+GOOGLE DRIVE — leer y resumir documentos, crear documentos, buscar archivos por nombre o contenido, compartir
+y editar Docs existentes.
+Ejemplo: "Lee el documento de briefing en Clientes/2025 y dame un resumen."
+
+GOOGLE CALENDAR — ver la agenda, crear y editar eventos, verificar disponibilidad, añadir participantes y
+videoconferencia.
+Ejemplo: "¿Tengo algún horario libre la próxima semana para una reunión de 1 hora?"
+
+SLACK — leer mensajes de canales y DMs, enviar mensajes, buscar conversas antiguas, resumir threads largos.
+Ejemplo: "¿Cuáles fueron las decisiones tomadas en el canal #proyectos hoy?"
+
+GITHUB — leer repositorios y código, crear issues, comentar en pull requests, buscar commits.
+Ejemplo: "¿Cuáles pull requests están abiertos sin revisión?"
+
+JIRA — ver tickets abiertos, crear tareas, actualizar estado de issues, comentar y buscar por proyecto.
+Ejemplo: "Crea una tarea con prioridad Alta: corregir error en el checkout."
+
+CONFLUENCE — leer y buscar documentación interna, crear páginas, editar contenido, organizar espacios.
+Ejemplo: "Resume la página de políticas de seguridad en 5 puntos principales."
+
+NOTION (en expansión) — leer páginas y bases de datos, crear contenido, actualizar propiedades, buscar en el
+workspace. Verifica la lista actual en claude.ai, ya que nuevos conectores se añaden regularmente.
+Ejemplo: "Añade una entrada en mi CRM de Notion con el nuevo cliente."</div>
+
+    <p style="margin-top:16px"><strong>Cómo sacar el máximo de los conectores:</strong></p>
+    <ul>
+      <li><strong>Sé específico en el pedido</strong> — en vez de "verifica mi correo", pide "verifica mis
+      correos no leídos de los últimos 2 días y dime cuáles necesitan respuesta hoy, cuáles son informativos y
+      cuáles pueden ignorarse". Cuanto más específico, más útil el resultado.</li>
+      <li><strong>Combina conectores</strong> — Claude puede usar varios en la misma conversación: "Lee el
+      briefing en Google Drive, crea un evento en el Calendario para la reunión de kickoff y avisa al equipo en
+      Slack." Tres conectores, una sola instrucción.</li>
+      <li><strong>Confirma antes de acciones importantes</strong> — Claude siempre pregunta antes de enviar
+      correos, crear eventos o publicar mensajes. Aprovecha ese momento para revisar y pedir ajustes ("hazlo más
+      formal antes de enviar").</li>
+      <li><strong>Úsalos para resúmenes y búsquedas</strong> — "Busca todos los mensajes del cliente X en Gmail
+      y en Slack y dame un historial completo" sería imposible de hacer manualmente de forma rápida.</li>
+    </ul>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buenas prácticas</strong>
+        Antes de activar un conector, piensa en 3 cosas que haces manualmente cada semana en esa herramienta —
+        esas son las primeras cosas para pedirle a Claude. Revisa siempre el borrador antes de confirmar: es tu
+        control de calidad. Sé específico incluso con acceso total — la especificidad define la calidad del
+        resultado. Si cambias la contraseña de una cuenta conectada, ve a Integraciones y reconéctala.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Errores comunes</strong>
+        Activar el conector sin saber pedir nada específico; confirmar acciones sin revisarlas antes; pedir
+        cosas vagas ("verifica mi correo") en vez de instrucciones específicas; olvidar que el conector necesita
+        reautorizarse si cambia la contraseña de la cuenta; y pensar que Claude va a actuar solo, sin que se lo
+        pidas — el conector da acceso, pero Claude solo actúa cuando tú se lo indicas.
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:14px">
+      — Anotado por EDI: el conector no monitorea tu bandeja de entrada ni crea eventos por su cuenta. Tú sigues
+      en control — el conector solo elimina el trabajo manual de copiar y pegar entre Claude y tus herramientas.
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego final: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para completar la ruta.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-26.html" id="btn-siguiente" class="btn" aria-disabled="true">Módulo 26: Skills →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 25 de 26</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Qué es un conector de Claude?',
+    opciones: [
+      'Un cable físico para conectar el celular a la computadora',
+      'Una integración oficial que da a Claude acceso directo (bajo el protocolo MCP) para leer, crear y modificar contenido en herramientas reales como Gmail o Drive',
+      'Un plan de pago adicional obligatorio',
+      'Un tipo de prompt especial que no requiere autorización'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Puede Claude enviar un correo o borrar un archivo sin pedirte confirmación?',
+    opciones: [
+      'Sí, siempre actúa de forma completamente automática',
+      'No — Claude siempre pregunta antes de tomar una acción irreversible como enviar, borrar o crear un evento',
+      'Solo los fines de semana',
+      'Solo si el conector de Gmail está desactivado'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Si necesitas que Claude combine información de tu Google Drive y avise al equipo en Slack en una sola instrucción, ¿qué se puede hacer?',
+    opciones: [
+      'Es imposible, cada conector debe usarse en una conversación separada',
+      'Claude puede usar varios conectores en la misma conversación, por ejemplo: leer el briefing en Drive y luego avisar al equipo en Slack',
+      'Hay que pagar un plan especial para combinar conectores',
+      'Solo se puede combinar Gmail con Google Calendar'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Entre "verifica mi correo" y "verifica mis correos no leídos de los últimos 2 días y dime cuáles necesitan respuesta hoy", ¿cuál produce mejor resultado y por qué?',
+    opciones: [
+      'Da igual, ambas producen el mismo resultado con un conector activo',
+      'La primera, porque es más corta',
+      'La segunda, porque cuanto más específico el pedido, más útil el resultado — incluso con acceso total',
+      'Ninguna funciona sin escribir código'
+    ],
+    correcta: 2
+  },
+  {
+    enunciado: '¿Qué pasa si cambias la contraseña de tu cuenta de Gmail o Slack después de activar el conector?',
+    opciones: [
+      'Nada, el conector sigue funcionando igual para siempre',
+      'El conector pierde el acceso y hay que reconectarlo en Integraciones con las nuevas credenciales',
+      'Claude cambia la contraseña automáticamente por ti',
+      'Se activa un conector nuevo automáticamente'
+    ],
+    correcta: 1
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod25',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>

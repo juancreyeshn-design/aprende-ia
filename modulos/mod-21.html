@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 21. APIs de IA: la puerta de entrada — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+100 pts</span>
+  <h1>🔌 Módulo 21. APIs de IA: la puerta de entrada</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>Usas Claude por el sitio web, ChatGPT por la app. Pero existe una forma mucho más poderosa de usar esas IAs:
+    conectándolas directamente a otros programas, automatizaciones y herramientas. Esa conexión se llama
+    <strong>API</strong> (Application Programming Interface) — olvida la sigla, lo que importa es el concepto: es
+    la forma en que dos programas conversan entre sí para hacer un pedido y recibir una respuesta.</p>
+
+    <p><strong>La analogía del restaurante:</strong> imagina que estás en un restaurante. Tú (el cliente) no
+    entras a la cocina a hacer la comida — haces un pedido al mesero. El mesero lleva el pedido a la cocina, que
+    prepara y devuelve; no sabes cómo se hizo la comida, solo que pediste y recibiste. La <strong>API es el
+    mesero</strong>: haces un pedido (la pregunta para la IA), la API lo lleva al servidor de la empresa, el
+    servidor procesa y devuelve la respuesta.</p>
+
+    <div class="tip">
+      💡 Sitio web es manual, API es automática. Cuando abres claude.ai y envías un mensaje, el sitio web usa la
+      API de Claude por debajo. Cuando una automatización en n8n envía un texto a Claude para analizar, usa la
+      misma API. La diferencia: por el sitio web la usas manualmente, una vez por vez; por la API, los programas y
+      automatizaciones la usan automáticamente, cuantas veces quieran — eso es lo que la API libera: escala,
+      automatización e integración con cualquier herramienta.
+    </div>
+
+    <p><strong>API key — la clave que abre la puerta:</strong> para usar la API de cualquier IA necesitas una API
+    key: una contraseña única en forma de código, generada por la empresa, que te identifica cada vez que un
+    programa usa la IA en tu nombre. La empresa registra el uso y cobra en tu cuenta. Trátala como una contraseña
+    bancaria: no la compartas con nadie, no la pongas en textos públicos ni en GitHub, no la envíes por WhatsApp.
+    Si alguien la obtiene, puede usar la IA en tu nombre y tú pagas la cuenta — si sospechas que fue expuesta, ve
+    al panel de la empresa y cancélala; puedes generar otra en cualquier momento. Crear la clave es gratis en
+    todas las empresas — solo pagas por el uso (en tokens, como se vio en el Módulo 20); la mayoría ofrece
+    créditos gratuitos iniciales para empezar a probar sin gastar nada.</p>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado: crear tu clave y elegir la API correcta</h2>
+    <p>El proceso para crear una API key es parecido en todas las empresas: acceder al panel, entrar en la
+    cuenta, ir a "API Keys", crear la clave y guardarla de inmediato — en la mayoría de los servicios <strong>la
+    clave aparece una sola vez</strong>.</p>
+
+    <div class="ejemplo">Claude (Anthropic) — console.anthropic.com: 1) Accede a la consola. 2) Crea una cuenta
+con 'Sign Up' (o usa tu inicio de sesión de claude.ai). 3) Ve a 'API Keys' en el menú lateral. 4) Haz clic en
+'Create Key', dale un nombre (ej. 'mi-automatización') y confirma. 5) Copia y guarda la clave de inmediato.
+
+ChatGPT (OpenAI) — platform.openai.com: mismo flujo, en 'API Keys' o platform.openai.com/api-keys, con 'Create
+new secret key'.
+
+Gemini (Google) — aistudio.google.com: inicia sesión con tu cuenta Google, ve a 'Get API key' → 'Create API key'
+y vincúlala a un proyecto (puedes crear uno nuevo con cualquier nombre).</div>
+
+    <p style="margin-top:16px"><strong>Qué API usar según la tarea</strong> — cada empresa tiene sus fortalezas:</p>
+    <ul>
+      <li><strong>Anthropic (Claude)</strong> — console.anthropic.com — mejor para razonamiento profundo, análisis
+      de documentos largos y agentes complejos.</li>
+      <li><strong>OpenAI (GPT-4o · GPT-4o mini)</strong> — platform.openai.com — uso general, integraciones con
+      herramientas y volumen alto con costo bajo.</li>
+      <li><strong>Google (Gemini 1.5 Flash · Pro)</strong> — aistudio.google.com — volumen extremo con costo
+      mínimo y contexto muy largo (1 millón de tokens).</li>
+      <li><strong>Groq (Llama 3 · Mixtral)</strong> — console.groq.com — velocidad extrema, respuestas en tiempo
+      real y modelos open source.</li>
+      <li><strong>Mistral</strong> — console.mistral.ai — alternativa europea, buena relación costo-beneficio para
+      producción.</li>
+    </ul>
+
+    <p style="margin-top:12px">Como referencia rápida de decisión: para <strong>alto volumen</strong> (Gemini
+    Flash · GPT-4o mini) la velocidad y la relación costo-beneficio son excelentes pero la profundidad es baja; para
+    <strong>profundidad</strong> (Claude Sonnet · Opus) la capacidad de análisis es máxima pero cuesta más y es más
+    lento; para <strong>tiempo real</strong> (Groq + Llama 3) la velocidad es la mayor de todas; y para
+    <strong>costo cero</strong> para probar (Gemini Flash con créditos gratis) la relación costo-beneficio es
+    excelente sin gastar nada al empezar.</p>
+
+    <p style="margin-top:16px"><strong>Cómo funciona una llamada a la API, paso a paso:</strong></p>
+    <ol>
+      <li><strong>El programa envía el pedido</strong> (API key + modelo + texto) — cualquier herramienta que usa
+      IA (n8n, Zapier, un sitio) envía un mensaje a la API de la empresa con la clave, el modelo a usar (Claude
+      Sonnet, GPT-4o, etc.) y el texto a procesar.</li>
+      <li><strong>La API verifica la key y llama al modelo de IA</strong> — el servidor recibe la solicitud,
+      verifica la clave y envía al modelo especificado.</li>
+      <li><strong>El modelo genera la respuesta</strong> — todo esto ocurre en milisegundos.</li>
+      <li><strong>La API devuelve la respuesta + el conteo de tokens</strong> — el conteo sirve para calcular el
+      costo.</li>
+      <li><strong>El programa usa la respuesta</strong> como quiera: la guarda en una hoja de cálculo, la envía por
+      correo, la publica en un sitio, la envía por WhatsApp. La API no sabe ni le importa qué se hace con la
+      respuesta — solo la entrega.</li>
+    </ol>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buenas prácticas</strong>
+        Trata la API key como una contraseña bancaria: nunca la compartas, ni la subas a GitHub ni la envíes por
+        WhatsApp. Cópiala y guárdala de inmediato al crearla, en un gestor de contraseñas o documento seguro — en
+        la mayoría de los servicios aparece una sola vez. Configura un límite de gasto mensual en el panel de la
+        empresa antes de poner en marcha automatizaciones. Usa Claude Haiku o Sonnet (o Gemini Flash, GPT-4o mini)
+        para automatizaciones del día a día, y reserva los modelos más caros (Opus) para análisis realmente
+        complejos.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Errores comunes</strong>
+        Compartir la API key públicamente; no guardarla en el momento de la creación (cuando ya no se puede
+        recuperar); usar el modelo más caro (como Claude Opus) para todo sin pensar en el costo; no configurar un
+        límite de gasto en el panel, arriesgando una sorpresa en la factura; y confundir la API con el sitio web —
+        son canales diferentes, con precios y formas de acceso distintas: el sitio (claude.ai) es para uso manual,
+        uno por vez; la API es para que los programas la usen automáticamente.
+      </div>
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego final: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para completar la ruta.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-22.html" id="btn-siguiente" class="btn" aria-disabled="true">Módulo 22: Usando API sin programar →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 21 de 22</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Qué es una API, en la analogía del restaurante?',
+    opciones: [
+      'El mesero: lleva tu pedido a la cocina (el servidor de la IA) y te trae la respuesta',
+      'El cliente que hace el pedido',
+      'La cocina donde se prepara la comida',
+      'El menú del restaurante'
+    ],
+    correcta: 0
+  },
+  {
+    enunciado: '¿Qué es una API key?',
+    opciones: [
+      'El nombre del modelo de IA que vas a usar',
+      'Una contraseña única en forma de código que te identifica cuando un programa usa la IA en tu nombre',
+      'La dirección del sitio web donde conversas con la IA',
+      'Un límite de tokens que nunca se puede cambiar'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Si tu API key se filtra o se expone públicamente, ¿qué debes hacer?',
+    opciones: [
+      'Nada, igual nadie la va a usar',
+      'Publicarla en GitHub pidiendo ayuda',
+      'Cancelarla de inmediato en el panel de la empresa y generar una nueva',
+      'Esperar a que expire sola'
+    ],
+    correcta: 2
+  },
+  {
+    enunciado: 'Comparado con usar la IA por el sitio web, usar la IA por la API permite:',
+    opciones: [
+      'Exactamente lo mismo, solo cambia el nombre',
+      'Que programas y automatizaciones la usen automáticamente, cuantas veces quieran, en vez de manualmente una vez por vez',
+      'Usar la IA gratis para siempre',
+      'Eliminar la necesidad de una cuenta'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Después de que la API devuelve la respuesta junto con el conteo de tokens, ¿qué hace el programa?',
+    opciones: [
+      'La API decide automáticamente qué hacer con la respuesta',
+      'El programa hace lo que quiera con ella: guardarla, enviarla, publicarla — la API no sabe ni le importa',
+      'La respuesta se borra automáticamente después de generarse',
+      'Solo se puede usar una vez y luego se pierde'
+    ],
+    correcta: 1
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod21',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>

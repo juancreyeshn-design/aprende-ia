@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 23. APIs especializadas: audio, imagen, voz y web — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+90 pts</span>
+  <h1>🎛️ Módulo 23. APIs especializadas: audio, imagen, voz y web</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>Claude, ChatGPT y Gemini son excelentes para escribir texto y razonar, pero no son las herramientas
+    correctas para todo. Existen <strong>APIs especializadas</strong> — cada una entrenada para una sola tarea
+    específica: transcribir audio, leer imágenes, generar voz humana, buscar en internet en tiempo real, leer
+    PDFs, traducir, generar imágenes o analizar el sentimiento de un texto. Usar la API correcta para cada
+    problema, en vez de forzar todo a través de un solo modelo de lenguaje, es lo que separa una automatización
+    que funciona bien de una que da resultados mediocres.</p>
+
+    <div class="tip">
+      💡 La mayoría de estas APIs se combinan con Claude o GPT en el mismo flujo: la API especializada convierte
+      el dato (audio, imagen, PDF) en texto o en otro dato estructurado, y Claude o GPT lo interpreta y genera la
+      respuesta final. Son piezas complementarias, no competidoras.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado: las 8 APIs más útiles para el día a día</h2>
+
+    <div class="ejemplo">01 · TRANSCRIPCIÓN DE AUDIO Y VIDEO — Whisper API (OpenAI)
+Transcribe cualquier audio o video a texto, en más de 50 idiomas, identificando distintas voces.
+Costo: US$ 0,006 por minuto de audio — una reunión de 1 hora cuesta cerca de US$ 0,36.
+Ejemplo: reunión grabada de 1 hora → Whisper transcribe en 2 minutos → Claude genera resumen ejecutivo,
+decisiones y próximos pasos a partir de esa transcripción.
+
+02 · LEER IMÁGENES Y DOCUMENTOS — Vision API (Anthropic/Claude y OpenAI/GPT-4o)
+Analiza imágenes y extrae la información que se le pida: lee documentos fotografiados, interpreta gráficos,
+identifica productos. Una imagen equivale a cerca de 1.000 tokens (~US$ 0,003 por imagen).
+Ejemplo — el más útil para trabajo contable: foto de una factura → Vision extrae empresa, fecha, artículos y
+totales → se guarda automáticamente en la hoja de gastos.
+
+03 · GENERAR VOZ HUMANA — ElevenLabs API
+Convierte texto en voz humana realista, con más de 1.000 voces y clonación de voz propia. Plan gratis con
+10.000 caracteres/mes; Starter US$5/mes con 30.000 caracteres (≈1.000 caracteres = 1 minuto de audio).
+Ejemplo: guion escrito → ElevenLabs genera el audio → se combina con imágenes para un video.
+
+04 · BUSCAR EN INTERNET EN TIEMPO REAL — Serper API
+Conecta la IA a Google para investigar con datos actuales, no solo los del entrenamiento. Plan gratis con
+2.500 búsquedas/mes; plan básico US$50/mes con 50.000 búsquedas.
+Ejemplo: Serper busca noticias de un competidor → Claude recibe los resultados y genera un resumen de
+inteligencia competitiva.
+
+05 · LEER Y PROCESAR PDFs — Claude (nativo) y PDF.co
+Extrae texto de PDFs, incluso escaneados por OCR — Claude ya acepta PDFs directamente por API.
+Ejemplo — muy relevante para contratos y expedientes: 50 contratos en PDF al mes → el flujo lee cada uno →
+Claude extrae cláusulas, fechas de vencimiento y montos → todo va a una hoja de gestión de contratos.
+
+06 · TRADUCCIÓN PRECISA A ESCALA — DeepL API
+Traducción de alta calidad en más de 30 idiomas, mejor que Google Translate para contenido profesional.
+Plan gratis con 500.000 caracteres/mes (~100 páginas); plan Pro desde US$6,99/mes.
+Ejemplo: contrato recibido en inglés → DeepL traduce → Claude analiza las cláusulas ya traducidas.
+
+07 · GENERAR IMÁGENES PROGRAMÁTICAMENTE — DALL-E 3 API (OpenAI)
+Genera imágenes a partir de texto dentro de un flujo automático, sin abrir ningún sitio web.
+Costo: US$0,04 por imagen (1024×1024) — 30 imágenes al mes cuestan US$1,20.
+Ejemplo: calendario de 30 temas en Sheets → Claude genera el prompt de imagen → DALL-E la genera → se guarda
+en Drive lista para usar.
+
+08 · ANALIZAR SENTIMIENTO A ESCALA — Claude (vía API)
+Clasifica cientos de reseñas, comentarios o correos por sentimiento y motivo principal, de una sola vez.
+Costo: 500 reseñas cortas cuestan cerca de US$0,50 en total.
+Ejemplo: 500 reseñas de Google → Claude analiza cada una → hoja de cálculo con sentimiento, calificación 1-5,
+problema o elogio principal y categoría — para ver patrones y saber dónde mejorar.</div>
+
+    <p style="margin-top:16px"><strong>Dos prompts listos para copiar y adaptar</strong> (los más útiles para
+    una práctica contable o profesional):</p>
+    <div class="ejemplo">EXTRAER DATOS DE UNA FACTURA (Vision, vía API)
+"Analiza esta imagen de factura y extrae lo siguiente en formato JSON: company_name, tax_id, date, items
+(arreglo con descripción y valor), subtotal, taxes, total. Si algún campo no es visible, devuelve null."
+
+EXTRAER DATOS DE UN CONTRATO (Claude con PDF, vía API)
+"Lee este PDF de contrato y extrae lo siguiente en JSON: contract_type, parties (arreglo con nombre y rol),
+start_date, end_date, total_value, payment_terms, main_obligations (lista), penalty_clauses (lista) y
+renewal_conditions. Si un campo no está presente, devuelve null."</div>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buenas prácticas</strong>
+        Usa cada API para lo que fue creada: Whisper para audio, Vision para imágenes, DeepL para traducción —
+        mezclar tareas genera resultados pobres. Aprovecha los planes gratuitos generosos (DeepL 500.000
+        caracteres, ElevenLabs 10.000 caracteres) antes de pagar cualquier suscripción. Envía siempre imágenes
+        nítidas a la Vision API — la calidad del resultado depende de la calidad de la foto. Cuando el resultado
+        de una API va a otro sistema del flujo, pide siempre un formato fijo como JSON.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Errores comunes</strong>
+        Usar Claude para todo, incluso para transcribir audio (Claude no transcribe audio — eso es trabajo de
+        Whisper); no aprovechar los planes gratuitos antes de pagar; mandar imágenes de baja calidad a la Vision
+        API; no especificar el formato de salida en el prompt de la API; y olvidar que la API de búsqueda
+        (Serper) cobra por cada búsqueda — hay que programar el disparador para no activar búsquedas
+        innecesarias.
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:14px">
+      — Anotado por EDI: cada API tiene una especialidad. Usar la incorrecta genera frustración y un resultado
+      malo — identifica primero qué tipo de dato necesitas procesar (audio, imagen, PDF, texto) y elige la API
+      hecha para eso.
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego final: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para completar la ruta.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-24.html" id="btn-siguiente" class="btn" aria-disabled="true">Módulo 24: Asistente en WhatsApp →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 23 de 24</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Cuál API se usa específicamente para transcribir audio y video a texto?',
+    opciones: [
+      'Whisper (OpenAI)',
+      'DALL-E 3',
+      'DeepL',
+      'Serper'
+    ],
+    correcta: 0
+  },
+  {
+    enunciado: '¿Para qué sirve la Vision API (Claude/GPT-4o), y por qué es tan útil para trabajo contable?',
+    opciones: [
+      'Genera imágenes nuevas a partir de texto',
+      'Analiza imágenes y extrae información — por ejemplo, los datos de una factura fotografiada',
+      'Traduce documentos a otros idiomas',
+      'Busca información actualizada en Google'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Según el error más común de quienes comienzan a usar estas APIs, ¿qué pasa si usas Claude para transcribir audio en vez de Whisper?',
+    opciones: [
+      'Funciona exactamente igual de bien',
+      'Claude no transcribe audio — cada API tiene una especialidad, y usar la incorrecta genera frustración y mal resultado',
+      'Es más barato usar Claude para eso',
+      'Claude rechaza automáticamente cualquier tarea de audio'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Cuando el resultado de una API va a otro sistema dentro de un flujo automático, ¿qué se debe especificar siempre en el prompt?',
+    opciones: [
+      'Nada en particular, cualquier formato sirve',
+      'El idioma únicamente',
+      'Un formato de salida fijo, como JSON, para que el siguiente nodo del flujo reciba los datos correctamente',
+      'El nombre del modelo usado'
+    ],
+    correcta: 2
+  },
+  {
+    enunciado: 'Antes de pagar por un plan de pago de estas APIs especializadas (DeepL, ElevenLabs, etc.), ¿qué conviene hacer primero?',
+    opciones: [
+      'Suscribirse directamente al plan más caro',
+      'Aprovechar los planes gratuitos, que suelen ser generosos, para probar antes de pagar cualquier suscripción',
+      'Nunca existen planes gratuitos en estas APIs',
+      'Esperar una oferta especial de fin de año'
+    ],
+    correcta: 1
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod23',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>

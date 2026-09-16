@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 15. Kanban de tareas con Lovable — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+100 pts</span>
+  <h1>📋 Módulo 15. Kanban de tareas con Lovable</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p><strong>Kanban</strong> es un sistema de gestión visual creado en Toyota en los años 50. La idea es simple:
+    cada tarea es una tarjeta, y cada tarjeta vive en una columna que representa su estado actual. Una lista de
+    tareas te muestra lo que necesitas hacer, pero no te muestra lo que está en progreso, lo que está bloqueado o
+    cuánto tiempo está tomando cada cosa. Kanban resuelve esto: ves el flujo completo del trabajo de una vez, y
+    cuando una tarea avanza, simplemente la arrastras a la siguiente columna.</p>
+
+    <p><strong>Un tablero Kanban funcional necesita solo tres bases:</strong></p>
+    <ul>
+      <li><strong>Columnas de estado:</strong> el corazón del Kanban. La estructura estándar más eficiente para uso
+      general es Por hacer / En progreso / En revisión / Completado — los nombres se personalizan según el
+      contexto de trabajo.</li>
+      <li><strong>Tarjetas de tarea:</strong> cada tarea es una tarjeta con título, descripción, prioridad (Alta /
+      Media / Baja), fecha de vencimiento, responsable (si es equipo) y etiqueta de categoría o proyecto.</li>
+      <li><strong>Control de tiempo por tarea:</strong> cada tarjeta tiene un temporizador que se inicia al
+      comenzar a trabajar en ella y se pausa al detenerse. El tiempo acumulado queda registrado en la tarjeta —
+      también se puede registrar manualmente.</li>
+    </ul>
+
+    <p>A esas tres bases se suman dos funciones que convierten un tablero simple en un sistema completo:
+    <strong>etiquetas y filtros</strong> (cada tarjeta puede llevar una etiqueta de proyecto o categoría, y el
+    tablero se filtra por ella) y un <strong>resumen de productividad</strong> en la parte superior — total de
+    tareas por estado, tareas que vencen hoy, tareas vencidas resaltadas, tiempo total trabajado hoy y tareas
+    completadas esta semana. Y por supuesto, <strong>arrastrar y soltar</strong> entre columnas: es lo que hace del
+    Kanban una experiencia y no solo una lista con columnas.</p>
+
+    <p><strong>El tablero se adapta a cualquier contexto</strong> cambiando solo las columnas y los campos:</p>
+    <ul>
+      <li><strong>Freelancer con múltiples clientes:</strong> Briefing recibido → En producción → Esperando
+      aprobación → Entregado → Facturado.</li>
+      <li><strong>Creador de contenido:</strong> Idea → Guión → Grabando → Editando → Publicado.</li>
+      <li><strong>Gestión de equipo:</strong> Backlog → Sprint actual → En progreso → Code review → Completado.</li>
+      <li><strong>Uso personal / vida:</strong> Quiero hacer → Esta semana → Hoy → Hecho.</li>
+    </ul>
+
+    <div class="tip">
+      💡 El Kanban base funciona para cualquier uso, pero lo que lo hace tuyo son las columnas: adapta los nombres
+      y el flujo a tu propio contexto de trabajo antes de pedirle nada a Lovable.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado: el Kanban en 2 prompts</h2>
+    <p>Son 2 prompts. El primero crea el Kanban completo. El segundo añade el control de tiempo y el resumen de
+    productividad. Redactar el prompt en inglés ayuda a que Lovable lo interprete mejor, pero aquí se presenta en
+    español para facilitar su uso directo.</p>
+
+    <div class="ejemplo">Prompt 01 — crear el Kanban base:
+"Construye una app de gestión de tareas tipo Kanban totalmente funcional. La app debe tener 4 columnas: 'Por
+hacer', 'En progreso', 'En revisión' y 'Hecho'. Cada tarjeta de tarea debe contener: título de la tarea,
+descripción, insignia de prioridad (Alta = rojo, Media = amarillo, Baja = verde), fecha de vencimiento, etiqueta
+de categoría (con código de color). Funciones requeridas: arrastrar y soltar entre columnas, botón para agregar
+nueva tarea en el encabezado de cada columna, hacer clic en una tarjeta para abrir un modal de detalle (editar
+título, descripción, prioridad, fecha de vencimiento, categoría), opción de eliminar la tarjeta dentro del modal,
+barra de filtros en la parte superior para filtrar por categoría o prioridad, tareas vencidas resaltadas
+automáticamente con un borde rojo. Diseño: tema oscuro, limpio y minimalista, acentos en azul (#0369A1), sombras
+en las tarjetas al pasar el cursor, animación de arrastre fluida. Totalmente responsivo: funciona en móvil con
+desplazamiento horizontal entre columnas. Conéctala a Supabase para guardar todos los datos. Publícala y
+proporciona una URL pública."</div>
+
+    <div class="ejemplo" style="margin-top:12px">Prompt 02 — añadir control de tiempo y resumen de productividad:
+"Agrega seguimiento de tiempo y un resumen de productividad a tu app Kanban. Seguimiento de tiempo: agrega un
+botón de temporizador con play/pausa a cada tarjeta en la parte superior de la columna 'En progreso'. Al
+iniciarlo, el temporizador cuenta hacia arriba en horas y minutos. Al pausarlo, el tiempo transcurrido se guarda
+en la tarjeta. El tiempo total registrado se muestra en la cara de la tarjeta. También puedes registrar tiempo
+manualmente haciendo clic en el indicador de tiempo de cualquier tarjeta. Resumen de productividad: agrega una
+barra de resumen en la parte superior del tablero que muestre: total de tareas por estado (4 contadores), tareas
+que vencen hoy (resaltadas), cantidad de tareas vencidas (insignia roja), tiempo total registrado hoy y tareas
+completadas esta semana. Todos los datos se guardan en Supabase. El resumen se actualiza en tiempo real a medida
+que las tarjetas se mueven entre columnas o los temporizadores corren."</div>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buenas prácticas</strong>
+        Comienza con 4 columnas — puedes añadir más después; con muchas columnas al principio el tablero pierde
+        el beneficio de la visión rápida. Limita a 2-3 tareas en "En progreso" a la vez: más que eso ya no es
+        ejecutar, es acumular. Usa el temporizador durante al menos una semana — descubrirás dónde va tu tiempo de
+        verdad. Reserva 2 minutos al inicio y al final del día para actualizar el tablero: es lo que mantiene el
+        sistema funcionando.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Errores comunes</strong>
+        Crear demasiadas columnas al principio, poner muchas tareas en "En progreso" al mismo tiempo, no usar el
+        temporizador por creer que no se necesita, olvidar mover las tarjetas cuando la tarea avanza (el tablero
+        deja de reflejar la realidad), y mezclar tareas muy grandes con tareas pequeñas en la misma tarjeta — si
+        una tarea toma más de 4 horas, se divide en subtareas.
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:14px">
+      💡 El mismo flujo de 2 prompts sirve para cualquier variación de columnas — freelancer, creador de
+      contenido, equipo o uso personal. Solo cambia la lista de columnas y los campos de cada tarjeta en el
+      Prompt 01.
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego final: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para completar la ruta.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-16.html" class="btn" id="btn-siguiente" aria-disabled="true">Módulo 16: CRM de ventas →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 15 de 16</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Cuál es la principal ventaja de Kanban en relación a una lista de tareas?',
+    opciones: [
+      'Kanban tiene más opciones de personalización visual',
+      'Kanban muestra el flujo completo del trabajo de una vez — lo que está parado, en progreso y completado',
+      'Kanban es más fácil de crear que una lista',
+      'Kanban funciona mejor en el celular que en la computadora'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Cuáles son las tres bases que necesita todo Kanban funcional?',
+    opciones: [
+      'Notificaciones, integraciones y reportes',
+      'Columnas de estado, tarjetas de tarea y control de tiempo por tarea',
+      'Login, base de datos y panel de administración',
+      'Colores, iconos y animaciones'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Para qué sirve el temporizador dentro de cada tarjeta de Kanban?',
+    opciones: [
+      'Para recordarle al usuario hacer pausas durante el trabajo',
+      'Para registrar cuánto tiempo realmente tomó cada tarea, revelando dónde va el tiempo de verdad',
+      'Para definir un plazo máximo para cada tarea',
+      'Para sincronizar el Kanban con el calendario'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Cuál es la regla no escrita más importante de Kanban para mantener el sistema funcionando?',
+    opciones: [
+      'Siempre usar al menos 6 columnas para tener visibilidad completa',
+      'Nunca mezclar tareas personales con tareas de trabajo',
+      'Limitar el número de tareas en "En progreso" a un máximo de 2 o 3 a la vez',
+      'Crear una tarjeta nueva para cada subtarea, por pequeña que sea'
+    ],
+    correcta: 2
+  },
+  {
+    enunciado: 'Un cliente pide adaptar el Kanban a "Creador de contenido". ¿Cuál sería un flujo de columnas correcto?',
+    opciones: [
+      'Backlog → Sprint actual → En progreso → Code review → Completado',
+      'Idea → Guión → Grabando → Editando → Publicado',
+      'Briefing recibido → En producción → Esperando aprobación → Entregado → Facturado',
+      'Quiero hacer → Esta semana → Hoy → Hecho'
+    ],
+    correcta: 1
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod15',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>

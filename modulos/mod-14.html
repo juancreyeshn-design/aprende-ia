@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 14. Landing pages con Claude + Lovable — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+100 pts</span>
+  <h1>🚀 Módulo 14. Landing pages con Claude + Lovable</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>Una landing page que convierte no nace de un solo prompt improvisado: nace de separar el pensamiento
+    estratégico de la construcción técnica. La fórmula es <strong>"Claude piensa, Lovable construye"</strong> — un
+    flujo de 4 etapas donde las 3 primeras ocurren en Claude y la última en Lovable, y cada etapa alimenta a la
+    siguiente.</p>
+
+    <ul>
+      <li><strong>Etapa 1 — Identidad, copy y embudo (Claude):</strong> describes tu producto y Claude entrega el
+      posicionamiento, la persona (cliente ideal), el copy completo sección por sección (headline, beneficios,
+      prueba social, FAQ, precio, CTA) y la estructura del embudo — qué pasa después del clic en el botón.</li>
+      <li><strong>Etapa 2 — Sistema de diseño (Claude):</strong> con el copy ya definido, Claude arma la ficha de
+      diseño — paleta de colores con códigos HEX exactos, tipografía, tamaños, radio de bordes, sombras y una
+      referencia visual — lista para que Lovable la aplique sin inventar ni interpretar.</li>
+      <li><strong>Etapa 3 — Prompt final (Claude):</strong> Claude organiza el copy y el sistema de diseño en un
+      único prompt estructurado por secciones, listo para pegar en Lovable. Nada se pierde en la traducción, y el
+      prompt generado se vuelve una plantilla reutilizable para futuras páginas.</li>
+      <li><strong>Etapa 4 — Construcción (Lovable):</strong> pegas el prompt final en Lovable. Él aplica el copy y
+      el sistema de diseño exactamente como se definieron y publica la página alojada, con URL pública.</li>
+    </ul>
+
+    <div class="tip">
+      💡 Ir directo a Lovable sin pasar antes por Claude entrega una página técnicamente funcional pero
+      estratégicamente vacía — texto genérico y diseño predeterminado. Cuando Claude hace el trabajo estratégico
+      primero, Lovable recibe un brief completo y ejecuta con precisión: cada herramienta hace lo que hace mejor.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado: los 3 prompts de Claude + el prompt final</h2>
+    <p>Ejemplo completo de página de venta para un curso o servicio profesional propio.</p>
+
+    <div class="ejemplo">Prompt 01 — identidad, copy y embudo (en Claude):
+"Eres un copywriter senior y estratega de marca. Necesito una estrategia completa de landing page para mi
+producto. Aquí está el contexto: [DESCRIBE TU PRODUCTO EN 3-5 ORACIONES — qué es, para quién, qué problema
+resuelve y qué lo hace diferente]. A partir de esto, entrega en formato estructurado: 1) Perfil del cliente
+ideal, 2) Declaración central de posicionamiento (una oración que capture el valor único), 3) Copy completo de
+la landing sección por sección — Titular (headline) y subtítulo del Hero, Beneficios (3 con título y
+descripción), Prueba social (2 testimonios realistas), FAQ (3 objeciones respondidas), Precio (una oferta con lo
+que incluye) y el texto del botón de CTA, 4) Estructura del embudo (funnel) — qué pasa después del clic en el
+CTA y qué debe decir la página de agradecimiento. Escribe todo el copy en español. Hazlo específico, persuasivo
+y alineado con el perfil del cliente."</div>
+
+    <div class="ejemplo" style="margin-top:12px">Prompt 02 — sistema de diseño (en Claude):
+"Ahora crea el design system completo para esta landing page. Basándote en el posicionamiento del producto y el
+perfil de cliente que definimos, sugiere una identidad visual que conecte con esta audiencia. Entrega: 1)
+Paleta de colores con códigos HEX exactos — color primario (botones y CTAs), color secundario, color de fondo,
+color de superficie (cards y secciones), color de texto primario y color de texto secundario. 2) Tipografía —
+familia tipográfica para títulos, familia tipográfica para el cuerpo, tamaños de fuente para H1 / H2 / H3 /
+cuerpo / caption, y pesos tipográficos. 3) Estilo de los componentes — radio de borde de los botones, radio de
+borde de los cards, espaciado entre secciones y estilo de sombra. 4) Tono visual — una frase que describa la
+personalidad visual general. 5) Una referencia de layout — en qué sitio o marca reconocida se inspira este
+diseño. Formatea todo como una ficha de especificación estructurada, lista para pegar en un prompt de
+Lovable."</div>
+
+    <div class="ejemplo" style="margin-top:12px">Prompt 03 — prompt final para Lovable (en Claude):
+"Ahora combina todo lo que creamos — el copy de la landing page y el design system — en un único prompt
+completo para Lovable. El prompt debe indicarle a Lovable que construya una landing page totalmente funcional y
+responsiva, usando exactamente el copy y el design system que definimos. Estructura el prompt de Lovable con
+estas secciones: 1) Resumen del proyecto — para qué es la página y el tono visual. 2) Design system — pega
+todos los colores, fuentes y estilos de componentes con sus valores exactos. 3) Estructura de la página — lista
+cada sección en orden con el copy exacto de cada una. 4) Requisitos técnicos — layout responsivo para móvil,
+smooth scroll, header fijo (sticky), comportamiento del botón de CTA. 5) Hosting — publica la página y
+proporciona la URL pública. Haz el prompt lo suficientemente detallado para que Lovable no tenga ningún motivo
+para improvisar ni inventar nada. Entrega solo el prompt final de Lovable, listo para pegar."</div>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buenas prácticas</strong>
+        Describe el producto con el máximo detalle posible en el Prompt 1 — audiencia, diferencial y qué siente
+        el cliente antes y después de usarlo. Usa siempre los códigos HEX exactos del design system en el prompt
+        de Lovable, nunca los dejes a su criterio. Si el texto necesita cambiar después de publicada la página,
+        vuelve a Claude y regenera el prompt — no lo edites a mano dentro de Lovable. No te saltes la etapa del
+        sistema de diseño: es lo que diferencia una landing con identidad propia de una genérica.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Errores comunes</strong>
+        Ir directo a Lovable sin pasar antes por Claude, describir el producto de forma vaga en el Prompt 1, no
+        usar los códigos HEX exactos en el prompt de Lovable (deja que invente los colores), intentar ajustar el
+        texto dentro de Lovable después de publicado en vez de regenerar el prompt en Claude, y saltarse la
+        etapa del design system dejando que Lovable aplique su visual predeterminado.
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:14px">
+      💡 El prompt final que genera Claude en la Etapa 3 se vuelve una plantilla reutilizable: la próxima vez que
+      necesites una landing page, solo cambias el contenido (producto, persona, copy) y repites el mismo flujo
+      de 4 etapas.
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego final: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para completar la ruta.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-15.html" class="btn" id="btn-siguiente" aria-disabled="true">Módulo 15: Kanban con Lovable →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 14 de 15</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Por qué el flujo de landing pages comienza en Claude y no directo en Lovable?',
+    opciones: [
+      'Porque Lovable no acepta prompts sin pasar por Claude antes',
+      'Porque Claude define la estrategia, el texto y la identidad visual — Lovable solo construye lo que ya se definió, no inventa',
+      'Porque Claude es más rápido que Lovable',
+      'Porque Lovable no puede crear landing pages sin ayuda'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Qué es el sistema de diseño (design system) y por qué es importante para Lovable?',
+    opciones: [
+      'Es el nombre del template predeterminado que Lovable usa',
+      'Son las especificaciones visuales exactas — colores HEX, tipografía y componentes — que Lovable aplica para crear la identidad de la página',
+      'Es un plugin que hay que instalar en Lovable',
+      'Es la estructura de secciones de la landing page'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Para qué sirve la Etapa 3 — pedirle a Claude que genere el prompt final de Lovable?',
+    opciones: [
+      'Porque Lovable solo acepta prompts generados por Claude',
+      'Para ahorrar créditos de Lovable',
+      'Para organizar el copy y el design system en una instrucción estructurada que Lovable sigue sin improvisar nada',
+      'Porque Claude sabe el idioma de Lovable mejor que el usuario'
+    ],
+    correcta: 2
+  },
+  {
+    enunciado: 'Después de publicada la landing page, el cliente pide cambiar el texto del headline. ¿Cuál es la forma correcta de hacerlo?',
+    opciones: [
+      'Editar el texto directamente dentro de Lovable',
+      'Volver a Claude para ajustar el copy y regenerar el prompt final',
+      'Crear un proyecto nuevo desde cero',
+      'Dejarlo así porque no se puede cambiar después de publicado'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Qué falta más probablemente si una landing page generada por Lovable usó colores distintos a los que se querían?',
+    opciones: [
+      'El prompt de Lovable no incluyó los códigos HEX exactos del design system',
+      'Lovable no permite personalizar colores',
+      'El copy tenía demasiadas palabras',
+      'Faltó pedir la estructura del embudo'
+    ],
+    correcta: 0
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod14',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>

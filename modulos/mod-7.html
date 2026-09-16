@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 7. Excel + IA — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+90 pts</span>
+  <h1>📊 Módulo 7. Excel + IA: planillas y análisis financiero</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>ChatGPT, Claude y Gemini no se quedan en el chat: los tres pueden <strong>generar archivos funcionales</strong>
+    —planillas con fórmulas, dashboards con gráficos, conciliaciones ya estructuradas— listos para abrir en Excel
+    o Google Sheets. En vez de construir la estructura desde una hoja en blanco, le describes lo que necesitas y
+    la IA entrega un primer borrador completo que tú revisas y ajustas.</p>
+
+    <ul>
+      <li><strong>Planillas con fórmulas:</strong> totales, subtotales, promedios y validaciones ya calculados,
+      con formato profesional (encabezados, colores, moneda).</li>
+      <li><strong>Dashboards de indicadores:</strong> resúmenes visuales con gráficos a partir de una tabla de
+      datos que le proporcionas o describes.</li>
+      <li><strong>Conciliaciones y controles:</strong> estructuras para cruzar dos fuentes (por ejemplo, libros
+      contra banco) con las diferencias resaltadas automáticamente.</li>
+      <li><strong>Plantillas reutilizables:</strong> una vez que un formato te funciona, lo guardas y solo cambias
+      los datos en cada cierre.</li>
+    </ul>
+
+    <div class="tip">
+      💡 <strong>Idea clave:</strong> mientras más específico seas sobre las <em>columnas exactas</em>, los
+      <em>totales</em> que necesitas y qué debe <em>destacarse visualmente</em> (por ejemplo, una partida fuera
+      de rango), mejor será el primer borrador que recibas — y menos ajustes tendrás que hacer tú después.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado</h2>
+    <div class="ejemplo">Ejemplo de prompt para una conciliación bancaria:
+"Crea una planilla de conciliación bancaria con columnas para fecha, descripción, cargo, abono, saldo según
+libros y saldo según banco. Agrega una fila de totales al final y destaca visualmente las partidas que no
+coincidan entre ambos saldos."</div>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buen uso</strong>
+        Crear el borrador de una plantilla repetitiva (conciliaciones, control de gastos, flujo de caja),
+        pedir que explique la lógica de una fórmula compleja, o generar un dashboard inicial a partir de una
+        tabla de datos que tú aportas.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Usar con cuidado</strong>
+        Nunca subas una base de datos completa con información identificable de clientes sin anonimizar primero.
+        Y antes de usar en un informe real cualquier fórmula o total generado por IA, verifícalo con un cálculo
+        de control manual — la responsabilidad sobre la cifra que entregas sigue siendo tuya.
+      </div>
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para desbloquear el Módulo 8.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-8.html" class="btn" id="btn-siguiente" aria-disabled="true">Módulo 8: Automatización de reportes →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 7 de 8</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: 'Además de responder en un chat, ¿qué pueden generar hoy ChatGPT, Claude y Gemini?',
+    opciones: [
+      'Únicamente imágenes decorativas',
+      'Archivos funcionales como planillas con fórmulas y dashboards con gráficos',
+      'Nada fuera del propio chat',
+      'Solo videos'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Para obtener un mejor primer borrador de una planilla, conviene especificar en el prompt...',
+    opciones: [
+      'Nada en particular, la IA adivina lo que necesitas',
+      'Las columnas exactas, los totales requeridos y qué debe destacarse visualmente',
+      'Solamente el nombre del archivo',
+      'El color de fondo de la hoja, sin más detalle'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Antes de usar en un informe real una fórmula o total generado por una IA, deberías...',
+    opciones: [
+      'Confiar en el resultado sin revisarlo',
+      'Verificarlo con un cálculo de control manual',
+      'Eliminar la fórmula y no usar IA nunca más',
+      'Cambiarle el color para que se vea distinto'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Qué NO deberías hacer al pedirle a una IA que trabaje con datos de un cliente?',
+    opciones: [
+      'Describir la estructura de columnas que necesitas',
+      'Subir la base de datos completa con información identificable sin anonimizar',
+      'Pedir un dashboard de ejemplo con datos ficticios',
+      'Preguntar cómo estructurar una conciliación'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'La principal ventaja de pedirle a la IA un primer borrador de una planilla en vez de construirla desde cero es...',
+    opciones: [
+      'Que nunca más tendrás que revisarla',
+      'Que ahorra tiempo en la estructura inicial, que luego tú revisas y ajustas',
+      'Que reemplaza tu criterio profesional por completo',
+      'Que no se puede editar después'
+    ],
+    correcta: 1
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod7',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 10. Presentaciones profesionales con IA — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+100 pts</span>
+  <h1>📊 Módulo 10. Presentaciones profesionales con IA</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>Montar una presentación desde cero siempre tomó tiempo: organizar el contenido, crear las diapositivas,
+    elegir el visual, alinear los elementos. Con herramientas como <strong>Gamma</strong>, describes lo que
+    quieres y la presentación aparece completa en segundos. No es solo diseño automático — la IA crea la
+    estructura del contenido, organiza las diapositivas en una narrativa lógica, aplica el visual y genera
+    imágenes de apoyo para cada diapositiva.</p>
+
+    <p>Un buen prompt para generar una presentación necesita <strong>4 elementos</strong>:</p>
+    <ul>
+      <li><strong>Tema y objetivo:</strong> sobre qué trata la presentación y para qué sirve — informar,
+      convencer, vender, enseñar, presentar resultados.</li>
+      <li><strong>Público objetivo:</strong> el público cambia todo — lenguaje, profundidad, ejemplos usados y
+      tono. No es lo mismo presentar a inversionistas que a un equipo de ventas principiante o a una junta
+      directiva.</li>
+      <li><strong>Número de diapositivas y estructura:</strong> la IA sigue la estructura que definas. Ejemplo:
+      "8 diapositivas: portada, contexto, 3 pilares, caso real, próximos pasos y conclusión".</li>
+      <li><strong>Tono y estilo visual:</strong> la paleta de colores o referencia de estilo — formal y
+      corporativo, desenfadado y colorido, o inspirador y minimalista.</li>
+    </ul>
+
+    <div class="tip">
+      💡 <strong>Idea clave:</strong> existe una estructura de 8 diapositivas que funciona para prácticamente
+      cualquier presentación — de negocios, educativa, de ventas o institucional: <em>portada, problema o
+      contexto, la solución o qué es, cómo funciona, beneficios principales, ejemplos o casos, objeciones o
+      próximos pasos, y conclusión y contacto.</em> Cuando dominas esa estructura, montas cualquier presentación
+      rápidamente.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado: de un briefing a una presentación lista</h2>
+    <div class="ejemplo">Prompt para generar una presentación con Gamma o herramienta equivalente:
+"Crea una presentación sobre [tema] para [público objetivo], con el objetivo de [informar/convencer/vender/
+enseñar]. Usa 8 diapositivas: portada, contexto, 3 pilares o puntos clave, caso real o ejemplo, próximos pasos
+y conclusión. Tono [formal y corporativo / cercano y práctico / inspirador], paleta [oscura / clara / colorida]."</div>
+
+    <p style="margin-top:16px">Herramienta de referencia: <strong>Gamma</strong> (gamma.app) permite crear una
+    cuenta gratuita con correo o Google, sin instalar nada. El plan gratuito da créditos iniciales para generar
+    presentaciones; el plan de pago agrega créditos ilimitados, exportación en PowerPoint y PDF sin marca de
+    agua y dominio personalizado. Una vez generada, cualquier diapositiva se puede editar directamente dentro
+    de la herramienta: cambiar texto, intercambiar imágenes, ajustar el layout — sin necesidad de exportar
+    para corregir.</p>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buenas prácticas</strong>
+        Incluye siempre los 4 elementos del prompt (tema y objetivo, público, estructura, tono visual).
+        Revisa las 8 diapositivas antes de descargar — la IA puede errar en una diapositiva específica que
+        necesite ajuste. Personaliza al menos la portada con tu nombre real, logo o información correcta antes
+        de usarla en una reunión real. Elige la paleta según el contexto: oscura para propuestas corporativas,
+        clara ("clean") para contenido educativo, más creativa para un portafolio personal.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Errores comunes</strong>
+        Escribir un prompt genérico sin estructura definida (entrega un resultado genérico), no definir el
+        público de la presentación, aceptar el resultado sin navegar por todas las diapositivas, usar el mismo
+        estilo visual para cualquier tipo de contenido, y exportar directo sin editar ni personalizar ninguna
+        diapositiva.
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:14px">
+      💡 Si un dato o texto de una diapositiva no queda bien, no generes todo de nuevo desde cero — haz clic
+      directamente sobre el texto de esa diapositiva y corrígelo ahí mismo. Editar dentro de la herramienta es
+      más rápido y mantiene el visual consistente con el resto de la presentación.
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego final: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para completar la ruta.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-11.html" class="btn" id="btn-siguiente" aria-disabled="true">Módulo 11: Investigación con IA →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 10 de 11</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Cuáles son los 4 elementos que todo prompt para generar una presentación con IA debe tener?',
+    opciones: [
+      'Título, subtítulo, número de diapositivas y color de fondo',
+      'Tema y objetivo, público objetivo, estructura de diapositivas y tono y estilo visual',
+      'Nombre de la empresa, producto, precio y contacto',
+      'Introducción, desarrollo, conclusión y bibliografía'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Por qué es importante definir el público objetivo de la presentación?',
+    opciones: [
+      'No hace diferencia, el resultado siempre es igual',
+      'El público define el lenguaje, el nivel de detalle y los ejemplos usados en cada diapositiva',
+      'Solo sirve para poner el nombre del cliente en la portada',
+      'La IA usa el público únicamente para elegir la paleta de colores'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'La estructura de 8 diapositivas que funciona para casi cualquier presentación es:',
+    opciones: [
+      'Portada, problema, solución, cómo funciona, beneficios, ejemplos, próximos pasos y conclusión',
+      'Índice, resumen, anexos, glosario, bibliografía, agradecimientos, contacto y cierre',
+      'Solo portada y conclusión repetidas 4 veces',
+      'Fecha, hora, lugar, agenda, invitados, refrigerio, cierre y despedida'
+    ],
+    correcta: 0
+  },
+  {
+    enunciado: 'Si una diapositiva generada tiene un dato que corregir, lo más eficiente es...',
+    opciones: [
+      'Eliminar toda la presentación y generarla de nuevo desde cero',
+      'Usarla así tal cual, es solo una diapositiva',
+      'Hacer clic en el texto de esa diapositiva y editarlo directamente dentro de la herramienta',
+      'Exportar y corregirlo únicamente en PowerPoint'
+    ],
+    correcta: 2
+  },
+  {
+    enunciado: 'Antes de usar una presentación generada con IA en una reunión real, siempre hay que...',
+    opciones: [
+      'Nada, se puede usar directamente sin revisar',
+      'Revisar todas las diapositivas y personalizar al menos la portada con el nombre real y el logo correcto',
+      'Cambiar el idioma de la presentación',
+      'Eliminar todas las imágenes generadas'
+    ],
+    correcta: 1
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod10',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>

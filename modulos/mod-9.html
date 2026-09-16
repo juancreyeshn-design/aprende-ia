@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 9. Imágenes y video con IA — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+110 pts</span>
+  <h1>🎬 Módulo 9. Imágenes y video con IA</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>Además de generar una imagen desde cero, hoy puedes partir de una <strong>foto real</strong> (un producto,
+    un local, una persona) y pedirle a la IA que la transforme en material listo para publicar: un flyer, una
+    portada, un banner. La diferencia es clave: al generar desde cero la IA inventa todo; al partir de una foto,
+    mantiene lo que importa (el producto, la persona, el ambiente) y transforma el resto — el resultado se ve
+    como producción profesional personalizada, no como una imagen genérica.</p>
+
+    <p>Lo mismo aplica a <strong>video</strong>: hoy describes una escena en texto y la IA genera el clip, sin
+    cámara, sin grabación, sin estudio. Un buen prompt de video necesita 5 elementos:</p>
+    <ul>
+      <li><strong>Escena:</strong> quién o qué aparece, qué hace y en qué ambiente está. Sé específico: "mujer
+      caminando en una playa al atardecer" es mejor que "persona en la playa".</li>
+      <li><strong>Cámara y lente:</strong> qué equipo se usa (define calidad visual, profundidad de campo y
+      bokeh). La IA reconoce equipos reales de cine: Sony FX3 50mm f/1.4, ARRI Alexa 35, RED V-Raptor.</li>
+      <li><strong>Movimiento de cámara:</strong> cómo se mueve dentro de la escena. Seis movimientos que la IA
+      reconoce por su nombre técnico: <em>tracking shot</em> (acompaña al sujeto), <em>dolly in/out</em>
+      (se acerca o aleja), <em>crane/jib shot</em> (sube o baja), <em>steadicam/handheld</em> (caminata estable),
+      <em>Dutch angle</em> (cámara inclinada) y <em>aerial drone shot</em> (vista aérea).</li>
+      <li><strong>Estilo visual y atmósfera:</strong> la sensación general — cinematográfico, publicitario,
+      documental, slow motion. La luz, el contraste y los colores transmiten la emoción.</li>
+      <li><strong>Duración y ritmo:</strong> los videos de IA suelen durar de 4 a 8 segundos. Indica si el ritmo
+      es lento y contemplativo, acelerado y dinámico, o normal.</li>
+    </ul>
+
+    <div class="tip">
+      💡 <strong>Idea clave:</strong> las mismas 5 preguntas — sujeto, contexto/iluminación, cámara/lente,
+      movimiento, estilo y duración — organizan cualquier prompt de imagen o de video. Cuantas más respondas con
+      precisión, más profesional y predecible es el resultado.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado: de foto de producto a flyer</h2>
+    <div class="ejemplo">Prompt para transformar la foto de un producto en un flyer comercial:
+"Transforma esta foto del [producto] en un flyer comercial elegante. Mantén el producto y el fondo de la
+foto original. Añade el nombre [MARCA] en tipografía [estilo] en la parte superior y un eslogan corto que
+transmita [sensación deseada]. Indica la posición del texto (arriba, al pie, centro). Fondo [color/tono],
+iluminación [tipo], estilo [editorial/comercial/etc.]."</div>
+
+    <p style="margin-top:16px">Herramientas de referencia: <strong>Nano Banana</strong> (Google, dentro de
+    Gemini) es la más práctica para foto→flyer, porque además de generar desde cero es especialmente buena
+    editando fotos que ya existen. Para video, <strong>Veo</strong> (Google, en aistudio.google.com/models/veo)
+    responde mejor a referencias cinematográficas clásicas y equipos reales de cine; <strong>Grok</strong>
+    (xAI, en grok.com, requiere plan con generación de video) responde mejor a prompts más creativos y
+    atrevidos, con estilos inusuales y referencias de cultura pop.</p>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buenas prácticas</strong>
+        Especifica qué mantener de la foto original ("mantén el producto" o "mantén a la persona"). Indica la
+        posición exacta del texto. Agrega una referencia técnica ("Shot on [cámara], lente [mm]"). Si el
+        resultado no queda bien, describe qué corregir y refina — casi siempre mejora mucho en el segundo intento.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Errores comunes</strong>
+        No decir qué debe permanecer igual en la foto, pedir texto sin especificar el contenido exacto (nombre,
+        precio, llamada a la acción), no definir dónde va el texto en el diseño, olvidar la referencia de
+        cámara/lente, y — en video — pedir demasiadas cosas a la vez: un video de IA es corto, así que una
+        escena, un movimiento y un enfoque dan mejor resultado que una lista larga de acciones.
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:14px">
+      💡 Sin resolución y formato claros, la IA "adivina" el tamaño y a veces entrega una imagen que no sirve
+      para su uso real. Siempre indica el formato: cuadrado, vertical (redes sociales) o banner horizontal.
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego final: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para completar la ruta.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-10.html" class="btn" id="btn-siguiente" aria-disabled="true">Módulo 10: Presentaciones con IA →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 9 de 10</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Cuál es la principal ventaja de partir de una foto real en vez de generar la imagen desde cero?',
+    opciones: [
+      'La IA genera el resultado más rápido',
+      'El resultado es personalizado, con el producto o la persona reales, en vez de algo genérico',
+      'No hace falta escribir ningún prompt',
+      'La foto elimina cualquier error posible en el resultado'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Al pedir un flyer a partir de una foto, si no indicas dónde debe ir el texto en el diseño...',
+    opciones: [
+      'La IA siempre lo coloca en la esquina superior izquierda',
+      'La IA elige la posición por su cuenta, con resultados impredecibles',
+      'El texto no aparece nunca',
+      'No es necesario indicarlo, es automático'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Un buen prompt de video, a diferencia de uno de imagen, necesita además especificar...',
+    opciones: [
+      'Solo el nombre de la herramienta que se está usando',
+      'Cámara, lente, movimiento y duración, además del sujeto y el estilo visual',
+      'El precio de la producción',
+      'Que no tenga ningún estilo definido'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Mencionar una cámara real como "ARRI Alexa 35" o "Sony FX3" en un prompt de video o imagen...',
+    opciones: [
+      'No tiene ningún efecto en el resultado',
+      'Ayuda a la IA a replicar las características visuales reales de ese equipo (color, profundidad, contraste)',
+      'Hace que la generación sea más lenta',
+      'Solo funciona si tienes esa cámara físicamente'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Al escribir un prompt de video, pedir demasiadas acciones o cambios de escena a la vez suele...',
+    opciones: [
+      'Mejorar el resultado porque hay más contenido',
+      'Dar peor resultado, porque los videos de IA son cortos (4-8 segundos) y funcionan mejor con un enfoque simple',
+      'No tener ningún efecto',
+      'Ser obligatorio para que la IA entienda el contexto'
+    ],
+    correcta: 1
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod9',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>

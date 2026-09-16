@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 17. Sistema financiero avanzado con Lovable — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+100 pts</span>
+  <h1>💹 Módulo 17. Sistema financiero avanzado con Lovable</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>Una hoja de cálculo financiera registra lo que ya pasó. Un dashboard lo visualiza. Pero ninguno de los dos
+    responde qué va a pasar. El sistema de este módulo sube un nivel más: además de registrar, <strong>proyecta,
+    diagnostica y avisa</strong> — antes de que el problema ocurra.</p>
+
+    <p><strong>El sistema se basa en tres reportes financieros fundamentales</strong>, y entender qué muestra cada
+    uno es lo que hace que se use bien después de construido:</p>
+    <ul>
+      <li><strong>Flujo de caja:</strong> la fotografía financiera del momento — cuánto entró, cuánto salió y el
+      saldo que sobra. Muestra si hay dinero disponible ahora. Un negocio rentable puede quebrar por falta de
+      caja.</li>
+      <li><strong>Ganancia o pérdida (Estado de Resultados / DRE):</strong> la ganancia real del negocio — lo que
+      entró menos costos y gastos. Es diferente del flujo de caja: revela si hay ganancia o pérdida, y es posible
+      tener dinero en la caja y aun así estar en números rojos.</li>
+      <li><strong>Previsión de ingresos:</strong> proyección de los ingresos futuros basada en el historial, la
+      estacionalidad y las tendencias. Ayuda a planificar contrataciones, inversiones y gastos por lo que va a
+      entrar — no por lo que ya entró.</li>
+    </ul>
+
+    <p><strong>El sistema completo tiene cinco componentes integrados</strong> que transforman números en
+    inteligencia financiera:</p>
+    <ul>
+      <li><strong>Lanzamiento de transacciones:</strong> área para registrar entradas y salidas con fecha,
+      descripción, categoría, tipo (ingreso, costo directo, gasto operacional, inversión), valor, forma de pago y
+      si es recurrente o eventual.</li>
+      <li><strong>Flujo de caja proyectado:</strong> visualización del saldo día a día con barras positivas
+      (verde) y negativas (rojo). Los lanzamientos futuros ya conocidos (alquiler, nómina, ingresos recurrentes)
+      se incluyen en la proyección automáticamente. Se ve 90 días adelante.</li>
+      <li><strong>DRE simplificada (la ganancia real del mes):</strong> reporte mensual automático que muestra,
+      paso a paso, cuánto se facturó, cuánto fue para impuestos, cuánto costó lo que se vendió, cuánto sobró
+      después de los costos (la ganancia bruta) y cuánto sobró al final, ya quitando los gastos (la ganancia
+      neta) — con comparativo del mes anterior y del mismo mes del año pasado.</li>
+      <li><strong>Previsión de ingresos:</strong> basado en los últimos 6 meses de lanzamientos, el sistema calcula
+      el promedio, identifica la tendencia y proyecta los próximos 3 meses en 3 escenarios: pesimista (75% del
+      promedio), realista (promedio histórico) y optimista (125% del promedio).</li>
+      <li><strong>Alertas financieras inteligentes:</strong> el sistema dispara alertas automáticas cuando el
+      saldo proyectado va a quedarse negativo en los próximos 30 días, una categoría de gasto superó el
+      presupuesto definido, el ingreso del mes está por debajo del mínimo histórico, o hay cuentas a pagar con
+      vencimiento en los próximos 7 días.</li>
+    </ul>
+
+    <p><strong>La diferencia frente a la hoja de cálculo:</strong> registrar entradas y salidas o ver el saldo
+    acumulado ya lo hacía una hoja de cálculo; lo que agrega el sistema es el flujo de caja proyectado a 90 días,
+    la DRE con margen y ganancia neta calculados automáticamente, las alertas antes de que el problema ocurra y
+    una app hospedada, accesible desde cualquier dispositivo. En una frase: la hoja de cálculo muestra qué pasó —
+    el sistema muestra qué pasó <em>y</em> qué va a pasar.</p>
+
+    <p><strong>El sistema predeterminado se adapta a cualquier tipo de negocio</strong> cambiando las categorías
+    y el enfoque de los reportes:</p>
+    <ul>
+      <li><strong>Negocio de servicios:</strong> categorías de ingreso (proyectos, suscripciones, consultorías),
+      costo (proveedores, herramientas, comisiones) y gasto (alquiler, salarios, marketing, administrativo) —
+      con enfoque en margen por proyecto y flujo de caja concentrado al inicio y fin del mes.</li>
+      <li><strong>Comercio y productos:</strong> enfoque en inventario y costo de la mercancía vendida (CMV).</li>
+      <li><strong>Freelancer y autónomo:</strong> ingresos por proyectos fijos, puntuales y regalías; impuesto
+      sobre el ingreso del autónomo; gastos de oficina en casa, herramientas, cursos y previsión — con enfoque en
+      la carga tributaria como % del ingreso y una reserva de emergencia basada en el escenario pesimista.</li>
+      <li><strong>Finanzas personales:</strong> ingresos (salario, freelances, rendimientos), gastos esenciales y
+      variables, inversiones — con enfoque en la tasa de ahorro del mes y la previsión de patrimonio en 3
+      escenarios.</li>
+    </ul>
+
+    <div class="tip">
+      💡 El escenario pesimista (75% del promedio) es el número que define el tamaño de la reserva de emergencia
+      y el piso del compromiso financiero. Si los gastos fijos caben dentro del escenario pesimista, hay
+      protección financiera; si no caben, hay vulnerabilidad ante cualquier mes débil.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado: el sistema en 3 prompts</h2>
+    <p>Son 3 prompts en secuencia. El primero crea la base con lanzamientos y flujo de caja. El segundo agrega la
+    DRE y la previsión de ingresos. El tercero agrega las alertas inteligentes.</p>
+
+    <div class="ejemplo">Prompt 01 — base del sistema, lanzamientos y flujo de caja:
+"Crea una app profesional de sistema de gestión financiera. La app debe tener dos secciones principales: Registro
+de Transacciones y Flujo de Caja. REGISTRO DE TRANSACCIONES: un formulario para registrar transacciones
+financieras con los campos — Fecha, Descripción, Categoría, Tipo (menú desplegable: Ingreso / Costo Directo /
+Gasto Operativo / Inversión / Impuesto), Monto, Método de pago (transferencia instantánea / transferencia
+bancaria / tarjeta / efectivo), Interruptor de recurrencia (sí/no — si es sí, mostrar la frecuencia:
+diaria/semanal/mensual/anual) y Notas. Las categorías deben ser personalizables por el usuario. Debajo del
+formulario, una tabla de transacciones que muestre todos los registros, con filtro por tipo, categoría y rango de
+fechas. VISTA DE FLUJO DE CAJA: un gráfico de barras que muestre el saldo de caja diario del mes actual — barras
+verdes para los días positivos y rojas para los negativos; un gráfico de líneas que muestre el saldo acumulado a
+lo largo del tiempo; y una proyección de flujo de caja a 90 días que incluya automáticamente las transacciones
+recurrentes proyectadas hacia el futuro. Tarjetas de KPI en la parte superior: Saldo Actual, Ingresos Totales del
+mes, Gastos Totales del mes y Saldo Proyectado en 30 días. Tema oscuro, acentos verdes (#059669), totalmente
+responsivo, conéctala a Supabase y publícala con una URL pública. Incluye 3 meses de datos de ejemplo
+realistas."</div>
+
+    <div class="ejemplo" style="margin-top:12px">Prompt 02 — DRE simplificado y previsión de ingresos:
+"Agrega un módulo de Estado de Resultados Simplificado (DRE) y de Pronóstico de Ingresos al sistema financiero.
+ESTADO DE RESULTADOS SIMPLIFICADO: un reporte mensual que se calcule automáticamente a partir de los datos de las
+transacciones — Ingresos Brutos, Deducciones (impuestos y devoluciones: suma de las transacciones de tipo
+Impuesto), Ingresos Netos, Costos Directos (suma de las transacciones de Costo Directo), Utilidad Bruta con % de
+Margen Bruto, Gastos Operativos desglosados por categoría con el monto y el % sobre los ingresos de cada uno,
+EBITDA (utilidad bruta menos gastos operativos) y Utilidad Neta con % de Margen Neto. Muestra el mes actual vs.
+el mes anterior con flechas que indiquen mejora o caída, y permite al usuario elegir cualquier mes pasado para
+ver su Estado de Resultados. PRONÓSTICO DE INGRESOS: con base en los últimos 6 meses de ingresos, calcula el
+promedio mensual, la tendencia de crecimiento mes a mes en %, y una proyección a 3 meses en 3 escenarios —
+Pesimista (75% del promedio), Realista (promedio histórico), Optimista (125% del promedio). Muéstralo como un
+gráfico de líneas que extienda los datos históricos hacia los 3 meses futuros, con una línea distinta para cada
+escenario. Agrega una pestaña en la navegación superior para el Estado de Resultados y otra para el
+Pronóstico."</div>
+
+    <div class="ejemplo" style="margin-top:12px">Prompt 03 — alertas financieras inteligentes:
+"Agrega alertas financieras inteligentes y control de presupuesto al sistema. ALERTAS: crea un panel de Alertas
+accesible desde la navegación superior. Genera alertas automáticamente cuando — el saldo de caja proyectado vaya
+a quedar negativo en los próximos 30 días (Crítica, roja); una categoría de gasto haya superado un límite de
+presupuesto definido por el usuario (Advertencia, amarilla); los ingresos del mes actual estén más de un 20% por
+debajo del promedio de los últimos 6 meses (Advertencia, amarilla); haya gastos recurrentes por vencer en los
+próximos 7 días (Información, azul). Cada alerta debe mostrar: un ícono del tipo de alerta, una descripción del
+problema, los números específicos involucrados y una acción sugerida. CONTROL DE PRESUPUESTO: permite a los
+usuarios fijar un límite de presupuesto mensual para cada categoría de gasto y muestra una barra de progreso que
+compare el gasto real vs. el presupuesto — las categorías que excedan el presupuesto se ponen en rojo. RESUMEN:
+agrega un pequeño distintivo (badge) de alertas en la navegación superior que muestre la cantidad de alertas
+críticas activas. Toda la lógica de alertas se ejecuta automáticamente a partir de los datos de transacciones en
+Supabase."</div>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buenas prácticas</strong>
+        El costo directo (CMV, comisión por venta) existe solo cuando existe el ingreso; el gasto operacional
+        (alquiler, salario fijo) existe independientemente — esta diferencia define el margen bruto y es
+        fundamental para que la DRE tenga sentido. Los contratos mensuales, cuotas e ingresos previsibles deben
+        registrarse como recurrentes, o la proyección de 90 días no refleja la realidad. Una alerta es señal de
+        acción necesaria, no de preocupación: cuando el sistema avisa que la caja se volverá negativa en 18 días,
+        esos 18 días son para actuar. Reserva 10 minutos para definir el presupuesto mensual de cada categoría de
+        gasto justo después de crear el sistema.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Errores comunes</strong>
+        No separar costo directo de gasto operacional, no registrar ingresos futuros recurrentes, ignorar las
+        alertas sin actuar, comparar la DRE con el flujo de caja esperando el mismo número (DRE muestra
+        rentabilidad, el flujo muestra liquidez — un negocio puede tener DRE positiva y caja negativa, y eso es
+        normal en negocios con plazo de cobro largo), y no definir presupuestos por categoría (sin presupuestos
+        el sistema no puede generar alertas de gasto excesivo).
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:14px">
+      💡 Rentabilidad y liquidez son cosas diferentes. Un negocio puede vender mucho, tener buen margen y aun así
+      tener caja negativa si los clientes pagan a 60 o 90 días mientras que proveedores y gastos se pagan al
+      contado. Esto se llama problema de capital de trabajo — una de las principales causas de quiebra en
+      negocios rentables.
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego final: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para completar la ruta.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-18.html" class="btn" id="btn-siguiente" aria-disabled="true">Módulo 18: Agentes de IA →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 17 de 18</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Cuál es la diferencia principal entre el flujo de caja y la DRE (Estado de Resultados)?',
+    opciones: [
+      'No hay diferencia real, son el mismo reporte con otro nombre',
+      'El flujo de caja muestra liquidez (cuánto dinero hay disponible ahora); la DRE muestra rentabilidad (si hay ganancia o pérdida real)',
+      'El flujo de caja es mensual y la DRE es anual',
+      'La DRE solo aplica a empresas grandes'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Un negocio tiene DRE positiva (está ganando dinero) pero el sistema está emitiendo una alerta de saldo proyectado negativo. ¿Qué explica esto?',
+    opciones: [
+      'Es un error del sistema — DRE positiva y caja negativa no pueden coexistir',
+      'El negocio es rentable pero recibe los pagos con plazo largo (30, 60, 90 días) mientras que los gastos se pagan al contado',
+      'Significa que el sistema fue configurado incorrectamente',
+      'La DRE no está considerando correctamente los impuestos'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Cuál es la diferencia práctica entre el escenario pesimista y el realista en la previsión de ingresos?',
+    opciones: [
+      'El pesimista es para cuando el mercado está en crisis y el realista para situaciones normales',
+      'El pesimista proyecta el 75% del promedio histórico y el realista proyecta el propio promedio histórico — utilizado para planificar reservas y decisiones de inversión',
+      'El pesimista es calculado por el sistema y el realista es definido por el usuario',
+      'No hay diferencia práctica — son solo referencias visuales en el gráfico'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Por qué es importante clasificar un gasto como "Costo Directo" y no como "Gasto Operativo"?',
+    opciones: [
+      'Porque afecta el cálculo del impuesto sobre la renta',
+      'Porque el costo directo es deducible y el gasto operativo no es',
+      'Porque el costo directo se resta de los ingresos para calcular el margen bruto — que revela la rentabilidad real del producto o servicio antes de los gastos fijos',
+      'No hace diferencia práctica para negocios pequeños'
+    ],
+    correcta: 2
+  },
+  {
+    enunciado: '¿Qué condiciones disparan una alerta financiera inteligente en el sistema?',
+    opciones: [
+      'Únicamente cuando el saldo actual ya está en negativo',
+      'Saldo proyectado negativo en 30 días, categoría de gasto que supera el presupuesto, ingresos por debajo del promedio histórico, o cuentas por vencer en 7 días',
+      'Solo cuando se supera el presupuesto anual completo',
+      'El sistema no genera alertas automáticas, solo reportes'
+    ],
+    correcta: 1
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod17',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>

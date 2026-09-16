@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 20. Tokens y costos de la IA — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+100 pts</span>
+  <h1>🔥 Módulo 20. Tokens y costos de la IA</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>Ya usaste Claude, ChatGPT y Gemini. Pero entender qué sucede "por debajo" cuando envías un mensaje te
+    permite gastar menos y elegir el modelo correcto para cada tarea. La unidad que mide todo esto se llama
+    <strong>token</strong>: un pedazo de texto, que puede ser una palabra completa, solo una parte de una palabra,
+    un espacio o un signo de puntuación. Es así como la IA ve y mide todo lo que escribes y todo lo que ella
+    responde. <strong>No es obligatorio entender de tokens para usar la IA — pero quien los entiende, la usa
+    mejor, gasta menos y no se lleva sorpresas cuando llega la factura de la API.</strong></p>
+
+    <p><strong>La regla general:</strong> 1 token ≈ 4 letras o 0,75 palabras en inglés. En español las palabras
+    tienden a ser más largas, así que se usan más tokens por palabra — una regla práctica es que 100 palabras en
+    español equivalen a aproximadamente 130-150 tokens. Ejemplos reales: "Hola" = 1 token; "Buen día" = 2 tokens;
+    "¿Cómo puedo ayudarte hoy?" = 7 tokens.</p>
+
+    <p><strong>Tokens de entrada y tokens de salida no cuestan lo mismo:</strong> los tokens de <em>entrada</em>
+    son lo que tú envías (tu pregunta, el contexto que pegas, las instrucciones) — la IA solo los lee, y leer
+    cuesta menos. Los tokens de <em>salida</em> son lo que la IA genera como respuesta — crear texto cuesta más
+    que leer texto, por eso los tokens de salida son, en general, de <strong>3 a 5 veces más caros</strong> que
+    los de entrada.</p>
+
+    <div class="tip">
+      💡 Lo que le pides a la IA que genere es lo que más pesa en la cuenta. Enviar un contrato completo para
+      analizar (muchos tokens de entrada) y pedir solo un resumen de 5 líneas (pocos tokens de salida) sale
+      barato. Enviar una pregunta corta y pedir un análisis completo de 10 páginas sube el costo — porque generar
+      texto es lo caro, no leerlo.
+    </div>
+
+    <p><strong>Ventana de contexto:</strong> es el límite de texto que la IA puede procesar de una vez en una
+    conversación — cuando la conversación supera ese límite, la IA empieza a "olvidar" los mensajes más antiguos
+    (no pierde el archivo, pierde la memoria activa de esa parte). En la práctica casi nunca se siente este
+    límite: solo se nota al pegar documentos muy largos (una investigación académica entera, un libro, un
+    historial de CRM enorme). Para conversaciones normales, análisis de contratos, creación de contenido y
+    automatizaciones, la ventana de contexto no suele ser un problema. Referencia de los principales modelos:
+    Claude Sonnet 4 ≈ 200.000 tokens (≈150.000 palabras, unas 2 novelas), GPT-4o ≈ 128.000 tokens, Gemini 1.5 Pro
+    ≈ 1.000.000 de tokens (≈750.000 palabras, el mayor del mercado).</p>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado: cuánto cuesta realmente usar IA</h2>
+    <p>El precio de los tokens se cobra por millón, y la lógica es simple: cuanto más capaz es el modelo, más
+    caro es. Precios de referencia de los principales modelos (por millón de tokens):</p>
+
+    <div class="ejemplo">Claude Haiku 3.5 (Anthropic) — Entrada US$ 0,80 / Salida US$ 4,00 — rápido y barato,
+ideal para tareas simples y alto volumen.
+Claude Sonnet 4 (Anthropic) — Entrada US$ 3,00 / Salida US$ 15,00 — equilibrado, el más usado en el día a día.
+Claude Opus 4 (Anthropic) — Entrada US$ 15,00 / Salida US$ 75,00 — el más inteligente, para tareas complejas.
+GPT-4o mini (OpenAI) — Entrada US$ 0,15 / Salida US$ 0,60 — muy barato, bueno para volumen alto y tareas simples.
+GPT-4o (OpenAI) — Entrada US$ 2,50 / Salida US$ 10,00 — versátil y capaz, buena elección general.
+Gemini 1.5 Flash (Google) — Entrada US$ 0,075 / Salida US$ 0,30 — el más barato del mercado para uso general.
+Gemini 1.5 Pro (Google) — Entrada US$ 1,25 / Salida US$ 5,00 — capacidad alta, precio competitivo.</div>
+
+    <p style="margin-top:16px"><strong>Lo que ese precio significa en tareas reales</strong> (con un modelo del
+    rango de Claude Sonnet): con US$ 1 se pagan aproximadamente...</p>
+    <ul>
+      <li><strong>27 contratos analizados</strong> (contrato de 10 páginas, ≈5.000 tokens de entrada cada uno).</li>
+      <li><strong>500 lotes de 30 textos</strong> generados para redes sociales (≈200 tokens de entrada cada lote).</li>
+      <li><strong>2.000 reportes semanales</strong> generados a partir de datos (≈2.000 tokens de entrada cada uno).</li>
+    </ul>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buenas prácticas</strong>
+        Piensa en token como un pedazo de texto, no como una palabra. El límite de tokens (ventana de contexto)
+        y el costo son conceptos relacionados pero diferentes — uno es capacidad, el otro es gasto. Para uso
+        individual o de un pequeño negocio, el costo real de la API es prácticamente insignificante: solo pesa
+        con volúmenes de miles de solicitudes por día. Recuerda que los tokens de salida cuestan de 3 a 5 veces
+        más que los de entrada — pide respuestas concisas cuando el volumen de generación no sea necesario. La
+        ventana de contexto es lo que la IA puede "ver" en la conversación actual, no un historial guardado para
+        siempre.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Errores comunes</strong>
+        Creer que token = palabra; confundir el límite de tokens (capacidad) con el costo (gasto); creer que usar
+        la API siempre es caro (para uso individual, un contrato completo analizado cuesta menos de US$ 0,20); no
+        saber que los tokens de salida son más caros que los de entrada; y creer que la ventana de contexto es el
+        historial guardado — en realidad, al superar el límite la IA olvida la memoria activa de esa conversación,
+        no borra ningún archivo.
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:14px">
+      💡 Para elegir modelo: usa uno barato y rápido (Haiku, GPT-4o mini, Gemini Flash) para tareas simples y de
+      alto volumen, y reserva los modelos más caros (Opus, GPT-4o, Gemini Pro) para el análisis complejo donde la
+      calidad de la respuesta importa más que el costo por token.
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego final: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para completar la ruta.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-21.html" id="btn-siguiente" class="btn" aria-disabled="true">Módulo 21: APIs de IA →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 20 de 21</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Qué es un token?',
+    opciones: [
+      'Un pedazo de texto: puede ser una palabra completa, parte de ella, un espacio o un signo de puntuación',
+      'Siempre una palabra entera',
+      'Una sola letra',
+      'Un archivo que se sube a la IA'
+    ],
+    correcta: 0
+  },
+  {
+    enunciado: 'Comparados con los tokens de entrada, los tokens de salida cuestan:',
+    opciones: [
+      'Exactamente lo mismo',
+      'Menos, porque generar es más simple que leer',
+      'De 3 a 5 veces más, porque crear texto cuesta más que leer texto',
+      'Nunca se cobran'
+    ],
+    correcta: 2
+  },
+  {
+    enunciado: '¿Qué es la ventana de contexto?',
+    opciones: [
+      'El historial completo guardado para siempre en la nube',
+      'El límite de texto que la IA puede procesar de una vez en una conversación',
+      'La cantidad de conversaciones que puedes tener por día',
+      'El tiempo que tarda la IA en responder'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Para uso individual o de un pequeño negocio, el costo real de usar la API de una IA es:',
+    opciones: [
+      'Insignificante — centavos por tarea; solo pesa con un volumen muy alto',
+      'Siempre muy caro, inaccesible sin una empresa grande detrás',
+      'Totalmente gratis en todos los casos',
+      'Imposible de calcular'
+    ],
+    correcta: 0
+  },
+  {
+    enunciado: 'Al elegir un modelo de IA para una tarea simple y de alto volumen (como clasificar mensajes), conviene:',
+    opciones: [
+      'Usar siempre el modelo más caro e inteligente disponible (como Claude Opus)',
+      'Usar un modelo barato y rápido (como Claude Haiku, GPT-4o mini o Gemini Flash), reservando los modelos caros para tareas complejas',
+      'No usar IA para tareas simples',
+      'El precio del modelo no importa nunca'
+    ],
+    correcta: 1
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod20',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>

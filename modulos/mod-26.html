@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 26. Skills: enseña a la IA una sola vez — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+105 pts</span>
+  <h1>🧠 Módulo 26. Skills: enseña a la IA una sola vez</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>Cada vez que abres una conversación nueva con Claude o ChatGPT, la IA no sabe nada de tu negocio: no sabe
+    qué haces, para quién, ni cómo quieres que te responda. Sin una <strong>skill</strong>, repites el mismo
+    contexto una y otra vez. Con una skill, lo escribes <strong>una sola vez</strong> y la IA lo recuerda en
+    todas las conversaciones futuras, sin que tengas que copiar y pegar nada.</p>
+
+    <p><strong>La analogía del empleado nuevo</strong>: piensa en la skill como el manual de inducción que le das
+    a un empleado en su primer día de trabajo. No le explicas todo de memoria cada mañana — se lo entregas una
+    vez, por escrito, y él lo consulta cuando lo necesita. Una skill bien escrita hace exactamente eso con la
+    IA: le explica tu negocio, tu público, tu tono y tus límites de una sola vez.</p>
+
+    <div class="comparacion">
+      <div class="col malo">
+        <strong>Skill</strong>
+        Instrucciones que guardas una vez en la configuración de la herramienta y la IA sigue en
+        <strong>todas</strong> las conversaciones, sin importar el tema.
+      </div>
+      <div class="col bueno">
+        <strong>System prompt</strong>
+        Instrucciones que configuras para un <strong>agente específico</strong> (por ejemplo, el asistente de
+        WhatsApp del Módulo 24). Aplican solo a ese agente, no a tu chat general.
+      </div>
+    </div>
+
+    <div class="tip">
+      💡 La skill es más amplia y vive en tus preferencias personales de la herramienta; el system prompt es más
+      puntual y vive dentro de un agente o automatización concreta. Ambos se pueden usar juntos: skill para tu
+      contexto general, system prompt para el comportamiento de un agente específico.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado: configura tus 5 skills</h2>
+
+    <p><strong>Sin skill vs. con skill</strong> — el mismo pedido, dos resultados muy distintos:</p>
+    <div class="ejemplo">CASO 1 · CORREO PROFESIONAL
+Sin skill: "Escribe un correo para un cliente" → la IA entrega un correo genérico, tono neutro, sin
+mencionar tu negocio ni tu forma habitual de comunicarte.
+Con skill: el mismo pedido → la IA ya sabe el nombre de tu empresa, tu tono (formal o cercano) y el tipo de
+cliente al que te diriges, y entrega un correo listo para enviar, sin ajustes.
+
+CASO 2 · ANÁLISIS DE DATOS
+Sin skill: "Analiza estos números" → la IA da un análisis genérico, sin saber qué es importante para tu
+negocio ni cómo prefieres ver los resultados (tabla, resumen, gráfico).
+Con skill: la IA ya sabe qué métricas te importan (por ejemplo, margen y flujo de caja) y en qué formato
+prefieres verlas, y entrega el análisis enfocado en lo que realmente usas.
+
+CASO 3 · CONTENIDO PARA REDES SOCIALES
+Sin skill: "Escribe un post para Instagram" → texto genérico, sin la voz de tu marca ni el público correcto.
+Con skill: la IA ya conoce tu público objetivo y tu tono de marca, y entrega un post que suena como tú, listo
+para publicar con pequeños ajustes.</div>
+
+    <p style="margin-top:16px"><strong>Los 5 tipos de skill que necesitas configurar</strong> — configúralos los
+    5 y la IA te entenderá de forma completa:</p>
+
+    <div class="ejemplo">TIPO 1 · SKILL DE CONTEXTO DEL NEGOCIO
+QUÉ ES: le enseña a la IA todo sobre tu negocio — qué haces, para quién, cuál es tu diferencial, quiénes son
+tus clientes, cuáles son tus productos o servicios y los precios.
+CUÁNDO USAR: siempre. Es la skill más importante — sin ella, la IA responde de forma genérica que no sirve
+para ningún negocio específico.
+EJEMPLO PRÁCTICO: tienes una agencia de marketing. La skill incluye nombre de la agencia, tipos de clientes
+atendidos, servicios ofrecidos con precios, diferenciales frente a la competencia y tono de comunicación con
+clientes.
+
+TIPO 2 · SKILL DE TONO DE VOZ Y ESTILO
+QUÉ ES: define cómo debe escribir la IA y comunicarse — formal o informal, con humor o serio, directo o
+detallado, con emojis o no, y cómo estructura los textos.
+CUÁNDO USAR: cada vez que la IA genera texto para ti — correos, posts, propuestas, respuestas. El tono
+necesita sonar como tú, no como una IA genérica.
+EJEMPLO PRÁCTICO: "Tono directo y confiado, sin ser arrogante. Sin jerga corporativa. Frases cortas. Usa
+ejemplos concretos para explicar. No usa palabras como 'apalancar', 'robusto' o 'sinergias'."
+
+TIPO 3 · SKILL DE FORMATO DE ENTREGA
+QUÉ ES: define cómo debe estructurar la IA las respuestas — listas o párrafos, con o sin tópicos, resumido o
+detallado, en qué idioma, con o sin emojis.
+CUÁNDO USAR: cuando usas la IA para trabajo frecuente y quieres consistencia en el formato. Evita que la IA
+cambie la estructura de las respuestas cada conversación.
+EJEMPLO PRÁCTICO: "Prefiero respuestas en párrafos cortos, sin listas largas. Si es una lista, máximo 5
+elementos. Siempre termina con un siguiente paso claro. Nunca usa tablas, a no ser que la pida."
+
+TIPO 4 · SKILL DE PÚBLICO OBJETIVO
+QUÉ ES: describe en detalle quién es el cliente ideal de tu negocio — perfil, dolores, deseos, lenguaje,
+objeciones comunes y qué los motiva a comprar.
+CUÁNDO USAR: para crear contenido, copy, scripts de ventas y cualquier texto que necesita resonar con tu
+público. La IA escribe para la persona correcta, no para todos.
+EJEMPLO PRÁCTICO: "Mi cliente ideal es emprendedor de 28 a 45 años, tiene un negocio funcionando pero no sabe
+cómo escalarlo. Principal dolor: trabaja mucho pero factura poco. Principal deseo: tener un negocio que
+funcione sin depender solo de él. Objeción más común: 'no tengo tiempo para aprender una cosa más'."
+
+TIPO 5 · SKILL DE LÍMITES Y RESTRICCIONES
+QUÉ ES: define qué no debe hacer la IA, mencionar, recomendar o asumir. Te protege de respuestas que pueden
+causar problemas.
+CUÁNDO USAR: cuando usas la IA para comunicación con clientes, creación de contenido público o cualquier
+situación donde una respuesta incorrecta puede ser perjudicial.
+EJEMPLO PRÁCTICO: "Nunca menciones competidores por nombre. Nunca inventes precios o plazos — si no lo sabes,
+di que vas a verificar. Nunca hagas afirmaciones sobre resultados garantizados. No uses lenguaje político o
+religioso."</div>
+
+    <p style="margin-top:16px"><strong>Dónde configurar cada skill</strong> — es gratuito en ambas
+    herramientas:</p>
+    <ul>
+      <li><strong>Claude</strong> — Configuración → Perfil → Memorias y Preferencias. Ahí escribes las
+      instrucciones que aplican a todas las conversaciones. Disponible en todos los planes.</li>
+      <li><strong>ChatGPT</strong> — icono de tu nombre → Instrucciones personalizadas. Dos campos: "Qué debe
+      saber ChatGPT sobre ti" y "Cómo quieres que ChatGPT responda". Completa los dos. Disponible en los planes
+      Free y Plus.</li>
+    </ul>
+
+    <div class="tip" style="margin-top:14px">
+      💡 La regla de oro: escribe la skill como si estuvieras capacitando a un empleado nuevo en su primer día
+      de trabajo. Y la diferencia entre una skill buena y una mala es siempre la <strong>especificidad</strong>:
+      ejemplos concretos, reglas claras y contexto real — no generalidades.
+    </div>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buenas prácticas</strong>
+        Actualiza la skill cada 3 meses o cuando lances un producto, cambies de público o ajustes el
+        posicionamiento. Sé denso pero conciso: enfócate en lo que cambia el resultado (negocio, tono, público,
+        límites) y evita historias largas. Después de guardar, haz 5 solicitudes distintas para verificar que la
+        IA responde como esperas — si algo falla, ajusta la skill, no la solicitud. Configura la skill por
+        separado en Claude y en ChatGPT, con pequeños ajustes según cómo responde cada una.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Errores comunes</strong>
+        Escribir la skill una vez y nunca actualizarla; hacerla muy larga y llena de detalles irrelevantes; no
+        probarla después de configurarla; poner información confidencial (contraseñas, datos bancarios,
+        documentos personales) dentro de la skill — es para contexto de negocio, no para datos sensibles; y usar
+        la misma skill en Claude y ChatGPT sin adaptarla, ya que cada herramienta interpreta las instrucciones de
+        forma ligeramente distinta.
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:14px">
+      — Anotado por EDI: la skill es para contexto de negocio, no para datos sensibles. Nunca registres
+      contraseñas ni información confidencial en las preferencias de una plataforma de terceros.
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego final: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para completar la ruta.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="../index.html" class="btn">🏆 Ver mi progreso completo</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 26 de 26</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Qué es, en la práctica, una skill?',
+    opciones: [
+      'Instrucciones que guardas una vez y la IA sigue en todas las conversaciones',
+      'Un prompt que necesitas pegar de nuevo en cada conversación',
+      'Un modelo de IA más avanzado y de pago',
+      'Una extensión de navegador que hay que instalar'
+    ],
+    correcta: 0
+  },
+  {
+    enunciado: '¿Cuál es la diferencia entre una skill y un system prompt?',
+    opciones: [
+      'Son lo mismo, solo cambia el nombre',
+      'La skill es más amplia y aplica a cualquier conversación; el system prompt es de un agente específico',
+      'El system prompt es gratis y la skill es de pago',
+      'La skill solo funciona en ChatGPT y el system prompt solo en Claude'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Cuál de estas es una skill BUENA (específica)?',
+    opciones: [
+      'Soy emprendedor y me gustan las respuestas profesionales',
+      'Tengo una cafetería de especialidad; atiendo a amantes del café de 25 a 40 años; tono cálido, sin jerga técnica',
+      'Escribe bien y sé siempre útil',
+      'Responde rápido y sin errores'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Cuál de los 5 tipos de skill define qué NO debe hacer, mencionar o asumir la IA?',
+    opciones: [
+      'Skill de Formato de Entrega',
+      'Skill de Público Objetivo',
+      'Skill de Límites y Restricciones',
+      'Skill de Tono de Voz y Estilo'
+    ],
+    correcta: 2
+  },
+  {
+    enunciado: 'En Claude, ¿dónde guardas tus skills?',
+    opciones: [
+      'En Configuración → Memorias y Preferencias',
+      'En el nombre del archivo que adjuntas',
+      'Solo programando con la API',
+      'En un correo que le envías a soporte'
+    ],
+    correcta: 0
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod26',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz'
+});
+</script>
+</body>
+</html>

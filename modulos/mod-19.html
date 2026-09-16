@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 19. Automatizaciones con n8n y Claude — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+100 pts</span>
+  <h1>⚙️ Módulo 19. Automatizaciones con n8n y Claude</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>Hasta el módulo anterior, la IA — usada como herramienta o como agente — siempre necesitaba que tú
+    dieras el primer paso: abrir el chat, pegar el dato, pedir la respuesta. Una <strong>automatización</strong>
+    elimina ese primer paso: un flujo del tipo <strong>"cuando pase X, haz Y"</strong> que se ejecuta solo,
+    sin que abras nada. Un correo nuevo llega y el sistema ya lo clasificó; un lead se registra en Instagram y
+    ya quedó guardado en tu hoja de cálculo; llega el viernes y el reporte de ventas de la semana ya está armado
+    y enviado. Bien elegidas, unas pocas automatizaciones simples pueden liberar varias horas de trabajo
+    repetitivo a la semana.</p>
+
+    <p><strong>Cuatro ejemplos típicos de automatización para un negocio o práctica profesional:</strong></p>
+    <ul>
+      <li><strong>Correos de clientes:</strong> clasificar y enrutar automáticamente los correos entrantes según
+      su contenido o urgencia.</li>
+      <li><strong>Leads de Instagram:</strong> guardar automáticamente en una hoja de cálculo cada contacto nuevo
+      que escribe por Instagram.</li>
+      <li><strong>Reporte semanal de ventas:</strong> generar y enviar cada semana, sin intervención manual, un
+      resumen de las ventas del período.</li>
+      <li><strong>Aviso de seguimiento en el CRM:</strong> notificar automáticamente cuando un contacto o
+      negociación lleva demasiado tiempo sin actividad.</li>
+    </ul>
+
+    <p><strong>n8n</strong> es la herramienta elegida para construir estos flujos: es <strong>gratuita</strong> (a
+    diferencia de alternativas como Zapier, de pago), conecta más de <strong>400 aplicaciones e integraciones</strong>
+    (Gmail, Google Sheets, WhatsApp, CRMs, redes sociales, entre otras) y no requiere escribir código — el flujo se
+    arma visualmente conectando nodos, cada uno representando un paso o una aplicación.</p>
+
+    <p><strong>El proceso tiene 3 pasos</strong>, y no exige saber programar:</p>
+    <ol>
+      <li><strong>Describe la automatización a Claude</strong> en lenguaje simple — qué debe pasar (el disparador)
+      y qué debe hacer el flujo como resultado (la acción), con el mayor detalle posible.</li>
+      <li><strong>Claude genera el JSON del flujo</strong> — el archivo con la estructura completa del flujo de
+      n8n, listo para importar.</li>
+      <li><strong>Pegas ese JSON en n8n y activas el flujo</strong> — importas el archivo, conectas las cuentas de
+      cada aplicación involucrada (haciendo clic en cada nodo) y, tras probarlo con el botón "Test Workflow",
+      lo activas.</li>
+    </ol>
+
+    <div class="tip">
+      💡 Cuanto más específico seas al describirle la automatización a Claude, mejor sale el JSON: indica el
+      nombre exacto de la hoja de cálculo, las columnas que tiene, el número de WhatsApp completo con código de
+      país (DDI) y cualquier otro dato concreto de tu flujo real — los detalles importan.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado: de una idea a un flujo activo en n8n</h2>
+    <p>El punto de partida siempre es una indicación clara a Claude, siguiendo una plantilla similar a esta:</p>
+
+    <div class="ejemplo">"Quiero automatizar [DESCRIBE QUÉ QUIERES AUTOMATIZAR]. Cuando [DISPARADOR: por ejemplo,
+    'llega un correo nuevo a mi Gmail' o 'alguien envía un mensaje por Instagram'], quiero que [ACCIÓN: por
+    ejemplo, 'se guarde el nombre y el mensaje en mi hoja de Google Sheets llamada Leads, en las columnas Nombre,
+    Mensaje y Fecha' o 'se envíe un resumen por WhatsApp al número +504 XXXX-XXXX']. Genérame el JSON completo de
+    este flujo para importar en n8n."</div>
+
+    <p style="margin-top:16px"><strong>Tres automatizaciones listas para adaptar</strong> a partir de esa misma
+    plantilla:</p>
+    <ul>
+      <li><strong>Automatización — Guardar leads:</strong> cuando llega un mensaje nuevo por Instagram o
+      WhatsApp Business, el flujo guarda automáticamente el contacto (nombre, mensaje y fecha) en una hoja de
+      cálculo de seguimiento, sin que nadie tenga que copiarlo a mano.</li>
+      <li><strong>Automatización — Informe semanal por WhatsApp:</strong> cada semana, en un día y hora fijos,
+      el flujo toma los datos de ventas de la hoja de cálculo, arma un resumen y lo envía por WhatsApp al número
+      indicado, sin que nadie tenga que redactarlo.</li>
+      <li><strong>Automatización — Aviso de seguimiento en el CRM:</strong> el flujo revisa periódicamente los
+      contactos o negociaciones del CRM y envía un aviso (por correo o WhatsApp) cuando alguno lleva demasiado
+      tiempo sin actividad, para que ningún seguimiento se quede olvidado.</li>
+    </ul>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buenas prácticas</strong>
+        Después de importar el JSON, haz clic en cada nodo y conecta tu cuenta real (Gmail, Google Sheets,
+        WhatsApp) — sin esto el flujo no puede acceder a tus datos. Usa siempre el botón "Test Workflow" para
+        probar el flujo una vez antes de activarlo. Sé específico al describir la automatización a Claude: nombre
+        de la hoja, columnas exactas, número de WhatsApp completo con DDI. Empieza con una automatización simple
+        y, cuando funcione sin problemas durante una semana, añade la siguiente. Entra a n8n una vez por semana a
+        revisar el historial de ejecuciones — si aparecen errores, algo necesita ajuste.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Errores comunes</strong>
+        No configurar las credenciales de cada aplicación en n8n; activar el flujo sin probarlo primero con
+        "Test Workflow"; dar a Claude una indicación demasiado vaga, sin nombres de hoja, columnas o números
+        exactos; intentar automatizar todo de una sola vez, apilando automatizaciones sin verificar que cada una
+        funciona antes de sumar la siguiente; y olvidar que el flujo sigue en ejecución — dejarlo activo sin
+        revisar nunca más su historial.
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:14px">
+      — Anotado por EDI: la automatización necesita mantenimiento eventual. No es "configurar una vez y
+      olvidar" — es "configurar una vez y revisar de tanto en tanto".
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego final: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para completar la ruta.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-20.html" id="btn-siguiente" class="btn" aria-disabled="true">Módulo 20: Tokens y costos de la IA →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 19 de 20</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Qué es una automatización, a diferencia de usar la IA como herramienta o como agente?',
+    opciones: [
+      'Un flujo del tipo "cuando pase X, haz Y" que se ejecuta solo, sin que tengas que abrir nada',
+      'Lo mismo que un agente, solo que más lento',
+      'Un tipo de GPT personalizado que solo funciona en ChatGPT',
+      'Una automatización siempre requiere escribir código'
+    ],
+    correcta: 0
+  },
+  {
+    enunciado: '¿Por qué se eligió n8n para construir estos flujos?',
+    opciones: [
+      'Porque solo funciona con Gmail',
+      'Es gratuito, conecta más de 400 aplicaciones y no requiere escribir código',
+      'Porque requiere saber programar en Python',
+      'Porque es la única opción que existe en el mercado'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Cuáles son los 3 pasos del proceso para crear una automatización?',
+    opciones: [
+      'Abrir n8n, escribir código manualmente, publicar',
+      'Describir la automatización a Claude, Claude genera el JSON del flujo, pegar el JSON en n8n y activarlo',
+      'Pagar una suscripción, contratar un programador, esperar la entrega',
+      'Grabar un video tutorial, subirlo a YouTube, compartir el enlace'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Después de importar el JSON en n8n, ¿qué falta para que el flujo acceda a tus datos?',
+    opciones: [
+      'Configurar las credenciales de cada app (Gmail, Sheets) haciendo clic en cada nodo',
+      'Nada — ya viene conectado a tus cuentas automáticamente',
+      'Reescribir todo el código del flujo a mano',
+      'Nada, un JSON nunca necesita credenciales'
+    ],
+    correcta: 0
+  },
+  {
+    enunciado: '¿Por qué conviene empezar con una automatización simple en vez de automatizar todo de una vez?',
+    opciones: [
+      'Porque n8n cobra por cada automatización adicional',
+      'Automatización encima de automatización que no funciona se convierte en confusión — mejor validar una semana antes de sumar la siguiente',
+      'Porque solo se puede tener un flujo activo a la vez',
+      'No hay ninguna razón real, es solo una preferencia'
+    ],
+    correcta: 1
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod19',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>

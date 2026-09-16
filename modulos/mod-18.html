@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 18. Agentes de IA que trabajan por ti — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+100 pts</span>
+  <h1>🤖 Módulo 18. Agentes de IA que trabajan por ti</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>Hasta ahora usaste la IA como <strong>herramienta</strong>: la abres, le explicas todo desde cero, obtienes
+    una respuesta y cierras. Funciona, pero no escala — en cada conversación repites el contexto de tu negocio,
+    tu tono y tus reglas. Un <strong>agente</strong> es diferente: es una IA configurada una sola vez, con
+    instrucciones fijas, que actúa siempre dentro de ese mismo contexto. Abres y ya sabe quién eres, qué haces y
+    cómo debe responder — configuras una vez y trabaja para ti siempre.</p>
+
+    <p><strong>Configurar un agente significa definir cinco elementos:</strong></p>
+    <ul>
+      <li><strong>Nombre:</strong> identifica al agente y su propósito.</li>
+      <li><strong>Rol:</strong> qué hace exactamente (asistente de correo, analista de campañas, etc.).</li>
+      <li><strong>Tono:</strong> cómo se comunica (formal, cálido, directo).</li>
+      <li><strong>Reglas:</strong> qué puede y qué no puede hacer por su cuenta.</li>
+      <li><strong>Conocimiento:</strong> la información de contexto que necesita sobre tu negocio.</li>
+    </ul>
+
+    <p>Estos cinco elementos se escriben en un <strong>system prompt</strong> — las instrucciones fijas que
+    definen cómo se comporta el agente en cada interacción, sin que tengas que repetirlas. Hay dos formas
+    principales de poner un agente a funcionar: dándole a Claude acceso directo a una herramienta externa (como
+    Gmail) mediante un <strong>MCP (Model Context Protocol)</strong> — una conexión que permite a Claude leer y
+    actuar sobre esa herramienta dentro de la propia conversación —, o creando un <strong>GPT personalizado</strong>
+    en ChatGPT, que queda guardado en tu cuenta con nombre, instrucciones y conocimiento propios, listo para
+    reutilizar sin volver a configurarlo.</p>
+
+    <div class="tip">
+      💡 Un agente especializado funciona mejor que uno generalista: crea un agente por función — uno para
+      correo, otro para campañas, otro para presupuestos — en vez de intentar que uno solo lo resuelva todo.
+      Separar los contextos es lo que hace que cada agente responda con precisión.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado: agentes en Claude y en ChatGPT</h2>
+    <p>Dos agentes viven directamente en Claude con acceso a herramientas externas vía MCP. El resto se configuran
+    como GPTs personalizados en ChatGPT o como agentes de Claude con un system prompt fijo, sin integración.</p>
+
+    <div class="ejemplo">Agente 01 — Claude + Gmail MCP · Asistente de Correo Electrónico:
+"Eres mi asistente personal de correo electrónico con acceso a mi bandeja de entrada de Gmail. Tu trabajo es
+ayudarme a gestionar y responder correos de forma eficiente. Cuando te pida que revises mi bandeja de entrada:
+1) Lista los correos sin leer o sin responder agrupados por prioridad — Urgente (requiere acción hoy), Normal
+(puede esperar 1-2 días), Informativo (no necesita respuesta). 2) Para cada correo que necesite respuesta,
+redacta una contestación con mi voz — directa, profesional pero cálida, sin jerga corporativa. 3) Muéstrame
+siempre el borrador antes de enviarlo. Nunca envíes nada sin mi aprobación explícita. 4) Si un correo requiere
+información que no tienes (precios, fechas, detalles específicos), deja un marcador [COMPLETAR] y avísame. Mi
+nombre es [TU NOMBRE]. Mi negocio es [DESCRIBE TU NEGOCIO EN 2 ORACIONES]. Mi tono habitual en los correos es
+[DESCRIBE: formal / casual / directo / cálido]."
+Para conectar: abre claude.ai → Configuración → Integraciones → activa el conector de Gmail y autoriza con tu
+cuenta Google. Después, pega este system prompt al inicio de la conversación.</div>
+
+    <div class="ejemplo" style="margin-top:12px">Agente 02 — Claude · Analista de Campañas:
+"Eres un analista senior de marketing de performance. Voy a pegar los datos de mi campaña de anuncios a
+continuación. Analízalos y entrégame: 1) Resumen general del rendimiento — si la campaña es rentable o no, según
+los números. 2) El anuncio o conjunto de anuncios con mejor rendimiento — qué está funcionando (identifica el
+patrón: tipo de creativo, audiencia, ángulo del copy). 3) El anuncio o conjunto de anuncios con peor rendimiento
+— qué está desperdiciando presupuesto y qué hacer (pausar, optimizar o probar un nuevo creativo). 4) Las 3
+acciones específicas más importantes que debo tomar esta semana para mejorar los resultados. 5) Sugerencia de
+nuevo copy para anuncios basado en lo que mejor está funcionando — escribe 2 opciones de titular y 2 opciones de
+texto del cuerpo. Sé específico y usa los números reales de los datos que te compartí."
+No necesitas integración: exporta el informe de la campaña (Meta Ads o Google Ads → Exportar → CSV) y pega el
+contenido directamente en el chat junto con este prompt.</div>
+
+    <p style="margin-top:16px"><strong>Tres GPTs personalizados listos para crear en ChatGPT</strong>
+    (chatgpt.com → tu nombre → Mis GPTs → Crear GPT → pestaña Configurar → pega el nombre y las instrucciones;
+    requiere plan ChatGPT Plus, Team o Enterprise para crearlos — en el plan gratuito puedes usar GPTs públicos
+    de otras personas):</p>
+    <ul>
+      <li><strong>Asistente de Control Financiero:</strong> procesa costos fijos, facturación, extracto bancario
+      y facturas por pagar, y entrega diagnóstico financiero (margen, runway), gastos fuera de lo normal y las 3
+      acciones de la semana.</li>
+      <li><strong>Creador de Guiones:</strong> a partir de idea/tema, formato, tono, público objetivo, duración y
+      producto a promocionar, entrega un guion estructurado (gancho · cuerpo · CTA), el gancho de 3 segundos y la
+      descripción con hashtags lista para publicar. Ejemplo de uso: "Crea un guion de reel de 30 segundos sobre
+      los 3 errores de quien comienza a invertir. Público: jóvenes de 20-30 años."</li>
+      <li><strong>Constructor de Embudo de Ventas:</strong> con tasa de conversión, anuncios activos, objeciones y
+      página de ventas, entrega el embudo mapeado, el cuello de botella identificado y la próxima acción a
+      optimizar. Ejemplo de uso: "Mi embudo tiene CTR del 3% en los anuncios pero solo 8% de conversión en la
+      landing page. ¿Qué pruebo primero?"</li>
+    </ul>
+
+    <p style="margin-top:16px"><strong>Cuatro agentes de Claude más para el día a día</strong> (pegas el
+    documento o describes la situación, sin integración adicional):</p>
+    <ul>
+      <li><strong>Lector de Contratos:</strong> analiza un contrato en PDF y entrega un resumen en lenguaje
+      simple, las cláusulas de riesgo y los puntos de atención antes de firmar. Ejemplo: "¿Hay alguna cláusula
+      peligrosa en este contrato de alquiler?"</li>
+      <li><strong>Lector de Exámenes Médicos:</strong> explica un resultado de laboratorio en lenguaje simple —
+      qué significa cada valor, qué está fuera de lo normal y qué preguntas llevar al médico.</li>
+      <li><strong>Intermediador de Conversaciones Tensas:</strong> con el mensaje recibido, tu límite y el tono
+      deseado, redacta una respuesta calmada y firme, lista para enviar, y señala qué evitar decir. Ejemplo:
+      "Un cliente me mandó un mensaje agresivo quejándose de un servicio. ¿Cómo respondo de forma profesional?"</li>
+      <li><strong>Creador de Presupuestos y Cotizaciones:</strong> con alcance del servicio, ítems, precios, plazo
+      y margen, arma un presupuesto formateado con total, condiciones y texto listo para enviar. Ejemplo:
+      "Necesito armar un presupuesto de social media: 12 posts, 4 reels y gestión de Instagram."</li>
+    </ul>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buenas prácticas</strong>
+        Incluye en el system prompt qué haces, quién es tu público, tu tono de comunicación y las reglas
+        específicas de tu contexto — cuanto más específico, mejor funciona el agente. Configura siempre el
+        agente de correo para redactar y esperar tu aprobación, nunca para enviar de forma autónoma. Crea un GPT
+        por función en vez de uno genérico para todo. Al pedir análisis de campañas, dile siempre a Claude qué
+        quieres optimizar (CPL, alcance, conversión) — sin objetivo claro el análisis es genérico. El agente
+        mejora con el uso: dedica 15 minutos por semana para refinar el system prompt según lo que funciona.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Errores comunes</strong>
+        Escribir un system prompt vago, sin contexto del negocio; dejar que el agente de correo envíe mensajes
+        sin revisar; crear un solo GPT genérico para todas las tareas en vez de uno por función; pegar datos de
+        campaña sin indicar el objetivo a optimizar; y usar el agente una sola vez y abandonarlo, en vez de
+        seguir ajustándolo con el uso real.
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:14px">
+      💡 El system prompt completo de cada agente queda guardado dentro del GPT (ChatGPT) o se reutiliza al
+      inicio de cada conversación (Claude) — quien lo usa después no necesita escribir ni pegar ninguna
+      instrucción, el agente ya llega configurado.
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego final: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para completar la ruta.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-19.html" id="btn-siguiente" class="btn" aria-disabled="true">Módulo 19: Automatizaciones con n8n →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 18 de 19</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Cuál es la diferencia entre usar la IA como herramienta y tener IA como agente?',
+    opciones: [
+      'La herramienta responde una pregunta a la vez y olvida el contexto; el agente se configura una vez y actúa siempre dentro de ese contexto',
+      'Ninguna — son lo mismo con nombres diferentes',
+      'El agente sirve solo para generar imágenes; la herramienta, solo para textos',
+      'La herramienta es gratuita y el agente siempre requiere pago'
+    ],
+    correcta: 0
+  },
+  {
+    enunciado: 'Para que Claude lea y redacte correos en tu bandeja de entrada, conectas Gmail vía:',
+    opciones: [
+      'Enviando un archivo .zip',
+      'MCP (Model Context Protocol)',
+      'Copiando y pegando cada correo a mano',
+      'No es posible conectar Gmail a Claude'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'El system prompt del agente de correo indica que Claude nunca debe:',
+    opciones: [
+      'Agrupar los correos por prioridad',
+      'Redactar una respuesta en tu tono',
+      'Enviar un correo sin tu aprobación explícita',
+      'Dejar un marcador [COMPLETAR] cuando falta información'
+    ],
+    correcta: 2
+  },
+  {
+    enunciado: 'Para CREAR GPTs personalizados en ChatGPT, necesitas:',
+    opciones: [
+      'Plan ChatGPT Plus, Team o Enterprise (de pago)',
+      'Solo el plan gratuito',
+      'No es posible crear GPTs personalizados',
+      'Una cuenta de Google Workspace'
+    ],
+    correcta: 0
+  },
+  {
+    enunciado: '¿Por qué conviene crear un agente por función en vez de uno solo genérico para todo?',
+    opciones: [
+      'Porque ChatGPT limita el número de instrucciones por GPT',
+      'Un agente especializado funciona mejor que uno generalista — separar los contextos da respuestas más precisas',
+      'Porque cada GPT solo puede usarse una vez',
+      'No hay ninguna ventaja real, es solo una preferencia estética'
+    ],
+    correcta: 1
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod18',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>

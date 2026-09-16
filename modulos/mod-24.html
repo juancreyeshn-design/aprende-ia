@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 24. Asistente de IA en WhatsApp — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+99 pts</span>
+  <h1>💬 Módulo 24. Asistente de IA en WhatsApp</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>Imagina mandar un mensaje por WhatsApp y recibir en segundos una respuesta inteligente y personalizada —
+    no un bot de menú con opciones numeradas, sino un asistente real que entiende lo que pediste y responde como
+    una persona. Esto se arma conectando <strong>tres piezas</strong>:</p>
+    <ul>
+      <li><strong>Evolution API</strong> — el conector de WhatsApp. WhatsApp no tiene API oficial para uso
+      individual, así que Evolution API es una solución open source y gratuita que conecta tu número a internet.
+      Se instala en un servidor propio (Railway y Render tienen planes gratuitos suficientes para comenzar).</li>
+      <li><strong>n8n</strong> — el cerebro del flujo. Recibe el mensaje que llegó por Evolution API, lo envía a
+      Claude para procesar, toma la respuesta y la manda de vuelta por WhatsApp.</li>
+      <li><strong>Claude</strong> — la inteligencia. Procesa el mensaje según el system prompt configurado y
+      genera la respuesta. Claude no sabe que está en WhatsApp — para él es solo otra conversación.</li>
+    </ul>
+    <p>Todo esto sucede en menos de 5 segundos: para quien recibe el mensaje, parece una conversación normal con
+    una persona.</p>
+
+    <div class="tip">
+      💡 El límite de lo que el asistente puede hacer no es técnico, es el <strong>system prompt</strong> que le
+      escribas. Ahí defines su personalidad, su tono y qué puede y qué no puede hacer.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado: monta tu asistente</h2>
+
+    <p><strong>Cuatro tipos de asistente</strong> según lo que necesites — el mismo flujo técnico sirve para los
+    cuatro, solo cambia el system prompt:</p>
+    <div class="ejemplo">01 · ASISTENTE DE PRODUCTIVIDAD
+Mandas: "Resumen de la reunión de hoy: [texto]" → devuelve un resumen con decisiones y próximos pasos.
+Mandas: "Crea una respuesta profesional para este email: [texto]" → recibes el borrador listo para enviar.
+
+02 · ASISTENTE DE VENTAS
+Mandas: "El cliente preguntó sobre el plazo de entrega, ¿cómo respondo?" → sugiere el mejor enfoque.
+Mandas: "Necesito argumentos para rebatir la objeción de precio" → recibes 3 enfoques diferentes.
+
+03 · ASISTENTE DE CONTENIDO
+Mandas un tema → genera la leyenda, los hashtags y la sugerencia visual.
+Mandas una idea → la transforma en un post o guion de reel estructurado.
+
+04 · ASISTENTE FINANCIERO PERSONAL — el más útil para el control diario de gastos
+Mandas: "Gasté US$ 45 en el almuerzo, categoría alimentación" → registra el gasto y devuelve el saldo del
+mes, integrado con tu hoja de cálculo. Mantiene el control en tiempo real solo con mensajes de WhatsApp.</div>
+
+    <p style="margin-top:16px"><strong>El system prompt define la personalidad</strong> — dos ejemplos completos
+    y listos para adaptar:</p>
+    <div class="ejemplo">SYSTEM PROMPT — ASISTENTE DE PRODUCTIVIDAD
+"Eres mi asistente personal en WhatsApp. Tu nombre es [NOMBRE DEL ASISTENTE]. Me ayudas con tareas de
+productividad, comunicación y organización. Reglas: 1) Respuestas cortas y directas — máximo 5 líneas, a
+menos que te pida más. 2) Tono informal y cercano — como un asistente de confianza, no un robot. 3) Cuando
+recibas un correo para redactar respuesta, entrega listo para copiar y pegar. 4) Cuando recibas texto de
+reunión, entrega resumen con decisiones y próximos pasos. 5) Si no entiendes lo que te pedí, pregunta antes de
+adivinar. 6) Nunca inventes información. Si no sabes, di que no sabes."
+
+SYSTEM PROMPT — ASISTENTE DE VENTAS
+"Eres mi asistente de ventas en WhatsApp. Me ayudas con atención al cliente, objeciones y negociaciones.
+Contexto de mi negocio: [PRODUCTO O SERVICIO, PRECIO, PÚBLICO Y DIFERENCIALES]. Reglas: 1) Ante una situación
+con cliente, sugiere el mejor enfoque en 3 líneas. 2) Ante una objeción, entrega 2 enfoques diferentes. 3) Ante
+un pedido de script, entrega listo para enviar. 4) Nunca crees ofertas o descuentos que no haya autorizado.
+5) Tono: confiado, empático, nunca desesperado."</div>
+
+    <p style="margin-top:16px"><strong>Herramientas y cuentas necesarias</strong> — las tres ya las conoces de
+    módulos anteriores:</p>
+    <ul>
+      <li><strong>Evolution API</strong> — 100% gratuita y open source; se instala en Railway o Render (planes
+      gratuitos). La cuenta se conecta escaneando un código QR, igual que WhatsApp Web.</li>
+      <li><strong>n8n</strong> — n8n.io o n8n.cloud; la misma cuenta del Módulo 19. Plan gratuito suficiente para
+      comenzar; Starter US$20/mes para uso intenso.</li>
+      <li><strong>Claude API</strong> — console.anthropic.com; la misma API key del Módulo 21. Costo por
+      tokens, irrisorio para uso personal (menos de US$5/mes para uso intenso diario).</li>
+    </ul>
+
+    <p style="margin-top:16px"><strong>Montar el flujo en n8n</strong>, con Claude generando el JSON:</p>
+    <div class="ejemplo">PROMPT PARA QUE CLAUDE GENERE EL FLUJO
+"Genera un flujo completo para n8n en formato JSON. La automatización: cuando llegue un mensaje en WhatsApp
+vía Evolution API Webhook, toma el texto del mensaje, envía a la API de Claude con el siguiente system prompt:
+[PEGA TU SYSTEM PROMPT AQUÍ], recibe la respuesta de Claude y envíala de vuelta como mensaje de WhatsApp
+usando Evolution API Send Message. Credenciales: Evolution API Base URL: [MI_URL], Evolution API Key:
+[MI_KEY], Anthropic API Key: [MI_KEY]. Entrega solo el JSON listo para pegar en n8n."</div>
+
+    <p style="margin-top:16px"><strong>Configurar Evolution API</strong>, paso a paso:</p>
+    <ol>
+      <li><strong>Crea una instancia</strong> — con Evolution API instalada, en Swagger UI crea una instancia
+      con <code>POST /instance/create</code>. Cada instancia conecta un número de WhatsApp.</li>
+      <li><strong>Escanea el código QR</strong> — con el número que será el asistente (usa un chip separado, no
+      tu WhatsApp personal principal).</li>
+      <li><strong>Copia el ID de instancia y el token</strong> — la API Key generada y la URL del servidor, los
+      necesitarás en n8n.</li>
+      <li><strong>Configura el webhook</strong> — en <code>POST /webhook/set</code>, pon la URL de tu n8n para
+      que Evolution API le avise cuando llegue un mensaje nuevo.</li>
+      <li><strong>Activa y prueba</strong> — envía un mensaje desde tu WhatsApp personal al número conectado; si
+      el flujo está activo, la respuesta de Claude llega en segundos.</li>
+    </ol>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buenas prácticas</strong>
+        Usa un número secundario o chip nuevo para el asistente — nunca tu WhatsApp personal principal. Cuanto
+        más específico el system prompt (contexto del negocio, reglas de tono, formato de entrega, ejemplos de
+        qué sí y qué no hacer), mejor se comporta el asistente. Pruébalo contigo mismo por al menos 2 días,
+        intentando romperlo con preguntas inesperadas, antes de activarlo con clientes. El celular con Evolution
+        API debe permanecer siempre encendido y conectado a internet — configúralo para nunca dormir. Define
+        siempre en el system prompt qué NO debe hacer el asistente (no dar precios ni plazos no autorizados).
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Errores comunes</strong>
+        Usar el WhatsApp principal personal para el asistente — mezclar automatización con conversaciones
+        personales genera confusión y riesgo; escribir un system prompt muy genérico; no probar antes de
+        activar con clientes reales; dejar que el celular se apague (Evolution API deja de funcionar sin el
+        celular encendido y online); y no poner límites claros en lo que el asistente puede responder.
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:14px">
+      — Anotado por EDI: si el celular se apaga o se cae el internet, el asistente se detiene. Para uso
+      profesional, usa un celular dedicado que se mantenga siempre cargado y conectado.
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego final: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para completar la ruta.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-25.html" id="btn-siguiente" class="btn" aria-disabled="true">Módulo 25: Conectores de Claude →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 24 de 25</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Cuáles son las tres piezas que se conectan para armar un asistente de IA en WhatsApp?',
+    opciones: [
+      'Evolution API (conecta WhatsApp), n8n (el flujo) y Claude (la inteligencia)',
+      'Solo se necesita Claude, sin ninguna otra herramienta',
+      'WhatsApp Business, Facebook Ads y ChatGPT',
+      'Zapier, Google Sheets y DALL-E'
+    ],
+    correcta: 0
+  },
+  {
+    enunciado: '¿Qué define la personalidad, el tono y los límites del asistente?',
+    opciones: [
+      'El modelo de teléfono que se use',
+      'El system prompt configurado en Claude',
+      'El plan de pago de Evolution API',
+      'El número de WhatsApp elegido'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Por qué se recomienda usar un número secundario o chip nuevo para el asistente, y no el WhatsApp personal principal?',
+    opciones: [
+      'Porque WhatsApp lo prohíbe expresamente',
+      'Mezclar automatización con conversaciones personales genera confusión y riesgo de responder a clientes con mensajes personales por error',
+      'Porque un número nuevo es obligatorio para instalar n8n',
+      'No hay ninguna razón real, es solo una preferencia'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Qué pasa si el celular conectado a Evolution API se apaga o pierde internet?',
+    opciones: [
+      'No pasa nada, el asistente sigue funcionando desde la nube',
+      'El asistente se detiene, porque Evolution API depende de que el celular esté siempre encendido y online',
+      'El flujo se transfiere automáticamente a otro celular',
+      'Solo se pierde el historial de mensajes, pero sigue respondiendo'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Antes de activar el asistente para que responda a clientes reales, ¿qué se recomienda hacer?',
+    opciones: [
+      'Activarlo directamente sin pruebas',
+      'Probarlo contigo mismo por al menos 2 días, intentando romperlo con preguntas inesperadas, hasta sentirte confiado',
+      'Esperar a que un cliente se queje para corregirlo',
+      'Eliminar el system prompt para que responda con más libertad'
+    ],
+    correcta: 1
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod24',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>

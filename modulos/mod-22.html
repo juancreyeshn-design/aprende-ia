@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 22. Usando API sin programar — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+100 pts</span>
+  <h1>🧩 Módulo 22. Usando API sin programar</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>En el módulo anterior viste qué es una API y para qué sirve una API key. Pero conectar la API de una IA a
+    tus herramientas de trabajo <strong>no requiere saber programar</strong>: existen plataformas visuales, "de
+    arrastrar y soltar", que conectan la API con tus aplicaciones (correo, hojas de cálculo, WhatsApp, formularios)
+    sin escribir una sola línea de código. Al usar una de estas herramientas, tu trabajo cambia de naturaleza: dejas
+    de ejecutar la tarea manualmente cada vez y pasas a <strong>configurar el flujo una vez y revisarlo</strong> —
+    te conviertes en el revisor y responsable del proceso, no en quien lo hace a mano.</p>
+
+    <p><strong>Cinco herramientas no-code principales</strong>, cada una con su propio punto fuerte:</p>
+    <ul>
+      <li><strong>n8n</strong> — gratuito (auto-alojado) o desde US$20+/mes en su versión en la nube; da más control
+      y personalización. Conviene para quien ya se siente cómodo con automatizaciones y quiere flujos más a la
+      medida sin pagar una mensualidad alta.</li>
+      <li><strong>Make</strong> — plan gratis con 1.000 operaciones al mes; interfaz visual "de burbujas" conectadas
+      y más de 1.500 integraciones disponibles.</li>
+      <li><strong>Zapier</strong> — plan gratis con 5 Zaps y 100 tareas al mes; es la opción más simple de las
+      cinco y la que tiene más soporte y comunidad en español, ideal para empezar.</li>
+      <li><strong>Google Sheets + Apps Script</strong> — completamente gratis; permite crear una función
+      personalizada, por ejemplo <code>=CLAUDE()</code>, que se usa celda por celda dentro de la propia hoja de
+      cálculo, sin salir de Sheets.</li>
+      <li><strong>Typebot</strong> — plan básico gratis, plan Starter desde US$39/mes; sirve para construir
+      chatbots visuales conversacionales.</li>
+    </ul>
+
+    <div class="tip">
+      💡 No hace falta dominar las cinco. Para alguien que recién comienza, la recomendación es clara: empieza con
+      Zapier o Make por ser las más simples, y migra a n8n solo cuando ya te sientas cómodo y necesites más control.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado: 5 usos reales sin escribir código</h2>
+    <p>Estos son cinco flujos reales que se arman conectando una de estas herramientas con la API de una IA —
+    adaptables a un despacho contable o una práctica profesional:</p>
+
+    <div class="ejemplo">CASO 01 — Clasificar correos por urgencia (n8n o Make)
+Disparador: llega un correo nuevo a la bandeja de entrada.
+Acción de la IA: lee el asunto y el cuerpo del correo y responde SOLO con una etiqueta de urgencia, en formato
+fijo para que el flujo la pueda usar después, por ejemplo: {"urgencia": "alta" | "media" | "baja", "motivo": "..."}
+Resultado: el flujo mueve o etiqueta el correo según la urgencia devuelta, sin que nadie lo revise uno por uno.
+
+CASO 02 — Resumir reuniones grabadas automáticamente (n8n)
+Disparador: se sube una grabación o transcripción de una reunión a una carpeta.
+Acción de la IA: genera un resumen estructurado con puntos clave, decisiones tomadas y tareas pendientes con
+responsable, siempre en el mismo formato.
+Resultado: el resumen se guarda automáticamente y se puede enviar por correo a los participantes.
+
+CASO 03 — Responder evaluaciones/reseñas de Google (Zapier)
+Disparador: llega una reseña nueva en el perfil de Google del negocio.
+Acción de la IA: clasifica la reseña (positiva o negativa) y redacta una respuesta profesional y empática, en el
+tono de la empresa.
+Resultado: la respuesta se publica o queda lista para revisar y aprobar antes de publicarse.
+
+CASO 04 — IA directamente en Google Sheets (Apps Script) — el más útil para trabajo contable en Excel/Sheets
+Disparador: ninguno — se usa como una función más dentro de la hoja de cálculo.
+Acción de la IA: a partir de una celda con datos (una descripción de gasto, una partida contable), la función
+personalizada =CLAUDE(celda, "instrucción") devuelve en otra celda, por ejemplo, la cuenta contable sugerida o
+una clasificación, calculada fila por fila igual que una fórmula normal.
+Resultado: se clasifican cientos de filas de datos sin copiar y pegar en un chat una por una.
+
+CASO 05 — Chatbot de calificación de leads (Typebot)
+Disparador: un visitante inicia una conversación en el chatbot del sitio web.
+Acción de la IA: hace preguntas de calificación (presupuesto, necesidad, urgencia) y decide si el lead es
+prioritario.
+Resultado: los leads calificados como prioritarios se envían automáticamente al equipo de ventas.</div>
+
+    <p style="margin-top:16px"><strong>Conectar la API key como credencial en n8n, paso a paso</strong> (el mismo
+    principio aplica en Make, Zapier y las demás herramientas):</p>
+    <ol>
+      <li><strong>Abrir Credentials</strong> — en el menú lateral de n8n, entrar a la sección de credenciales.</li>
+      <li><strong>Add Credential</strong> — buscar el proveedor por nombre, por ejemplo "Anthropic" u "OpenAI".</li>
+      <li><strong>Pegar la API key y darle un nombre</strong> — el nombre sirve para identificarla dentro de tus
+      flujos (por ejemplo, "Claude - cuenta principal").</li>
+      <li><strong>Usar la credencial guardada en cualquier flujo</strong> — cada vez que un nodo necesite conectarse
+      a esa IA, seleccionas la credencial ya guardada, sin volver a escribir la clave.</li>
+    </ol>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buenas prácticas</strong>
+        Comienza con Zapier o Make, que son las más simples; migra a n8n cuando te sientas seguro y necesites más
+        control. Configura las credenciales (API keys) de todas las IAs antes de crear cualquier flujo. La key va
+        siempre en el sistema de credenciales de la herramienta, nunca escrita dentro del texto del prompt. Usa la
+        función de prueba (Test Step o Test Workflow) antes de activar, y verifica que la respuesta se guarda
+        correctamente. Dentro de un flujo automático no hay conversación de ida y vuelta — el prompt debe ser
+        completo, específico y decir exactamente el formato en que debe llegar la respuesta.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Errores comunes</strong>
+        Intentar usar una herramienta compleja desde el inicio en vez de empezar simple; no configurar la API key
+        en las credenciales de la herramienta; dejar la API key visible dentro del prompt en el flujo; crear flujos
+        y activarlos sin probar primero con datos reales; y pedirle a la IA algo muy vago en el prompt de la API,
+        olvidando que ahí no hay chat para aclarar después.
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:14px">
+      — Anotado por EDI: en un flujo automático, el prompt hace todo el trabajo de una sola vez. Sé tan específico
+      como si le estuvieras dando instrucciones a alguien que solo va a leer el mensaje una vez y no puede
+      preguntar nada más.
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego final: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para completar la ruta.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-23.html" id="btn-siguiente" class="btn" aria-disabled="true">Módulo 23: APIs especializadas →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 22 de 23</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Qué cambia cuando usas una IA a través de una herramienta no-code (n8n, Make, Zapier) en vez de manualmente?',
+    opciones: [
+      'Dejas de escribir cualquier instrucción y la IA decide todo sola sin supervisión',
+      'La IA se ejecuta automáticamente dentro de un flujo, y tu trabajo pasa a ser configurar y revisar ese flujo en vez de ejecutar cada tarea a mano',
+      'Necesitas aprender a programar en Python para poder usarla',
+      'El costo por token desaparece por completo'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Cuál de las cinco herramientas no-code se describe como la más simple y con más soporte en español, ideal para empezar?',
+    opciones: [
+      'n8n',
+      'Google Sheets + Apps Script',
+      'Zapier',
+      'Typebot'
+    ],
+    correcta: 2
+  },
+  {
+    enunciado: 'Dentro de un flujo automático (sin conversación de ida y vuelta), ¿cómo debe ser el prompt que se le da a la IA?',
+    opciones: [
+      'Vago y abierto, para que la IA decida el formato de respuesta',
+      'Completo, específico y con el formato exacto de respuesta esperado, porque no hay forma de aclarar después como en un chat',
+      'Lo más corto posible, sin importar el detalle',
+      'Debe incluir la API key dentro del propio texto del prompt'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Dónde debe guardarse la API key al usar una herramienta como n8n, y nunca dentro del prompt?',
+    opciones: [
+      'En el sistema de credenciales de la herramienta',
+      'En una hoja de cálculo compartida con el equipo',
+      'En el nombre del flujo',
+      'En un comentario dentro del flujo'
+    ],
+    correcta: 0
+  },
+  {
+    enunciado: 'Antes de activar un flujo para que funcione con datos reales, ¿qué se recomienda hacer primero?',
+    opciones: [
+      'Activarlo directamente sin revisar nada',
+      'Usar la función de prueba (Test Step o Test Workflow) para verificar que la IA recibe y guarda correctamente la información',
+      'Eliminar las credenciales configuradas',
+      'Esperar a que falle en producción para corregirlo'
+    ],
+    correcta: 1
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod22',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>

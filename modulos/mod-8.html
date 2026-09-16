@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 8. Automatización de reportes — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+100 pts</span>
+  <h1>🔗 Módulo 8. Automatización de reportes: flujos con varias IA</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>Ninguna IA es igual de fuerte en investigar, redactar con criterio profesional y diseñar visualmente al
+    mismo tiempo. Por eso, para acelerar un cierre o un informe ejecutivo completo, la técnica más efectiva no es
+    usar una sola herramienta de principio a fin, sino encadenar varias: un <strong>flujo de IA</strong>, donde la
+    salida de una se convierte en la entrada de la siguiente.</p>
+
+    <ul>
+      <li><strong>Entrada:</strong> lo que quieres resolver o crear — el punto de partida del flujo (por ejemplo,
+      "necesito el informe de variaciones para el cierre de este mes").</li>
+      <li><strong>Procesamiento:</strong> qué IA hace qué parte, según su punto fuerte (una estructura el análisis,
+      otra lo transforma en presentación visual).</li>
+      <li><strong>Salida:</strong> el resultado final, listo para revisar y entregar.</li>
+    </ul>
+
+    <div class="tip">
+      💡 <strong>Idea clave:</strong> piensa en cada IA como un especialista distinto — uno investiga, otro
+      redacta, otro diseña. Tú eres quien dirige el flujo y valida cada entrega antes de pasarla a la siguiente
+      herramienta o de firmarla como tuya.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado: flujo para un informe ejecutivo</h2>
+    <div class="ejemplo">Flujo de 2 pasos para un informe al Consejo o a la Gerencia:
+1. Pide a Claude que estructure el análisis a partir de tus cifras: variaciones relevantes, hallazgos y
+recomendaciones, organizados como guion de presentación (una idea por diapositiva).
+2. Pega ese guion en una herramienta de presentaciones con IA (o en Gemini dentro de Google Slides) y pídele
+que lo transforme en una presentación visual con gráficos y jerarquía clara de contenido.</div>
+
+    <p style="margin-top:16px">Otro flujo útil para difusión institucional: redactar el contenido con una IA de
+    texto (Claude o ChatGPT) y usar esa misma descripción como prompt para generar la imagen de portada en una
+    IA de imágenes.</p>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buenas prácticas</strong>
+        Sé específico en cada paso (objetivo, formato, tono, público). Si un resultado no queda bien, refínalo
+        antes de pasarlo al siguiente paso — no te rindas con el primer intento.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Errores comunes</strong>
+        Usar una sola IA para todo el proceso, copiar y pegar entre herramientas sin dar contexto de lo anterior,
+        o no revisar ni ajustar la primera salida antes de avanzar en el flujo.
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:14px">
+      💡 Una vez que un flujo te funciona bien para un cierre, <strong>documenta qué prompt usaste en cada paso</strong>
+      para repetirlo en el siguiente período sin tener que reinventarlo.
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego final: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para completar la ruta.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-9.html" class="btn" id="btn-siguiente" aria-disabled="true">Módulo 9: Imágenes y video con IA →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 8 de 9</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: 'Un "flujo de IA" se define como...',
+    opciones: [
+      'Usar la misma IA para investigar, redactar y diseñar sin cambiar de herramienta',
+      'Una secuencia en la que la salida de una herramienta se convierte en la entrada de la siguiente',
+      'Un tipo de archivo exclusivo de Excel',
+      'Un límite de mensajes por día'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Por qué usar una sola IA para todo un informe ejecutivo (investigación + redacción + diseño) suele dar un resultado débil?',
+    opciones: [
+      'Porque las IA no pueden redactar texto',
+      'Porque ninguna herramienta es igual de fuerte en las tres áreas a la vez',
+      'Porque está prohibido usar una sola IA',
+      'Porque siempre es más lento'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'El error más común al empezar a combinar herramientas de IA es...',
+    opciones: [
+      'Ser demasiado específico en el prompt',
+      'Usar una sola herramienta para todo el proceso en vez de distribuir las tareas',
+      'Documentar el flujo que funcionó',
+      'Revisar el resultado antes de entregarlo'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Si el primer resultado de un paso del flujo no queda bien, lo correcto es...',
+    opciones: [
+      'Rendirte y volver al método manual sin IA',
+      'Refinar el prompt de ese paso e intentarlo de nuevo antes de continuar',
+      'Pasarlo igual al siguiente paso del flujo',
+      'Eliminar todo el flujo'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Una vez que un flujo de IA funciona bien para un cierre financiero, conviene...',
+    opciones: [
+      'Olvidarlo, cada cierre se resuelve desde cero',
+      'Documentar qué prompt usaste en cada paso para repetirlo en los próximos cierres',
+      'Compartir tus credenciales con el equipo',
+      'Dejar de revisar los resultados a partir de ahora'
+    ],
+    correcta: 1
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod8',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>

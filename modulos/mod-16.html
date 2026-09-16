@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 16. CRM de ventas con Lovable — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+100 pts</span>
+  <h1>📈 Módulo 16. CRM de ventas con Lovable</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>Perder un cliente porque se olvidó darle respuesta. No saber en qué etapa de la negociación está cada lead.
+    No tener idea de cuánto valor está abierto en el embudo. Estos tres problemas tienen un nombre: falta de
+    <strong>CRM</strong>. Un CRM de ventas es un pipeline visual igual al Kanban del Módulo 15, pero con las
+    columnas siendo etapas de venta, las tarjetas siendo leads, y el sistema controlando seguimiento, valor e
+    histórico de contacto.</p>
+
+    <p><strong>El embudo de ventas tiene 6 etapas</strong> que todo negocio atraviesa, independientemente de lo
+    que venda:</p>
+    <ul>
+      <li><strong>Nuevo Lead:</strong> el contacto acaba de entrar al embudo.</li>
+      <li><strong>Calificando:</strong> se está evaluando si el lead tiene el perfil, el presupuesto y la urgencia
+      para comprar. No todo lead se convierte en cliente — calificar temprano ahorra tiempo a todos.</li>
+      <li><strong>Propuesta Enviada:</strong> se presentó el valor, el precio y las condiciones. El lead está
+      analizando.</li>
+      <li><strong>Negociando:</strong> el lead mostró interés pero tiene objeciones — precio, plazo, condiciones.</li>
+      <li><strong>Cerrado — Ganado:</strong> venta completada, el cliente compró.</li>
+      <li><strong>Cerrado — Perdido:</strong> el lead no compró y salió del embudo sin convertirse.</li>
+    </ul>
+
+    <p><strong>Un CRM funcional necesita tres funcionalidades esenciales</strong> además de la lógica visual del
+    Kanban (columnas con etapas, tarjetas con leads, arrastrar y soltar):</p>
+    <ul>
+      <li><strong>Alerta de seguimiento:</strong> la mayoría de las ventas perdidas no es por precio o
+      competencia — es por falta de seguimiento en el momento correcto. La alerta resalta automáticamente las
+      tarjetas con seguimiento vencido.</li>
+      <li><strong>Historial de contacto:</strong> cuando hay varios leads al mismo tiempo, es imposible recordar
+      todo. El historial es la memoria de tu proceso de ventas — cada nota queda registrada con fecha.</li>
+      <li><strong>Valor del pipeline:</strong> saber cuánto valor está en cada etapa permite prever la facturación
+      de los próximos 30 días e identificar si el embudo está saludable o atascado en alguna etapa.</li>
+    </ul>
+
+    <p>A esto se suma un <strong>resumen del embudo</strong> (leads activos, valor total abierto, tasa de
+    conversión y seguimientos vencidos, de un vistazo) y un <strong>botón directo a WhatsApp</strong> en cada
+    tarjeta — cualquier fricción en el proceso de seguimiento reduce la cantidad de contactos realizados; un clic
+    a WhatsApp elimina la excusa de "lo haré después".</p>
+
+    <p><strong>El pipeline estándar se adapta a cualquier tipo de venta</strong> cambiando solo las etapas:</p>
+    <ul>
+      <li><strong>Servicios de alto valor (consultoría, mentoría, agencia):</strong> Lead llegó → Discovery call →
+      Propuesta enviada → Contrato en análisis → Cerrado.</li>
+      <li><strong>Producto físico vía WhatsApp:</strong> Interés recibido → Presupuesto enviado → Esperando
+      confirmación → Pago recibido → Pedido enviado.</li>
+      <li><strong>Inmobiliario o venta de ticket alto:</strong> Lead nuevo → Visita agendada → Visita realizada →
+      Propuesta → Documentación.</li>
+      <li><strong>B2B (venta de empresa a empresa):</strong> Prospección → Primer contacto → Reunión agendada →
+      Propuesta → Negociación → Cerrado.</li>
+    </ul>
+
+    <div class="tip">
+      💡 Comienza con 5 o 6 etapas. Un embudo con muchas etapas genera parálisis — no sabes dónde colocar el
+      lead. Simple y funcional es mejor que completo y confuso.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado: el CRM en 2 prompts</h2>
+    <p>Son 2 prompts, igual al Módulo 15. El primero crea el pipeline visual completo. El segundo añade el
+    resumen financiero del embudo y las alertas de seguimiento.</p>
+
+    <div class="ejemplo">Prompt 01 — crear el pipeline de ventas:
+"Crea una app de pipeline de CRM de ventas totalmente funcional. La app debe tener 6 columnas: 'Nuevo Lead',
+'Calificando', 'Propuesta Enviada', 'Negociando', 'Ganado', 'Perdido'. Cada tarjeta de lead debe contener: nombre
+del contacto, nombre de la empresa (opcional), número de WhatsApp (clickeable — abre el enlace wa.me), email,
+origen del lead (Instagram / Referido / Sitio Web / Anuncio / Otro), valor del negocio (en US$), insignia de
+temperatura (Caliente = rojo, Tibio = amarillo, Frío = azul), fecha del próximo seguimiento y una vista previa de
+notas (primera línea de la nota más reciente). Funcionalidades requeridas: arrastrar y soltar tarjetas entre
+columnas, botón de agregar nuevo lead en el encabezado de cada columna, hacer clic en la tarjeta para abrir un
+modal de detalle con toda la información de contacto, campos editables, un registro cronológico del historial de
+contactos (el usuario agrega notas con marca de tiempo) y una opción de eliminar. Las tarjetas con seguimiento
+vencido (la fecha del próximo seguimiento es anterior a hoy) deben resaltarse automáticamente con un borde rojo.
+Barra de filtros para filtrar por temperatura u origen del lead. Botón de WhatsApp en cada tarjeta que abre
+wa.me/[número] directamente. Diseño: tema oscuro, acentos en teal (#0F766E), animación de arrastre fluida,
+responsivo para móvil. Conéctala a Supabase. Despliégala y proporciona la URL pública."</div>
+
+    <div class="ejemplo" style="margin-top:12px">Prompt 02 — añadir resumen financiero y alertas:
+"Agrega un resumen financiero y alertas inteligentes al CRM de ventas. Barra de resumen financiero en la parte
+superior del pipeline: Conteo total de leads activos, Valor total del pipeline (suma de todos los valores de
+negocios en las columnas activas), Valor por etapa (muestra la suma de los valores de negocios de cada columna
+debajo del encabezado de la columna), Valor de Ganados este mes, Tasa de conversión este mes (conteo de Ganados /
+total de leads como porcentaje) y Conteo de seguimientos vencidos (insignia roja). Alertas inteligentes: si un
+lead ha estado en la misma columna por más de 7 días sin que se le agregue una nota, muestra un ícono de
+advertencia sutil en la tarjeta. Si el próximo seguimiento es hoy, muestra una insignia con ícono de calendario.
+Todos los datos financieros se actualizan en tiempo real a medida que las tarjetas se mueven entre columnas o se
+editan los valores de los negocios. Todos los datos persisten en Supabase."</div>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buenas prácticas</strong>
+        Anota siempre de dónde vino el lead — Instagram, indicación, anuncio, sitio. Al final del mes ese dato
+        revela qué canal genera más ventas. Luego de hablar con el lead, anota qué se dijo y el próximo paso
+        acordado de inmediato — con el tiempo pasa, se olvida. Si un lead pasó más de 7 días sin movimiento,
+        haces seguimiento o lo mueves a Perdido. Cuando un lead va a Cerrado Perdido, anota el motivo — precio,
+        timing o competencia: es el dato más valioso del embudo.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Errores comunes</strong>
+        Registrar el lead pero no registrar el origen, no actualizar el histórico después de cada contacto, dejar
+        leads mucho tiempo en la misma etapa sin actuar (un lead parado es un embudo mentiroso — parece lleno
+        pero no va a cerrar), no registrar el motivo de la pérdida, y crear demasiadas etapas en el funil.
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:14px">
+      💡 El mismo flujo de 2 prompts sirve para cualquier tipo de venta — servicios de alto valor, producto
+      físico, inmobiliario o B2B. Solo cambia la lista de etapas y los campos de cada tarjeta en el Prompt 01.
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego final: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para completar la ruta.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-17.html" class="btn" id="btn-siguiente" aria-disabled="true">Módulo 17: Sistema financiero →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 16 de 17</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Cuáles son las tres funcionalidades esenciales que necesita un CRM de ventas, además de la lógica visual del Kanban?',
+    opciones: [
+      'Notificaciones push, chat en vivo y videollamadas',
+      'Alerta de seguimiento, historial de contacto y valor del pipeline',
+      'Facturación automática, firma digital y reportes en PDF',
+      'Login, base de datos y panel de administración'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Por qué la alerta de seguimiento vencido es la funcionalidad más importante de un CRM?',
+    opciones: [
+      'Porque ayuda a cerrar ventas más rápido',
+      'Porque la mayoría de las ventas perdidas ocurren por falta de seguimiento en el momento correcto, no por precio o competencia',
+      'Porque organiza los leads por orden de valor',
+      'Porque elimina la necesidad de anotar el histórico de contacto'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Cuál es el dato más importante para registrar cuando un lead va a Cerrado - Perdido?',
+    opciones: [
+      'El valor que estaba dispuesto a pagar',
+      'El motivo de la pérdida — precio, timing, competencia u otro factor',
+      'El número de contactos que se hicieron hasta la pérdida',
+      'La fecha exacta en que salió del embudo'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Qué revela el valor del pipeline por etapa sobre el proceso de ventas?',
+    opciones: [
+      'Cuánto se va a facturar con seguridad en los próximos 30 días',
+      'Dónde el proceso de venta está atascado — si hay mucho valor acumulado en una etapa, puede haber un cuello de botella allí',
+      'Cuál es el mejor canal de adquisición de leads',
+      'Cuántos vendedores se necesita contratar'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Un negocio inmobiliario quiere adaptar el CRM a su proceso. ¿Cuál sería un flujo de etapas correcto?',
+    opciones: [
+      'Prospección → Primer contacto → Reunión agendada → Propuesta → Negociación → Cerrado',
+      'Interés recibido → Presupuesto enviado → Esperando confirmación → Pago recibido → Pedido enviado',
+      'Lead nuevo → Visita agendada → Visita realizada → Propuesta → Documentación',
+      'Lead llegó → Discovery call → Propuesta enviada → Contrato en análisis → Cerrado'
+    ],
+    correcta: 2
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod16',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>

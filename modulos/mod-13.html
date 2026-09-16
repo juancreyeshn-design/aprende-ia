@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 13. Dashboards profesionales con Lovable — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+100 pts</span>
+  <h1>📊 Módulo 13. Dashboards profesionales con Lovable</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>Una hoja de cálculo cumple su función, pero tiene límites: es difícil de compartir con quien no sabe leer
+    fórmulas, no tiene acceso controlado y actualizarla significa reenviar el archivo cada vez. <strong>Lovable</strong>
+    resuelve los tres problemas a la vez — transforma cualquier hoja de cálculo en un panel de control alojado en
+    internet, con una URL pública, un área para subir nuevos datos y, si lo pides, una pantalla de acceso. Todo
+    esto sin escribir una línea de código: describes en texto lo que quieres ver y Lovable construye la
+    aplicación completa.</p>
+
+    <p><strong>Cómo acceder:</strong></p>
+    <ul>
+      <li><strong>01 — Accede:</strong> entra a <em>lovable.dev</em> desde el navegador, no necesita instalación.</li>
+      <li><strong>02 — Cuenta:</strong> crea una cuenta gratuita con correo electrónico o GitHub.</li>
+      <li><strong>03 — Plan:</strong> el plan gratuito permite hasta 5 proyectos con limitaciones de generación;
+      el plan Pro (US$ 25/mes) da proyectos ilimitados y generación sin restricción.</li>
+    </ul>
+
+    <p>El proceso completo son <strong>3 etapas</strong>, y cada una es un prompt independiente dentro del mismo
+    proyecto de Lovable:</p>
+    <ul>
+      <li><strong>Etapa 1 — Panel de control:</strong> pegas o describes el contenido de tu hoja de cálculo y
+      pides el dashboard. Resultado: panel visual funcionando con tus datos reales, alojado con URL pública.</li>
+      <li><strong>Etapa 2 — Área de carga:</strong> pides una página para subir un nuevo CSV en el mismo formato.
+      Resultado: al subir el archivo, el panel se actualiza automáticamente con los datos nuevos.</li>
+      <li><strong>Etapa 3 — Acceso:</strong> pides una pantalla de login. Resultado: solo quien tiene cuenta creada
+      accede al panel de control.</li>
+    </ul>
+
+    <div class="tip">
+      💡 <strong>La regla de oro del archivo:</strong> Lovable lee archivos CSV, y el formato debe ser siempre
+      idéntico en cada actualización — los mismos nombres de columna, en el mismo orden. Es lo que permite que la
+      aplicación lea y actualice el panel automáticamente, sin configuración adicional. Si el orden cambia, la
+      app no puede leer los datos correctamente.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado: de hoja de cálculo a app en 3 prompts</h2>
+    <p>Ejemplo completo con un control financiero personal — la misma estructura de columnas del Módulo 12
+    (Fecha, Descripción, Categoría, Tipo, Monto) se reutiliza aquí como fuente de datos.</p>
+
+    <div class="ejemplo">Prompt 01 — panel de control a partir del archivo:
+"Tengo un archivo CSV con datos de transacciones financieras. Las columnas son: Fecha, Descripción, Categoría
+(Alimentación / Transporte / Ocio / Salud / Vivienda / Otros), Tipo (Ingreso o Gasto), Monto. Aquí están los
+datos: [PEGA EL CONTENIDO DE TU CSV AQUÍ]. Crea un dashboard limpio y moderno que lea estos datos y muestre: 4
+tarjetas de KPI en la parte superior — Ingresos Totales, Gastos Totales, Saldo Actual y Tasa de Ahorro %. Un
+gráfico de barras que compare Ingresos vs Gastos por mes. Un gráfico de dona que muestre el desglose de gastos
+por categoría. Una tabla que liste las 10 transacciones más recientes. Usa un tema oscuro con detalles en
+morado. Hazlo totalmente responsivo para que también funcione en celular.</div>
+
+    <div class="ejemplo" style="margin-top:12px">Prompt 02 — área de carga para actualizar los datos:
+"Agrega una página de 'Actualizar Datos' a la app. Esta página debe tener un área simple de carga de archivos
+donde yo pueda arrastrar y soltar o seleccionar un nuevo archivo CSV en el mismo formato que el original
+(columnas: Fecha, Descripción, Categoría, Tipo, Monto). Cuando suba el nuevo archivo, la app debe leerlo,
+reemplazar los datos actuales con los nuevos y actualizar automáticamente el dashboard con las cifras y los
+gráficos actualizados. Muestra un mensaje de éxito después de la carga confirmando cuántos registros se
+cargaron. Agrega un enlace de navegación entre el Dashboard y la página de Actualizar Datos."</div>
+
+    <div class="ejemplo" style="margin-top:12px">Prompt 03 — acceso y control de acceso:
+"Agrega una pantalla de login simple para proteger la app. Crea una página de login con campos de email y
+contraseña y un botón de Iniciar Sesión. Yo crearé las cuentas de usuario manualmente — no se necesita registro
+público. Después del login, redirige al Dashboard. Si el usuario no inició sesión, redirige a la página de
+Login. Agrega un botón de cerrar sesión en la esquina superior de cada página. Mantén el mismo diseño oscuro en
+morado. Usa Supabase Auth para la autenticación."</div>
+
+    <p style="margin-top:16px"><strong>Cómo actualizar el panel en el futuro</strong> — una vez la app está en el
+    aire, ya no se vuelve a abrir Lovable. El flujo se repite en 3 pasos simples:</p>
+    <ol style="margin:10px 0 0 20px;line-height:1.7">
+      <li><strong>Prepara el archivo:</strong> exporta la hoja de cálculo actualizada como CSV, con el mismo
+      formato de siempre. Puede tener más filas que el original — la aplicación las lee todas.</li>
+      <li><strong>Sube el archivo:</strong> abres el enlace de la app, vas a la página "Actualizar Datos" y
+      arrastras el nuevo CSV al área de carga.</li>
+      <li><strong>Confirmación:</strong> la app reemplaza los datos antiguos con los nuevos y muestra un mensaje
+      de éxito con el número de registros cargados. El dashboard ya refleja los datos actualizados.</li>
+    </ol>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buenas prácticas</strong>
+        Exporta siempre como CSV antes de subir o pegar los datos — un .xlsx directo de Excel puede no funcionar.
+        Envía los 3 prompts uno por vez, esperando a que Lovable termine cada etapa: la carga de datos depende
+        del dashboard ya construido, y el login depende de las páginas ya creadas. Describe los gráficos de
+        forma específica ("gráfico de dona de gastos por categoría", no "algunos gráficos"). Prueba la carga de
+        un archivo de actualización antes de compartir el enlace con otras personas.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Errores comunes</strong>
+        Subir un nuevo CSV con las columnas en otro orden (la app no puede leer los datos), enviar los 3 prompts
+        de una sola vez (genera conflictos y resultados incompletos), olvidar exportar como CSV antes de subir,
+        escribir un prompt sin describir los gráficos específicos que se quieren ver, y no probar la carga de un
+        archivo antes de pasar el enlace a otros usuarios.
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:14px">
+      💡 El mismo flujo de 3 prompts sirve para cualquier tipo de panel — financiero, de ventas, de metas o de
+      proyectos. Lo único que cambia es la estructura de columnas del CSV y los indicadores que le pides a
+      Lovable que muestre.
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego final: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para completar la ruta.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="mod-14.html" class="btn" id="btn-siguiente" aria-disabled="true">Módulo 14: Landing pages con IA →</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 13 de 14</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Qué hace Lovable con una hoja de cálculo?',
+    opciones: [
+      'Solo la convierte a formato PDF para imprimir',
+      'La transforma en una aplicación web completa, alojada con URL pública, sin escribir código',
+      'La sube a la nube como copia de seguridad, sin ningún cambio',
+      'Corrige automáticamente los errores de las fórmulas'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Cuál es el formato correcto para actualizar los datos de un panel de control ya publicado?',
+    opciones: [
+      'Cualquier formato — Lovable lo convierte automáticamente',
+      'CSV con las mismas columnas y en el mismo orden del archivo original',
+      'PDF exportado de la planilla',
+      'Archivo .xlsx directo de Excel'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Por qué se envían los 3 prompts de Lovable por separado, en lugar de todos juntos?',
+    opciones: [
+      'Porque Lovable tiene un límite de caracteres por mensaje',
+      'Porque cada etapa necesita estar funcionando antes de añadir la siguiente',
+      'Para ahorrar créditos del plan gratuito',
+      'Porque Lovable no acepta prompts largos'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: 'Después de que la app está en el aire, ¿cómo se actualiza el dashboard con datos nuevos?',
+    opciones: [
+      'Abriendo Lovable de nuevo y enviando un nuevo prompt con los datos',
+      'Exportando la hoja de cálculo como CSV, entrando al enlace de la app, yendo a "Actualizar Datos" y subiendo el archivo',
+      'Editando el código de la app manualmente en Lovable',
+      'Es necesario recrear la app desde cero cada mes'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Cuál de estas es una buena práctica al pedir los gráficos de un dashboard?',
+    opciones: [
+      'Pedir "algunos gráficos" y dejar que Lovable decida',
+      'Describir el gráfico específico y qué debe mostrar, por ejemplo "gráfico de dona de gastos por categoría"',
+      'No mencionar ningún gráfico en el primer prompt',
+      'Pedir el máximo número posible de gráficos sin importar el dato'
+    ],
+    correcta: 1
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod13',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz',
+  botonSiguienteId: 'btn-siguiente'
+});
+</script>
+</body>
+</html>
