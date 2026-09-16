@@ -35,6 +35,7 @@ const MODULOS_IA = [
   { id: 'mod24', numero: 24, titulo: 'Asistente en WhatsApp', archivo: 'modulos/mod-24.html', xp: 99, color: '#ca8a04', bloque: 'Especialización avanzada' },
   { id: 'mod25', numero: 25, titulo: 'Conectores de Claude', archivo: 'modulos/mod-25.html', xp: 109, color: '#4338ca', bloque: 'Especialización avanzada' },
   { id: 'mod26', numero: 26, titulo: 'Skills: enseña una vez', archivo: 'modulos/mod-26.html', xp: 105, color: '#6d28d9', bloque: 'Especialización avanzada' },
+  { id: 'mod27', numero: 27, titulo: 'RTCFR: prompt perfecto', archivo: 'modulos/mod-27.html', xp: 100, color: '#059669', bloque: 'Especialización avanzada' },
   ];
 
 function obtenerProgreso() {
