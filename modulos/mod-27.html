@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 27. RTCFR: la fórmula del prompt perfecto — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">+100 pts</span>
+  <h1>🎯 Módulo 27. RTCFR: la fórmula del prompt perfecto</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Concepto</h2>
+    <p>En el Módulo 2 aprendiste los ingredientes de un buen prompt. Después de 26 módulos ya los has usado decenas
+    de veces, casi sin pensarlo. Este módulo cierra el ciclo: convierte esos ingredientes en una
+    <strong>fórmula fija y repetible</strong>, pensada para el trabajo contable y de auditoría, que puedes aplicar
+    en segundos frente a cualquier tarea nueva — un cierre, una conciliación, una nota a los EEFF o un hallazgo de
+    auditoría.</p>
+
+    <p>La fórmula se llama <strong>RTCFR</strong>: cinco elementos que, juntos, eliminan casi toda la ambigüedad de
+    un pedido.</p>
+
+    <div class="ejemplo">R — ROL: define QUIÉN debe ser la IA.
+Establece el tono, la perspectiva y el nivel de experiencia del asistente.
+Ejemplo: "Actúa como auditor interno con especialidad en NIIF para Pymes."
+
+T — TAREA: describe QUÉ debe hacer la IA.
+Instrucción clara y directa, con un verbo de acción: analiza, redacta, crea, compara, concilia, calcula.
+Ejemplo: "Analiza las variaciones del estado de resultados entre el mes actual y el anterior."
+
+C — CONTEXTO: da el TRASFONDO necesario.
+Antecedentes, tipo de empresa, sector, moneda, público que va a leer el resultado, situación particular.
+Ejemplo: "Es una empresa comercial mediana, moneda Lempiras (L), el informe es para la gerencia, no para contadores."
+
+F — FORMATO: especifica CÓMO quieres recibir la respuesta.
+Tabla, lista numerada, párrafos, Markdown, JSON — lo que vayas a usar directamente.
+Ejemplo: "Preséntalo en tabla con columnas: Partida | Monto actual | Monto anterior | Variación % | Interpretación."
+
+R — RESTRICCIONES: define qué NO debe hacer.
+Longitud máxima, tono, qué excluir, qué no asumir ni inventar.
+Ejemplo: "Sin tecnicismos. Máximo 200 palabras. No inventes cifras ni cites artículos de ley que no te haya dado yo."</div>
+
+    <div class="comparacion">
+      <div class="col malo">
+        <strong>❌ Prompt sin RTCFR</strong>
+        "Revisa este estado financiero y dime si está bien." — la IA no sabe desde qué rol responder, qué tan a
+        fondo revisar, en qué formato entregarlo ni qué tan largo debe ser. El resultado es genérico y hay que
+        reformular varias veces.
+      </div>
+      <div class="col bueno">
+        <strong>✅ Prompt con RTCFR</strong>
+        "Actúa como auditor externo [R]. Revisa este estado de resultados e identifica las 5 variaciones más
+        significativas [T]. Es una distribuidora mediana, cifras en Lempiras [C]. Preséntalo en tabla con
+        interpretación de cada variación [F]. Sin tecnicismos, máximo 250 palabras, no asumas causas que no estén
+        respaldadas en los datos [R]." — la IA entrega el resultado correcto a la primera.
+      </div>
+    </div>
+
+    <div class="tip">
+      💡 Los 5 elementos no tienen que ir en ese orden dentro del texto — pueden mezclarse en un párrafo natural —
+      pero los 5 deben estar presentes. Si tu prompt falla o sale muy genérico, revisa cuál de las 5 letras te
+      faltó, casi siempre es Contexto o Restricciones.
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>⚡ Caso aplicado: tu biblioteca esencial de prompts RTCFR</h2>
+
+    <p>Con la fórmula ya interiorizada, aquí tienes 12 prompts listos para adaptar a tu trabajo diario, organizados
+    por área. Todos siguen la estructura RTCFR y usan <strong>marcadores entre corchetes</strong>
+    (como <code>[NORMA_APLICABLE]</code> o <code>[TASA_VIGENTE]</code>) en los datos que solo tú debes completar
+    con la cifra o norma exacta y vigente — la IA nunca debe inventarlos.</p>
+
+    <div class="ejemplo">📁 CIERRE CONTABLE MENSUAL
+
+1. CHECKLIST DE CIERRE
+"Actúa como contador senior con experiencia en cierre mensual bajo NIIF. Genera un checklist de cierre priorizado
+para una empresa de [SECTOR], que cierra libros el día [DÍA_CIERRE] de cada mes. Preséntalo en tabla: Actividad |
+Responsable | Día límite | Estado. Máximo 20 actividades, sin pasos triviales, ordenadas por fecha límite."
+
+2. ASIENTO DE DEPRECIACIÓN
+"Actúa como especialista en activos fijos bajo NIC 16. Con los datos de la tabla adjunta (costo, valor residual,
+vida útil en meses, método línea recta), calcula la depreciación del mes y genera el asiento contable. Formato:
+cédula con Activo | Dep. mes | Valor en libros, más el asiento Cuenta | Debe | Haber en Lempiras (L). Señala en
+rojo cualquier activo ya totalmente depreciado."
+
+📁 CONCILIACIONES
+
+3. CONCILIACIÓN BANCARIA
+"Actúa como auditor de tesorería. Cruza el estado de cuenta bancario contra el auxiliar de bancos del mes
+[MES_AÑO] y clasifica las diferencias (depósitos en tránsito, cheques pendientes, cargos no registrados). Formato:
+resumen de conciliación (saldo banco → ajustes → saldo libro) más tabla de partidas con acción requerida. Si no
+cuadra, indica el monto de la diferencia sin explicar y márcalo 'Requiere investigación'."
+
+4. CONCILIACIÓN DE INVENTARIOS
+"Actúa como auditor de inventarios bajo NIC 2. Compara el conteo físico del [FECHA_INVENTARIO] contra el saldo
+contable y clasifica las diferencias en faltantes, sobrantes o error de valoración. Formato: tabla con Diferencia
+en unidades y en Lempiras. Marca 'requiere investigación de causa raíz' toda diferencia superior a 5% del valor de
+la línea. No propongas asiento para diferencias menores a [MONTO_MATERIALIDAD]."
+
+📁 NIIF Y ESTADOS FINANCIEROS
+
+5. NOTA DE POLÍTICAS CONTABLES
+"Actúa como redactor técnico de estados financieros bajo NIC 1. Redacta la nota de política contable para
+[RUBRO, ej. propiedad planta y equipo], a partir de esta descripción de la política real de la empresa:
+[DESCRIPCIÓN]. Formato: prosa formal en tercera persona, máximo 200 palabras, citando la norma aplicable. No
+copies literalmente los párrafos de la norma ni agregues políticas que no te haya descrito."
+
+6. ANÁLISIS HORIZONTAL Y VERTICAL
+"Actúa como analista financiero. Con el estado de resultados y balance general adjuntos (dos períodos), realiza
+un análisis horizontal (variación %) y vertical (peso sobre el total). Formato: dos tablas, seguidas de un
+párrafo de máximo 150 palabras con las 3 conclusiones más relevantes para la gerencia, sin tecnicismos."
+
+📁 CONTROL INTERNO Y AUDITORÍA
+
+7. MATRIZ DE RIESGOS
+"Actúa como especialista en control interno (marco COSO). Genera una matriz de riesgos para el proceso de
+[PROCESO, ej. compras y pagos a proveedores] de una empresa de [SECTOR]. Formato: tabla con Riesgo | Causa |
+Impacto (alto/medio/bajo) | Control existente | Control recomendado. Máximo 12 riesgos, solo los más relevantes
+para el proceso descrito."
+
+8. MEMO DE HALLAZGOS DE AUDITORÍA
+"Actúa como auditor interno. Con los asientos y evidencia adjuntos del cierre de [MES_AÑO], redacta un memo de
+observaciones con: 1) resumen ejecutivo, 2) tabla de hallazgos (# | error detectado | norma aplicable | corrección
+sugerida), 3) riesgo residual. Solo señala hallazgos con fundamento normativo explícito; si la evidencia es
+insuficiente, indica 'requiere documentación adicional' en vez de asumir."
+
+9. PROGRAMA DE AUDITORÍA
+"Actúa como gerente de auditoría. Diseña el programa de auditoría para el rubro de [RUBRO] de una empresa de
+[SECTOR], con nivel de riesgo [ALTO/MEDIO/BAJO]. Formato: tabla con Procedimiento | Objetivo | Evidencia a
+solicitar | Responsable. Entre 8 y 15 procedimientos, ordenados de mayor a menor riesgo."
+
+📁 IMPUESTOS (sin inventar cifras)
+
+10. CALENDARIO DE OBLIGACIONES
+"Actúa como asesor tributario. Genera un calendario de obligaciones fiscales mensuales para una empresa de
+[SECTOR] en Honduras, usando exactamente estas fechas y tasas que te doy: [LISTA_DE_OBLIGACIONES_Y_FECHAS].
+Formato: tabla Obligación | Fecha límite | Responsable. No agregues ninguna obligación, tasa o fecha que no esté
+en la lista que te di."
+
+11. CONCILIACIÓN CONTABLE-FISCAL
+"Actúa como contador fiscalista. Con la utilidad contable y la lista de diferencias permanentes y temporales que
+te doy: [LISTA_DE_DIFERENCIAS], arma la conciliación hacia la renta gravable. Formato: tabla Concepto | Monto.
+Aplica la tasa de impuesto sobre la renta que yo te indique: [TASA_VIGENTE]. Si el resultado es pérdida fiscal,
+adviértelo explícitamente. No asumas tasas ni normas que yo no te haya dado."
+
+📁 REDACCIÓN EJECUTIVA
+
+12. INFORME PARA JUNTA DIRECTIVA
+"Actúa como gerente financiero que reporta a una junta directiva no técnica. Con las cifras del cierre de
+[MES_AÑO] adjuntas, redacta un informe ejecutivo de una página: situación financiera, 3 riesgos a vigilar y 2
+recomendaciones. Sin jerga contable, en Lempiras, máximo 350 palabras, tono directo y seguro."</div>
+
+    <div class="tip" style="margin-top:14px">
+      💡 Fíjate en el patrón del bloque de Impuestos: en vez de dejar que la IA "sepa" la tasa o la norma vigente
+      —que puede estar desactualizada o ser de otro país—, tú se la das explícitamente entre corchetes. Es la
+      misma regla de oro de todo este curso: la IA es excelente redactando y ordenando, pero la cifra exacta,
+      la norma exacta y el artículo exacto los pones tú.
+    </div>
+
+    <div class="comparacion" style="margin-top:14px">
+      <div class="col bueno">
+        <strong>✅ Buenas prácticas</strong>
+        Guarda estos 12 prompts en un documento y reutilízalos cambiando solo lo que está entre corchetes. Si un
+        resultado sale débil, revisa primero Contexto y Restricciones — ahí está el 80% de los ajustes. En temas
+        fiscales o normativos, dale tú la cifra o el artículo exacto; nunca dejes que la IA "complete" ese dato
+        por su cuenta.
+      </div>
+      <div class="col malo">
+        <strong>⚠️ Errores comunes</strong>
+        Pedir "revisa esto" sin Rol ni Formato y esperar un resultado listo para usar; dejar que la IA cite tasas,
+        artículos o normas sin que tú se los hayas confirmado; copiar un prompt genérico de internet sin
+        adaptarlo a tu moneda, país o sector; y no poner Restricciones, lo que abre la puerta a que la IA rellene
+        con supuestos no verificados.
+      </div>
+    </div>
+  </div>
+
+  <div class="bloque juego" id="quiz-bloque">
+    <h2>🎯 Mini-juego final: evalúa lo aprendido</h2>
+    <p style="margin-top:-6px;color:var(--gris-suave);font-size:.9rem">Responde las 5 preguntas. Necesitas 70% o más para completar la ruta.</p>
+    <div id="quiz"></div>
+    <div id="resultado-quiz"></div>
+  </div>
+
+  <div class="nav-final">
+    <a href="../index.html" class="btn" style="background:var(--gris-suave)">← Volver a la ruta</a>
+    <a href="../index.html" class="btn">🏆 Ver mi progreso completo</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA · Módulo 27 de 27</footer>
+
+<script src="../assets/progreso.js"></script>
+<script src="../assets/quiz.js"></script>
+<script>
+const PREGUNTAS = [
+  {
+    enunciado: '¿Qué significa la sigla RTCFR?',
+    opciones: [
+      'Rol, Tarea, Contexto, Formato, Restricciones',
+      'Revisión, Trámite, Control, Firma, Reporte',
+      'Riesgo, Tolerancia, Costo, Frecuencia, Resultado',
+      'Registro, Timbre, Comprobante, Factura, Recibo'
+    ],
+    correcta: 0
+  },
+  {
+    enunciado: 'Según el módulo, si un prompt sale genérico, ¿cuáles de las 5 letras conviene revisar primero?',
+    opciones: [
+      'Rol y Tarea',
+      'Contexto y Restricciones',
+      'Formato únicamente',
+      'Ninguna, hay que cambiar de IA'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Para qué sirven los marcadores entre corchetes como [TASA_VIGENTE] o [NORMA_APLICABLE] en un prompt?',
+    opciones: [
+      'Son decorativos, no afectan el resultado',
+      'Le indican a la IA que debe investigar por internet la cifra exacta',
+      'Marcan el dato exacto y vigente que el contador debe completar, para que la IA no lo invente',
+      'Solo funcionan en ChatGPT, no en Claude'
+    ],
+    correcta: 2
+  },
+  {
+    enunciado: 'En el prompt de "Conciliación contable-fiscal" del módulo, ¿por qué se le pide al contador dar la tasa de impuesto en vez de dejar que la IA la use de memoria?',
+    opciones: [
+      'Porque la IA nunca sabe calcular porcentajes',
+      'Porque las tasas y normas pueden variar o desactualizarse, y solo el profesional debe confirmar la cifra exacta vigente',
+      'Porque escribir la tasa hace el prompt más corto',
+      'No hay ninguna razón especial, es solo estilo'
+    ],
+    correcta: 1
+  },
+  {
+    enunciado: '¿Qué elemento de RTCFR define QUÉ NO debe hacer o asumir la IA?',
+    opciones: [
+      'Rol',
+      'Formato',
+      'Contexto',
+      'Restricciones'
+    ],
+    correcta: 3
+  }
+];
+
+iniciarQuiz({
+  preguntas: PREGUNTAS,
+  modId: 'mod27',
+  contenedorId: 'quiz',
+  resultadoId: 'resultado-quiz'
+});
+</script>
+</body>
+</html>
