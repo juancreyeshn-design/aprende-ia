@@ -294,7 +294,7 @@ h2.section-title .sub{font-size:.78rem;text-transform:none;letter-spacing:0;font
     padding:3px 10px;border-radius:20px;
 }
 .especializacion .estado.disponible{background:var(--navy-100);color:var(--navy-800)}
-.especializacion .estado.proxima{background:#eef0f4;color:var(--gris-suave)}
+.especializacion .estado.proxima{background:#eef0f4;color:var(--gris-suave)} .especializacion .requisito{display:block;margin-top:8px;font-size:.74rem;color:var(--navy-600);text-decoration:none;font-weight:700} .especializacion .requisito:hover{text-decoration:underline}
 
 /* ---------- Constancia ---------- */
 .constancia-card{
