@@ -211,7 +211,7 @@ function renderModulos() {
   });
 }
 
-function renderEspecializaciones() {
+function requisitoDesbloqueo(modId){const idx=MODULOS_IA.findIndex(m=>m.id===modId);if(idx<=0)return null;return MODULOS_IA[idx-1];} function renderEspecializaciones() {
   const cont = document.getElementById('lista-especializaciones');
   cont.innerHTML = '';
   ESPECIALIZACIONES.forEach(esp => {
@@ -224,12 +224,12 @@ function renderEspecializaciones() {
     if (proxima) { estadoTxt = 'Próximamente'; estadoClase = 'proxima'; }
     else if (completado) { estadoTxt = 'Completada ✓'; estadoClase = 'disponible'; }
     else if (desbloqueada) { estadoTxt = 'Disponible'; estadoClase = 'disponible'; }
-    else { estadoTxt = 'Bloqueada'; estadoClase = 'proxima'; }
+    else { estadoTxt = 'Bloqueada'; estadoClase = 'proxima'; } let requisitoHtml = ''; if (!proxima && !desbloqueada) { const req = requisitoDesbloqueo(esp.modId); if (req) { requisitoHtml = '<a href="' + req.archivo + '" class="requisito">🔓 Completa el Módulo ' + req.numero + ': ' + req.titulo + '</a>'; } }
     div.innerHTML = `
       <div class="monograma" style="background:${esp.color}">${esp.sigla}</div>
       <h4>${esp.nombre}</h4>
       <p>${esp.desc}</p>
-      <span class="estado ${estadoClase}">${estadoTxt}</span>
+      <span class="estado ${estadoClase}">${estadoTxt}</span>${requisitoHtml}
     `;
     cont.appendChild(div);
   });
