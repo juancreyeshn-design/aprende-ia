@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklist de Gobierno de IA para Auditoría — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+<style>
+.recurso-controls{max-width:980px;margin:0 auto;padding:0 20px}
+.buscador{position:relative;margin:18px 0 12px}
+.buscador input{width:100%;padding:11px 16px 11px 40px;border:1.5px solid var(--borde);border-radius:10px;font-family:'Nunito',sans-serif;font-size:.92rem;outline:none;box-sizing:border-box}
+.buscador input:focus{border-color:var(--navy-600)}
+.buscador svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--gris-suave)}
+.filtros{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.filtro-btn{padding:6px 14px;border:1.5px solid var(--borde);border-radius:20px;background:#fff;font-family:'Nunito',sans-serif;font-size:.76rem;font-weight:700;color:var(--gris-suave);cursor:pointer}
+.filtro-btn.activo{background:var(--navy-600);border-color:var(--navy-600);color:#fff}
+.contador-resultados{font-size:.8rem;color:var(--gris-suave);margin:6px 0 14px}
+.chk-card{background:#fff;border-radius:var(--radio);padding:18px 20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(10,25,48,.06);border-left:5px solid var(--navy-600)}
+.chk-card.oculto{display:none}
+.chk-card .cab{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.chk-card .num{font-weight:800;color:var(--navy-600);font-size:.8rem}
+.chk-card .dom-tag{display:inline-block;font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--navy-800);background:var(--navy-100);padding:2px 9px;border-radius:20px}
+.crit-badge{display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 10px;border-radius:20px;margin-left:auto}
+.crit-alto{background:#fde2e1;color:#9f1c1c}
+.crit-medio{background:var(--oro-suave);color:var(--oro)}
+.crit-bajo{background:#e3ebfd;color:var(--navy-600)}
+.chk-card .criterio{font-size:.92rem;line-height:1.6;color:var(--navy-950);margin:0 0 10px}
+.chk-card .evidencia{font-size:.82rem;line-height:1.55;color:var(--gris-suave);border-top:1px dashed var(--borde);padding-top:8px}
+.chk-card .evidencia strong{color:var(--gris-texto)}
+.copiar-btn{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:6px 12px;border:1px solid var(--borde);border-radius:8px;background:var(--gris-fondo);font-family:'Nunito',sans-serif;font-size:.78rem;font-weight:700;color:var(--gris-suave);cursor:pointer}
+.copiar-btn:hover{background:var(--navy-600);color:#fff;border-color:var(--navy-600)}
+.copiar-btn.copiado{background:var(--ok);color:#fff;border-color:var(--ok)}
+.vacio{text-align:center;padding:40px;color:var(--gris-suave);display:none}
+.vacio.mostrar{display:block}
+</style>
+</head>
+<body>
+
+<a href="../index.html" class="volver">&larr; Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">Recurso complementario</span>
+  <h1>&#9989; Checklist de Gobierno de IA para Auditoría</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>Como usar este checklist</h2>
+    <p>51 criterios de verificación organizados en 10 dominios de gobierno de IA &mdash; desde la politica de uso hasta
+    el cumplimiento normativo y etico &mdash; pensados para que un auditor o firma independiente evalue como esta
+    usando (o deberia usar) la inteligencia artificial en sus procesos y encargos. Para cada criterio, marca si la
+    organizacion <strong>Cumple</strong>, <strong>Cumple parcialmente</strong>, <strong>No cumple</strong> o si
+    <strong>No aplica</strong> a su contexto, y respalda la valoracion con la evidencia sugerida (o equivalente).
+    Los criterios en criticidad <strong>Alta</strong> sin cumplimiento son los que ameritan atencion prioritaria.</p>
+    <div class="tip">
+      &#128161; Los marcadores entre corchetes &mdash; como <code>[Referencia normativa exacta de proteccion de datos
+      personales aplicable]</code> &mdash; son datos que debes completar tu con la norma exacta y vigente en tu
+      jurisdiccion; no se completan por defecto para evitar referencias legales inexactas.
+    </div>
+  </div>
+
+  <div class="recurso-controls">
+    <div class="buscador">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="buscar" placeholder="Buscar por palabra clave...">
+    </div>
+    <div class="filtros" id="filtros"></div>
+    <div class="contador-resultados" id="contador"></div>
+  </div>
+
+  <div id="listado" style="max-width:980px;margin:0 auto;padding:0 20px 10px"></div>
+  <div class="vacio" id="vacio">No se encontraron criterios con esa busqueda.</div>
+
+  <div class="nav-final">
+    <a href="../modulos/mod-27.html" class="volver">&larr; Volver al Modulo 27</a>
+    <a href="../index.html" class="btn">Ir a la ruta completa</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA &mdash; recurso complementario, fuera de la ruta de 27 modulos.</footer>
+
+<script>
+const DOMS = [["gobernanza", "1. Gobernanza"], ["inventario", "2. Inventario de modelos"], ["datos", "3. Calidad de datos"], ["validacion", "4. Validación técnica"], ["uso-auditoria", "5. Uso en auditoría"], ["transparencia", "6. Transparencia"], ["riesgos", "7. Riesgos"], ["seguridad", "8. Seguridad"], ["monitoreo", "9. Monitoreo"], ["cumplimiento", "10. Cumplimiento normativo y ético"]];
+const DATA = [{"n": 1, "dom": "gobernanza", "criterio": "La firma o el departamento cuenta con una política de uso de IA aprobada por la dirección, vigente y conocida por el personal, con usos permitidos y prohibidos definidos.", "evidencia": "Política firmada, acuse de lectura del personal.", "criticidad": "Alto"}, {"n": 2, "dom": "gobernanza", "criterio": "Existe un responsable o comité designado para supervisar el uso de IA en los trabajos de auditoría.", "evidencia": "Acta de designación, funciones documentadas.", "criticidad": "Alto"}, {"n": 3, "dom": "gobernanza", "criterio": "Las funciones de quien configura la herramienta de IA, quien valida sus resultados y quien los usa en el encargo están separadas — no recaen en la misma persona.", "evidencia": "Matriz de roles, verificación en el equipo del encargo.", "criticidad": "Alto"}, {"n": 4, "dom": "gobernanza", "criterio": "Ningún uso nuevo de IA se incorpora a un encargo sin evaluación y autorización previa documentada.", "evidencia": "Formato de solicitud/aprobación de nuevo caso de uso.", "criticidad": "Medio"}, {"n": 5, "dom": "gobernanza", "criterio": "Existe un mecanismo para detectar el uso no autorizado de herramientas de IA por parte del personal (herramientas \"no oficiales\" fuera de la política).", "evidencia": "Registro de herramientas aprobadas, capacitación al personal.", "criticidad": "Medio"}, {"n": 6, "dom": "inventario", "criterio": "Existe un inventario único y actualizado de todas las herramientas de IA en uso (asistentes de redacción, copilots, modelos de análisis, RPA con IA), con propósito, proveedor y área responsable.", "evidencia": "Inventario consultable, fecha de última actualización.", "criticidad": "Alto"}, {"n": 7, "dom": "inventario", "criterio": "Antes de adoptar una herramienta de IA se revisan sus condiciones de uso: dónde procesa los datos, si los usa para entrenar el modelo, y su nivel de confiabilidad reportado.", "evidencia": "Ficha de evaluación del proveedor.", "criticidad": "Alto"}, {"n": 8, "dom": "inventario", "criterio": "Las limitaciones conocidas del modelo (qué tipo de errores comete, en qué casos no debe usarse) están documentadas y comunicadas a quienes lo usan.", "evidencia": "Ficha técnica o nota de limitaciones por herramienta.", "criticidad": "Medio"}, {"n": 9, "dom": "inventario", "criterio": "Un cambio relevante en la herramienta (nueva versión, cambio de proveedor, cambio de configuración) pasa por una revisión antes de seguir usándose en encargos.", "evidencia": "Registro de cambios y aprobación.", "criticidad": "Medio"}, {"n": 10, "dom": "inventario", "criterio": "Cuando se deja de usar una herramienta de IA, se retiran los accesos y se define qué pasa con los datos que procesó.", "evidencia": "Procedimiento de baja, constancia de revocación de accesos.", "criticidad": "Bajo"}, {"n": 11, "dom": "datos", "criterio": "Los datos que se entregan a una herramienta de IA (para análisis, redacción o clasificación) son revisados en cuanto a completitud y exactitud antes de usarlos.", "evidencia": "Procedimiento de validación previa de datos.", "criticidad": "Alto"}, {"n": 12, "dom": "datos", "criterio": "Se puede rastrear de dónde salió cada dato usado por la IA y qué transformación sufrió antes de llegar al resultado final.", "evidencia": "Registro o bitácora de origen de datos.", "criticidad": "Medio"}, {"n": 13, "dom": "datos", "criterio": "El uso de datos personales de clientes o de terceros en herramientas de IA cuenta con base legal identificada y consentimiento cuando aplica.", "evidencia": "[Referencia normativa exacta de protección de datos personales aplicable], consentimiento documentado.", "criticidad": "Alto"}, {"n": 14, "dom": "datos", "criterio": "Antes de entregar información sensible a una herramienta de IA externa, se anonimiza o se elimina el dato identificable cuando el análisis no lo requiere.", "evidencia": "Procedimiento de anonimización, muestra de datos tratados.", "criticidad": "Alto"}, {"n": 15, "dom": "datos", "criterio": "Se conoce el origen y las restricciones de uso de los datos con los que fue entrenado el modelo (cuando el proveedor lo informa), para evitar usar información sin autorización de terceros.", "evidencia": "Ficha del proveedor, términos de servicio revisados.", "criticidad": "Medio"}, {"n": 16, "dom": "validacion", "criterio": "Antes de usar una herramienta de IA en un encargo real, se probó primero con casos conocidos (donde ya se sabe la respuesta correcta) para verificar su fiabilidad.", "evidencia": "Pruebas piloto documentadas, resultados comparados contra la respuesta esperada.", "criticidad": "Alto"}, {"n": 17, "dom": "validacion", "criterio": "Quien prueba y aprueba el uso de una herramienta de IA no es la misma persona que la va a operar día a día en los encargos.", "evidencia": "Evidencia de segregación de funciones en la aprobación.", "criticidad": "Medio"}, {"n": 18, "dom": "validacion", "criterio": "Para herramientas de tipo asistente conversacional (ChatGPT, Claude, Copilot y similares), se conoce y se ha probado con qué frecuencia el modelo \"inventa\" información (alucina) en el tipo de tarea para la que se usa.", "evidencia": "Registro de pruebas de exactitud/factualidad sobre casos del área.", "criticidad": "Alto"}, {"n": 19, "dom": "validacion", "criterio": "Cuando la herramienta se usa para tareas de mayor riesgo (ej. análisis de cifras, redacción de conclusiones), se ha intentado deliberadamente inducirla a error para conocer sus límites antes de confiar en ella.", "evidencia": "Bitácora de pruebas de estrés o \"casos trampa\".", "criticidad": "Medio"}, {"n": 20, "dom": "validacion", "criterio": "Los resultados de estas pruebas de validación quedan documentados y disponibles para revisión de calidad del encargo.", "evidencia": "Reporte de validación conservado en el archivo del área.", "criticidad": "Medio"}, {"n": 21, "dom": "uso-auditoria", "criterio": "Está expresamente prohibido que la IA emita la conclusión final, el juicio profesional o el dictamen de auditoría — su uso se limita a apoyar el trabajo del auditor.", "evidencia": "Política de uso aceptable de IA en encargos.", "criticidad": "Alto"}, {"n": 22, "dom": "uso-auditoria", "criterio": "Todo resultado generado por IA que se incorpora a un papel de trabajo o informe pasa antes por una revisión humana sustantiva, con evidencia de esa revisión (firma, fecha).", "evidencia": "Papel de trabajo con evidencia de revisión.", "criticidad": "Alto"}, {"n": 23, "dom": "uso-auditoria", "criterio": "Las conclusiones de auditoría se sustentan en evidencia obtenida por procedimientos propios del auditor; el resultado de la IA se corrobora y nunca es la única fuente de la conclusión.", "evidencia": "Papel de trabajo con procedimiento de corroboración independiente.", "criticidad": "Alto"}, {"n": 24, "dom": "uso-auditoria", "criterio": "El uso de IA en un encargo queda documentado: qué herramienta se usó, para qué, qué se le pidió (prompt) y qué ajustó el auditor sobre el resultado.", "evidencia": "Ficha de uso de IA anexa al papel de trabajo.", "criticidad": "Medio"}, {"n": 25, "dom": "uso-auditoria", "criterio": "Cuando aplica, se informa al cliente o al comité de auditoría que se usó IA como apoyo en el encargo, y el alcance de ese uso.", "evidencia": "Carta de encargo o acta de comunicación con el comité.", "criticidad": "Medio"}, {"n": 26, "dom": "uso-auditoria", "criterio": "El personal que usa IA en encargos ha recibido capacitación mínima sobre sus riesgos (alucinación, sesgo, fuga de información) antes de usarla sin supervisión.", "evidencia": "Registro de capacitación.", "criticidad": "Alto"}, {"n": 27, "dom": "transparencia", "criterio": "El equipo entiende, a un nivel razonable, cómo la herramienta llega a sus resultados (qué información usa, qué no puede hacer) — no se opera como una \"caja negra\" sin ningún entendimiento.", "evidencia": "Nota técnica o ficha de la herramienta con su funcionamiento general.", "criticidad": "Medio"}, {"n": 28, "dom": "transparencia", "criterio": "Cuando el resultado de la IA influye en una conclusión relevante, el auditor puede explicar en lenguaje profesional (sin tecnicismos) cómo se llegó a ese resultado, a un cliente o al comité de auditoría.", "evidencia": "Ejemplo documentado de explicación dada.", "criticidad": "Medio"}, {"n": 29, "dom": "transparencia", "criterio": "Las instrucciones (prompts) usadas para tareas relevantes quedan guardadas, de forma que el resultado se pueda reproducir o revisar después.", "evidencia": "Bitácora de prompts por encargo.", "criticidad": "Medio"}, {"n": 30, "dom": "transparencia", "criterio": "Se conserva un registro de cuándo se usó la herramienta, quién la usó y para qué, durante el tiempo que exige la conservación de papeles de trabajo.", "evidencia": "Registro de uso conservado en el archivo del encargo.", "criticidad": "Alto"}, {"n": 31, "dom": "transparencia", "criterio": "Si una decisión que afecta a una persona (cliente, empleado) se apoyó en un resultado de IA, existe forma de explicárselo si lo pide.", "evidencia": "Procedimiento de atención de solicitudes de explicación.", "criticidad": "Bajo"}, {"n": 32, "dom": "riesgos", "criterio": "Los riesgos del uso de IA (errores, sesgos, dependencia excesiva, exposición de información) están identificados e incorporados al mapa de riesgos del área o de la firma.", "evidencia": "Mapa de riesgos actualizado con el componente de IA.", "criticidad": "Alto"}, {"n": 33, "dom": "riesgos", "criterio": "Se ha evaluado el riesgo de que un cliente use IA para alterar registros, generar transacciones ficticias o fabricar evidencia (contratos, confirmaciones, imágenes o audios manipulados).", "evidencia": "Procedimientos de auditoría diseñados para detectar evidencia manipulada.", "criticidad": "Alto"}, {"n": 34, "dom": "riesgos", "criterio": "Se ha considerado el riesgo de que el equipo dependa demasiado de la IA y pierda criterio profesional propio con el tiempo (desentrenamiento del juicio).", "evidencia": "Política de uso que refuerza el rol del juicio profesional.", "criticidad": "Medio"}, {"n": 35, "dom": "riesgos", "criterio": "Existe un canal para reportar un uso indebido o un resultado erróneo de la IA que haya afectado un trabajo.", "evidencia": "Canal de reporte, casos atendidos.", "criticidad": "Medio"}, {"n": 36, "dom": "riesgos", "criterio": "Se ha evaluado qué pasa si la herramienta de IA deja de estar disponible (falla del proveedor, cambio de condiciones) y el trabajo depende de ella.", "evidencia": "Plan de contingencia o alternativa manual documentada.", "criticidad": "Bajo"}, {"n": 37, "dom": "seguridad", "criterio": "Está prohibido, por política y de forma efectiva, cargar información confidencial de clientes en herramientas de IA públicas o no aprobadas.", "evidencia": "Política de uso, lista de herramientas aprobadas.", "criticidad": "Alto"}, {"n": 38, "dom": "seguridad", "criterio": "Cuando es necesario usar una herramienta externa con información sensible, se usa una versión empresarial/privada que no entrena su modelo con esos datos.", "evidencia": "Contrato o configuración del proveedor que excluye entrenamiento con datos del cliente.", "criticidad": "Alto"}, {"n": 39, "dom": "seguridad", "criterio": "El acceso a las herramientas de IA está limitado por usuario/rol, con autenticación adecuada, y se revisa periódicamente quién tiene acceso.", "evidencia": "Listado de usuarios autorizados, revisión periódica.", "criticidad": "Medio"}, {"n": 40, "dom": "seguridad", "criterio": "La información procesada por IA (inputs y resultados) se maneja con el mismo nivel de confidencialidad que el resto del archivo del encargo.", "evidencia": "Política de manejo de información aplicada a los productos de IA.", "criticidad": "Medio"}, {"n": 41, "dom": "seguridad", "criterio": "Se ha verificado, al menos de forma básica, la reputación y las condiciones de seguridad del proveedor de la herramienta antes de adoptarla (dónde almacena los datos, qué certificaciones tiene).", "evidencia": "Ficha de evaluación del proveedor.", "criticidad": "Medio"}, {"n": 42, "dom": "monitoreo", "criterio": "Se revisa periódicamente si la herramienta de IA sigue dando resultados confiables para el tipo de tarea en que se usa (no solo se valida una vez al inicio).", "evidencia": "Registro de revisiones periódicas de desempeño.", "criticidad": "Alto"}, {"n": 43, "dom": "monitoreo", "criterio": "Cuando el proveedor actualiza el modelo o cambia su versión, se vuelve a verificar que el comportamiento siga siendo el esperado antes de seguir usándolo sin control.", "evidencia": "Registro de pruebas tras actualización de versión.", "criticidad": "Medio"}, {"n": 44, "dom": "monitoreo", "criterio": "Los errores o resultados llamativamente incorrectos detectados en el uso diario se registran y se analizan para identificar patrones (no se tratan como casos aislados).", "evidencia": "Bitácora de incidentes o errores de IA.", "criticidad": "Medio"}, {"n": 45, "dom": "monitoreo", "criterio": "Existe un umbral o criterio a partir del cual se suspende el uso de una herramienta de IA si su tasa de error se vuelve inaceptable.", "evidencia": "Criterio documentado de suspensión.", "criticidad": "Medio"}, {"n": 46, "dom": "monitoreo", "criterio": "El área de auditoría interna (o quien haga sus veces) revisa al menos una vez al año cómo se está usando la IA en la organización o en la firma.", "evidencia": "Plan de auditoría interna con el tema de IA incluido.", "criticidad": "Bajo"}, {"n": 47, "dom": "cumplimiento", "criterio": "Se conocen las obligaciones normativas aplicables al uso de IA en la actividad de la firma o de la entidad (protección de datos, regulación del sector si aplica, ej. CNBS para entidades supervisadas).", "evidencia": "[Referencia normativa exacta aplicable según el sector], mapeo de obligaciones.", "criticidad": "Alto"}, {"n": 48, "dom": "cumplimiento", "criterio": "El uso de IA respeta los principios éticos del auditor (integridad, objetividad, competencia profesional, confidencialidad e independencia) y se ha evaluado si su uso amenaza alguno de ellos.", "evidencia": "Evaluación de amenazas a la independencia por uso de IA en el encargo.", "criticidad": "Alto"}, {"n": 49, "dom": "cumplimiento", "criterio": "Existen lineamientos claros sobre qué información de la firma o del cliente no debe usarse para \"entrenar\" o mejorar herramientas de terceros.", "evidencia": "Política de uso, cláusula contractual con proveedores.", "criticidad": "Alto"}, {"n": 50, "dom": "cumplimiento", "criterio": "El personal ha recibido orientación ética sobre el uso de IA (no solo técnica) — qué es un uso responsable y qué no lo es.", "evidencia": "Registro de capacitación en ética y uso de IA.", "criticidad": "Medio"}, {"n": 51, "dom": "cumplimiento", "criterio": "La responsabilidad profesional del trabajo se mantiene siempre en el auditor humano; ninguna conclusión se delega a la herramienta de IA.", "evidencia": "Política reforzada por capacitación y revisión de calidad.", "criticidad": "Alto"}];
+
+function escapeHtml(s){
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function domLabel(dom){
+  const found = DOMS.find(d => d[0] === dom);
+  return found ? found[1] : dom;
+}
+
+function critClass(crit){
+  if(crit === 'Alto') return 'crit-alto';
+  if(crit === 'Medio') return 'crit-medio';
+  return 'crit-bajo';
+}
+
+function textoPlano(d){
+  return domLabel(d.dom) + ". Criterio: " + d.criterio + " Evidencia sugerida: " + d.evidencia + " Criticidad: " + d.criticidad;
+}
+
+function buildFiltros(){
+  const wrap = document.getElementById('filtros');
+  const todos = document.createElement('button');
+  todos.className = 'filtro-btn activo';
+  todos.dataset.dom = 'all';
+  todos.textContent = 'Todos (' + DATA.length + ')';
+  wrap.appendChild(todos);
+  DOMS.forEach(([dom,label]) => {
+    const n = DATA.filter(d => d.dom === dom).length;
+    const btn = document.createElement('button');
+    btn.className = 'filtro-btn';
+    btn.dataset.dom = dom;
+    btn.textContent = label + ' (' + n + ')';
+    wrap.appendChild(btn);
+  });
+  wrap.addEventListener('click', e => {
+    const btn = e.target.closest('.filtro-btn');
+    if(!btn) return;
+    wrap.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('activo'));
+    btn.classList.add('activo');
+    filtrar();
+  });
+}
+
+function buildListado(){
+  const cont = document.getElementById('listado');
+  DATA.forEach(d => {
+    const card = document.createElement('div');
+    card.className = 'chk-card';
+    card.dataset.dom = d.dom;
+    card.dataset.texto = (d.criterio + ' ' + d.evidencia).toLowerCase();
+    card.innerHTML =
+      '<div class="cab">' +
+        '<span class="num">#' + d.n + '</span>' +
+        '<span class="dom-tag">' + domLabel(d.dom) + '</span>' +
+        '<span class="crit-badge ' + critClass(d.criticidad) + '">' + escapeHtml(d.criticidad) + '</span>' +
+      '</div>' +
+      '<p class="criterio">' + escapeHtml(d.criterio) + '</p>' +
+      '<p class="evidencia"><strong>Evidencia sugerida:</strong> ' + escapeHtml(d.evidencia) + '</p>' +
+      '<button class="copiar-btn" type="button">&#128203; Copiar criterio</button>';
+    cont.appendChild(card);
+  });
+  cont.addEventListener('click', e => {
+    const btn = e.target.closest('.copiar-btn');
+    if(!btn) return;
+    const card = btn.closest('.chk-card');
+    const n = card.querySelector('.num').textContent;
+    const d = DATA.find(x => ('#' + x.n) === n);
+    navigator.clipboard.writeText(textoPlano(d)).then(() => {
+      btn.textContent = '\u2713 Copiado';
+      btn.classList.add('copiado');
+      setTimeout(() => { btn.innerHTML = '&#128203; Copiar criterio'; btn.classList.remove('copiado'); }, 2000);
+    });
+  });
+}
+
+function filtrar(){
+  const q = document.getElementById('buscar').value.toLowerCase();
+  const activo = document.querySelector('.filtro-btn.activo').dataset.dom;
+  let visibles = 0;
+  document.querySelectorAll('.chk-card').forEach(card => {
+    const matchDom = activo === 'all' || card.dataset.dom === activo;
+    const matchQ = !q || card.dataset.texto.includes(q);
+    if(matchDom && matchQ){ card.classList.remove('oculto'); visibles++; }
+    else card.classList.add('oculto');
+  });
+  document.getElementById('contador').textContent = 'Mostrando ' + visibles + ' de ' + DATA.length + ' criterios';
+  document.getElementById('vacio').classList.toggle('mostrar', visibles === 0);
+}
+
+buildFiltros();
+buildListado();
+filtrar();
+document.getElementById('buscar').addEventListener('input', filtrar);
+</script>
+
+</body>
+</html>
