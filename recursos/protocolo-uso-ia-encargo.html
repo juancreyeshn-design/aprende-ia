@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protocolo de Uso Responsable de IA en un Encargo — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+<style>
+.recurso-controls{max-width:980px;margin:0 auto;padding:0 20px}
+.buscador{position:relative;margin:18px 0 12px}
+.buscador input{width:100%;padding:11px 16px 11px 40px;border:1.5px solid var(--borde);border-radius:10px;font-family:'Nunito',sans-serif;font-size:.92rem;outline:none;box-sizing:border-box}
+.buscador input:focus{border-color:var(--navy-600)}
+.buscador svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--gris-suave)}
+.filtros{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.filtro-btn{padding:6px 14px;border:1.5px solid var(--borde);border-radius:20px;background:#fff;font-family:'Nunito',sans-serif;font-size:.76rem;font-weight:700;color:var(--gris-suave);cursor:pointer}
+.filtro-btn.activo{background:var(--navy-600);border-color:var(--navy-600);color:#fff}
+.contador-resultados{font-size:.8rem;color:var(--gris-suave);margin:6px 0 14px}
+.chk-card{background:#fff;border-radius:var(--radio);padding:18px 20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(10,25,48,.06);border-left:5px solid var(--navy-600)}
+.chk-card.oculto{display:none}
+.chk-card .cab{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.chk-card .num{font-weight:800;color:var(--navy-600);font-size:.8rem}
+.chk-card .dom-tag{display:inline-block;font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--navy-800);background:var(--navy-100);padding:2px 9px;border-radius:20px}
+.crit-badge{display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 10px;border-radius:20px;margin-left:auto}
+.crit-alto{background:#fde2e1;color:#9f1c1c}
+.crit-medio{background:var(--oro-suave);color:var(--oro)}
+.crit-bajo{background:#e3ebfd;color:var(--navy-600)}
+.chk-card .criterio{font-size:.92rem;line-height:1.6;color:var(--navy-950);margin:0 0 10px}
+.chk-card .evidencia{font-size:.82rem;line-height:1.55;color:var(--gris-suave);border-top:1px dashed var(--borde);padding-top:8px}
+.chk-card .evidencia strong{color:var(--gris-texto)}
+.copiar-btn{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:6px 12px;border:1px solid var(--borde);border-radius:8px;background:var(--gris-fondo);font-family:'Nunito',sans-serif;font-size:.78rem;font-weight:700;color:var(--gris-suave);cursor:pointer}
+.copiar-btn:hover{background:var(--navy-600);color:#fff;border-color:var(--navy-600)}
+.copiar-btn.copiado{background:var(--ok);color:#fff;border-color:var(--ok)}
+.vacio{text-align:center;padding:40px;color:var(--gris-suave);display:none}
+.vacio.mostrar{display:block}
+.tabla-prov{width:100%;border-collapse:collapse;font-size:.86rem;margin-top:10px}
+.tabla-prov th,.tabla-prov td{padding:10px 12px;border-bottom:1px solid var(--borde);text-align:left;vertical-align:top;line-height:1.5}
+.tabla-prov th{background:var(--navy-100);color:var(--navy-800);font-size:.76rem;text-transform:uppercase;letter-spacing:.03em}
+.tabla-prov td:first-child{white-space:nowrap;color:var(--navy-600)}
+.tabla-wrap{overflow-x:auto;max-width:980px;margin:0 auto}
+</style>
+</head>
+<body>
+
+<a href="../index.html" class="volver">&larr; Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">Recurso complementario</span>
+  <h1>&#128737;&#65039; Protocolo de Uso Responsable de IA en un Encargo Profesional</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>Cómo usar este protocolo</h2>
+    <p>El <a href="checklist-gobierno-ia.html">Checklist de Gobierno de IA</a> evalúa cómo tu firma o departamento
+    gobierna el uso de la IA en general. Este protocolo baja un nivel: es la lista de verificación que aplicás
+    <strong>encargo por encargo</strong>, antes, durante y después de usar una herramienta de IA en un trabajo
+    concreto de auditoría, contabilidad o consultoría. 20 puntos de verificación en 3 fases, más una guía de
+    configuración de privacidad por herramienta.</p>
+    <div class="tip">
+      &#128161; La responsabilidad profesional sobre las conclusiones de un encargo es indelegable y recae siempre en
+      vos, sin importar qué herramienta usaste de apoyo. Este protocolo existe para que puedas demostrarlo con
+      evidencia si alguna vez te lo piden.
+    </div>
+  </div>
+
+  <div class="recurso-controls">
+    <div class="buscador">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="buscar" placeholder="Buscar por palabra clave...">
+    </div>
+    <div class="filtros" id="filtros"></div>
+    <div class="contador-resultados" id="contador"></div>
+  </div>
+
+  <div id="listado" style="max-width:980px;margin:0 auto;padding:0 20px 10px"></div>
+  <div class="vacio" id="vacio">No se encontraron criterios con esa búsqueda.</div>
+
+  <div class="bloque practica" style="max-width:980px;margin:20px auto">
+    <h2>&#128274; Guía rápida de privacidad por herramienta</h2>
+    <p>Antes de cargar información de un cliente en cualquier asistente de IA, revisá su configuración de privacidad.
+    Las rutas cambian con frecuencia — verificá siempre la sección de privacidad vigente de tu cuenta —, pero la
+    lógica de fondo es la misma en las herramientas más usadas hoy por contadores y auditores en Honduras:</p>
+    <div class="tabla-wrap">
+    <table class="tabla-prov">
+      <tr><th>Herramienta</th><th>En el plan gratuito, asumí que...</th><th>Antes de usarla con datos de un cliente...</th></tr>
+      
+      <tr>
+        <td><strong>ChatGPT</strong></td>
+        <td>En el plan gratuito, cualquier conversación puede usarse para mejorar el modelo salvo que lo desactives.</td>
+        <td>Desactiva la opción de mejorar el modelo con tus datos y activa el chat temporal para la sesión del encargo.</td>
+      </tr>
+      <tr>
+        <td><strong>Claude</strong></td>
+        <td>Los planes de pago no usan tus conversaciones para entrenar por defecto, pero conviene confirmarlo en la política vigente antes de asumirlo.</td>
+        <td>Abre una conversación nueva por cliente o encargo y usa la opción de no conservar el historial cuando la sesión maneje datos sensibles.</td>
+      </tr>
+      <tr>
+        <td><strong>Gemini</strong></td>
+        <td>Tu actividad puede quedar ligada a tu cuenta de Google si no revisas la actividad de aplicaciones asociada.</td>
+        <td>Reduce el periodo de retención al mínimo disponible y evita mezclar la cuenta personal con el uso profesional.</td>
+      </tr>
+      <tr>
+        <td><strong>Copilot</strong></td>
+        <td>El tratamiento de tus datos depende de si trabajás desde una cuenta personal o desde una licencia corporativa de tu firma.</td>
+        <td>Confirma con qué tipo de cuenta estás trabajando antes de subir cualquier archivo con información de un cliente.</td>
+      </tr>
+      <tr>
+        <td><strong>Perplexity</strong></td>
+        <td>Tus consultas pueden usarse para mejorar el servicio salvo que lo desactives explícitamente.</td>
+        <td>Desactiva esa opción en configuración y usa el modo privado para consultas puntuales ligadas a un caso.</td>
+      </tr>
+      <tr>
+        <td><strong>NotebookLM</strong></td>
+        <td>El servicio no usa el contenido de tus notebooks para entrenar, pero el acceso al notebook depende de con quién lo compartís.</td>
+        <td>Creá un notebook separado por cliente o encargo y revisá quién tiene acceso antes de subir documentos.</td>
+      </tr>
+    </table>
+    </div>
+    <div class="tip">
+      &#9878;&#65039; Como profesional colegiado, el secreto profesional que te exige tu código de ética aplica
+      exactamente igual dentro de un chat de IA que en un correo o una llamada: la identificación de un cliente
+      (nombre, RTN, cifras individualizables) es información que protegés, no un dato más que se le entrega a un
+      tercero por comodidad. En Honduras, revisá además [Referencia normativa exacta de protección de datos
+      personales aplicable a tu actividad] antes de definir tu propio protocolo interno de manejo de datos con IA.
+    </div>
+  </div>
+
+  <div class="bloque">
+    <h2>&#128279; Recursos relacionados</h2>
+    <p>Este protocolo funciona junto con el <a href="checklist-gobierno-ia.html"><strong>Checklist de Gobierno de IA
+    para Auditoría</strong></a> (nivel firma/departamento) y con el <a href="banco-prompts.html"><strong>Banco de 50
+    Prompts Contables</strong></a> (los prompts que vas a usar dentro de este protocolo). Si no lo has revisado, el
+    Módulo 27 explica el marco RTCFR con el que se construyen esos prompts.</p>
+  </div>
+
+  <div class="nav-final">
+    <a href="../modulos/mod-27.html" class="volver">&larr; Volver al Módulo 27</a>
+    <a href="../index.html" class="btn">Ir a la ruta completa</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA &mdash; recurso complementario, fuera de la ruta de 27 módulos.</footer>
+
+<script>
+const DOMS = [["antes", "Fase 1: Antes del uso"], ["durante", "Fase 2: Durante el uso"], ["despues", "Fase 3: Después del uso"]];
+const DATA = [{"n": 1, "dom": "antes", "criterio": "Hay autorización expresa del cliente, del comité de auditoría o de quien corresponda para usar IA en este encargo, con constancia escrita (correo, acta o cláusula del contrato).", "evidencia": "Correo, acta o cláusula contractual conservada en el archivo del encargo.", "criticidad": "Alto"}, {"n": 2, "dom": "antes", "criterio": "Está definido y comunicado el alcance exacto: qué parte del trabajo se apoyará en IA y cuál se mantiene fuera de su alcance.", "evidencia": "Nota de planeación del encargo con el alcance de IA delimitado.", "criticidad": "Medio"}, {"n": 3, "dom": "antes", "criterio": "La información que se va a procesar fue clasificada por tipo (financiera, personal, contractual, operativa) y por nivel de confidencialidad antes de tocar la herramienta.", "evidencia": "Nota de clasificación previa de la información.", "criticidad": "Alto"}, {"n": 4, "dom": "antes", "criterio": "Los datos personales o sensibles del cliente (identificaciones, cifras individualizadas) se anonimizan o se sustituyen por datos genéricos antes de cargarlos, cuando la tarea lo permite.", "evidencia": "Muestra de datos anonimizados usados en la consulta.", "criticidad": "Alto"}, {"n": 5, "dom": "antes", "criterio": "Se confirmó que el tipo de cuenta o plan usado (gratuito, personal de pago, empresarial) admite el nivel de confidencialidad de la información a procesar.", "evidencia": "Verificación del plan activo frente a la guía de configuración de privacidad.", "criticidad": "Alto"}, {"n": 6, "dom": "antes", "criterio": "La configuración de privacidad de la herramienta específica fue revisada antes de esta sesión — no se asume que sigue igual que la última vez que se usó.", "evidencia": "Captura o registro de la configuración verificada.", "criticidad": "Alto"}, {"n": 7, "dom": "antes", "criterio": "Se abre una conversación, proyecto o \"notebook\" nuevo y exclusivo para este encargo, sin arrastrar información de otro cliente.", "evidencia": "Identificación de la sesión o proyecto usado, ligada al encargo.", "criticidad": "Medio"}, {"n": 8, "dom": "durante", "criterio": "Se vigila activamente la aparición de datos inventados, cifras no verificables o afirmaciones sin respaldo en las respuestas de la herramienta.", "evidencia": "Anotación de respuestas cuestionadas durante la sesión.", "criticidad": "Alto"}, {"n": 9, "dom": "durante", "criterio": "No se entrega más información de la estrictamente necesaria, aunque la herramienta la pida o la sugiera para \"mejorar\" la respuesta.", "evidencia": "Revisión de que el prompt no excede la información necesaria.", "criticidad": "Medio"}, {"n": 10, "dom": "durante", "criterio": "Se mantiene activo, cuando está disponible, el modo de sesión temporal o de historial restringido para esta conversación.", "evidencia": "Configuración de sesión temporal activada.", "criticidad": "Medio"}, {"n": 11, "dom": "durante", "criterio": "La conversación se mantiene dentro del alcance autorizado en la Fase 1, sin mezclar otros clientes, encargos o temas ajenos.", "evidencia": "Revisión del historial de la sesión al cierre.", "criticidad": "Alto"}, {"n": 12, "dom": "durante", "criterio": "Se revisa al menos una muestra de las respuestas mientras avanza la sesión, no únicamente al final del trabajo.", "evidencia": "Nota de revisión intermedia.", "criticidad": "Medio"}, {"n": 13, "dom": "durante", "criterio": "Las decisiones relevantes que se toman a partir de una respuesta de la herramienta quedan anotadas en el momento, no reconstruidas de memoria después.", "evidencia": "Bitácora de decisiones tomadas durante la sesión.", "criticidad": "Bajo"}, {"n": 14, "dom": "despues", "criterio": "El resultado se revisa de forma íntegra — no solo se hojea — antes de incorporarlo a un papel de trabajo, informe o comunicación con el cliente.", "evidencia": "Constancia de revisión completa del resultado.", "criticidad": "Alto"}, {"n": 15, "dom": "despues", "criterio": "Las inexactitudes, sesgos o datos inventados detectados se corrigen y esa corrección queda documentada.", "evidencia": "Registro de ajustes realizados sobre el resultado original.", "criticidad": "Alto"}, {"n": 16, "dom": "despues", "criterio": "Los prompts usados y las respuestas relevantes se archivan como parte de la evidencia del encargo, igual que cualquier otro papel de trabajo.", "evidencia": "Archivo de prompts y respuestas en el expediente del encargo.", "criticidad": "Alto"}, {"n": 17, "dom": "despues", "criterio": "El informe o memorando identifica, cuando corresponde, que se recibió apoyo de una herramienta de IA en esa parte del trabajo.", "evidencia": "Referencia al uso de IA en el informe o memorando.", "criticidad": "Medio"}, {"n": 18, "dom": "despues", "criterio": "Se informa al supervisor, socio o responsable del encargo que se usó IA y para qué se usó.", "evidencia": "Comunicación al supervisor conservada.", "criticidad": "Alto"}, {"n": 19, "dom": "despues", "criterio": "El profesional asume expresamente, con evidencia de la revisión realizada, la responsabilidad por las conclusiones — la herramienta nunca firma el criterio profesional.", "evidencia": "Constancia de aceptación de responsabilidad profesional sobre el resultado final.", "criticidad": "Alto"}, {"n": 20, "dom": "despues", "criterio": "Al cerrar el encargo, se anota qué funcionó y qué no del uso de la IA, para ajustar el protocolo en el siguiente encargo similar.", "evidencia": "Nota de lecciones aprendidas del encargo.", "criticidad": "Bajo"}];
+
+function escapeHtml(s){
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function domLabel(dom){
+  const found = DOMS.find(d => d[0] === dom);
+  return found ? found[1] : dom;
+}
+
+function critClass(crit){
+  if(crit === 'Alto') return 'crit-alto';
+  if(crit === 'Medio') return 'crit-medio';
+  return 'crit-bajo';
+}
+
+function textoPlano(d){
+  return domLabel(d.dom) + ". Criterio: " + d.criterio + " Evidencia sugerida: " + d.evidencia + " Criticidad: " + d.criticidad;
+}
+
+function buildFiltros(){
+  const wrap = document.getElementById('filtros');
+  const todos = document.createElement('button');
+  todos.className = 'filtro-btn activo';
+  todos.dataset.dom = 'all';
+  todos.textContent = 'Todas (' + DATA.length + ')';
+  wrap.appendChild(todos);
+  DOMS.forEach(([dom,label]) => {
+    const n = DATA.filter(d => d.dom === dom).length;
+    const btn = document.createElement('button');
+    btn.className = 'filtro-btn';
+    btn.dataset.dom = dom;
+    btn.textContent = label + ' (' + n + ')';
+    wrap.appendChild(btn);
+  });
+  wrap.addEventListener('click', e => {
+    const btn = e.target.closest('.filtro-btn');
+    if(!btn) return;
+    wrap.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('activo'));
+    btn.classList.add('activo');
+    filtrar();
+  });
+}
+
+function buildListado(){
+  const cont = document.getElementById('listado');
+  DATA.forEach(d => {
+    const card = document.createElement('div');
+    card.className = 'chk-card';
+    card.dataset.dom = d.dom;
+    card.dataset.texto = (d.criterio + ' ' + d.evidencia).toLowerCase();
+    card.innerHTML =
+      '<div class="cab">' +
+        '<span class="num">#' + d.n + '</span>' +
+        '<span class="dom-tag">' + domLabel(d.dom) + '</span>' +
+        '<span class="crit-badge ' + critClass(d.criticidad) + '">' + escapeHtml(d.criticidad) + '</span>' +
+      '</div>' +
+      '<p class="criterio">' + escapeHtml(d.criterio) + '</p>' +
+      '<p class="evidencia"><strong>Evidencia sugerida:</strong> ' + escapeHtml(d.evidencia) + '</p>' +
+      '<button class="copiar-btn" type="button">&#128203; Copiar criterio</button>';
+    cont.appendChild(card);
+  });
+  cont.addEventListener('click', e => {
+    const btn = e.target.closest('.copiar-btn');
+    if(!btn) return;
+    const card = btn.closest('.chk-card');
+    const n = card.querySelector('.num').textContent;
+    const d = DATA.find(x => ('#' + x.n) === n);
+    navigator.clipboard.writeText(textoPlano(d)).then(() => {
+      btn.textContent = '\u2713 Copiado';
+      btn.classList.add('copiado');
+      setTimeout(() => { btn.innerHTML = '&#128203; Copiar criterio'; btn.classList.remove('copiado'); }, 2000);
+    });
+  });
+}
+
+function filtrar(){
+  const q = document.getElementById('buscar').value.toLowerCase();
+  const activo = document.querySelector('.filtro-btn.activo').dataset.dom;
+  let visibles = 0;
+  document.querySelectorAll('.chk-card').forEach(card => {
+    const matchDom = activo === 'all' || card.dataset.dom === activo;
+    const matchQ = !q || card.dataset.texto.includes(q);
+    if(matchDom && matchQ){ card.classList.remove('oculto'); visibles++; }
+    else card.classList.add('oculto');
+  });
+  document.getElementById('contador').textContent = 'Mostrando ' + visibles + ' de ' + DATA.length + ' criterios';
+  document.getElementById('vacio').classList.toggle('mostrar', visibles === 0);
+}
+
+buildFiltros();
+buildListado();
+filtrar();
+document.getElementById('buscar').addEventListener('input', filtrar);
+</script>
+
+</body>
+</html>
