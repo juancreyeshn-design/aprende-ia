@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lecturas recomendadas — Aprende IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/estilo.css">
+<style>
+.fuente{font-size:.8rem;color:var(--gris-suave);margin-top:10px;padding-top:10px;border-top:1px solid var(--borde)}
+.fuente a{color:var(--navy-600);font-weight:700;text-decoration:none}
+.fuente a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<a href="../index.html" class="volver">← Volver a la ruta</a>
+
+<header class="leccion-header">
+  <span class="xp-pill">Recurso complementario</span>
+  <h1>📖 Lecturas recomendadas: IA en auditoría y control interno</h1>
+</header>
+
+<main>
+
+  <div class="bloque">
+    <h2>📘 Sobre este recurso</h2>
+    <p>Dos ideas externas que amplían lo visto en la ruta, resumidas aquí en texto propio — no son copia de sus
+    fuentes, que están protegidas por derechos de autor y en algunos casos requieren suscripción. Si querés el
+    contenido completo (metodología detallada, plantillas descargables), seguí el enlace a la fuente original.</p>
+  </div>
+
+  <div class="bloque practica">
+    <h2>🤖 IA Generativa vs. IA Agéntica: dos roles distintos para el auditor</h2>
+    <p>La mayoría de auditores que ya usan IA la usan para <strong>describir</strong> el trabajo: resumir una
+    descripción de control, redactar una narrativa a partir de notas, responder preguntas sobre una política. Es
+    útil, pero no ejecuta nada — el auditor sigue siendo quien hace la prueba.</p>
+    <p>La IA agéntica cambia esa relación: dado un control, identifica la evidencia relevante dentro de archivos no
+    estructurados (PDF, hojas de cálculo, grabaciones), extrae la muestra, evalúa el atributo y documenta la
+    conclusión en un papel de trabajo, ejecutando el procedimiento en vez de solo describirlo. El rol del auditor
+    se desplaza de <em>operador</em> a <em>revisor</em>: en lugar de correr la prueba repetitiva, gestiona
+    excepciones, evalúa el juicio detrás de cada determinación y se enfoca en el trabajo de asesoría que una
+    máquina no puede firmar.</p>
+    <div class="tip">
+      💡 Para tu trabajo como Comisario o en comités de riesgo, la distinción práctica es: una IA generativa te
+      ayuda a redactar el informe más rápido; una IA agéntica te entrega un papel de trabajo ya ejecutado que
+      tenés que revisar y cuestionar — el nivel de escepticismo profesional que le exigís a cada una es distinto.
+    </div>
+    <div class="fuente">
+      Fuente: CP Iván Rodríguez, "El futuro de la auditoría interna con la IA agéntica", Auditool —
+      <a href="https://www.auditool.org/blog/auditoria-interna/el-futuro-de-la-auditoria-interna-con-la-ia-agentica" target="_blank" rel="noopener">leer artículo completo</a>
+    </div>
+  </div>
+
+  <div class="bloque practica">
+    <h2>🧩 Gobierno de la IA generativa bajo el marco COSO</h2>
+    <p>COSO extendió su marco de control interno de cinco componentes (Entorno de Control, Evaluación de Riesgos,
+    Actividades de Control, Información y Comunicación, Actividades de Monitoreo) para cubrir específicamente la
+    IA generativa dentro de los procesos de una organización. La idea de fondo: los controles tradicionales no
+    fueron diseñados para un modelo que puede alucinar, arrastrar sesgo algorítmico, o cambiar su comportamiento
+    con el tiempo sin que nadie lo note (lo que en gobierno de IA se llama <em>drift</em>).</p>
+    <p>Tres conceptos de esa guía son directamente aplicables a un proyecto de gobierno de riesgos como el tuyo:
+    llevar un <strong>inventario de modelos de IA en uso</strong> (para no terminar con "IA huérfana" — modelos
+    que nadie audita ni sabe quién los aprobó), definir <strong>responsables claros por modelo</strong> dentro de
+    las tres líneas de defensa, y monitorear el desempeño del modelo con indicadores que detecten
+    <em>alucinación y sesgo</em> antes de que lleguen a una decisión de negocio.</p>
+    <div class="tip">
+      💡 Esto conecta directamente con el Marco de Apetito de Riesgo y la implementación de COSO en CODIMERSA: si
+      la entidad empieza a usar IA en procesos de originación crediticia u otros procesos críticos, esos modelos
+      deberían entrar al mismo inventario de riesgos y al mismo esquema de tres líneas de defensa que ya aplicás a
+      los demás riesgos operativos — no tratarse como una herramienta aparte, sin dueño ni control.
+    </div>
+    <div class="fuente">
+      Fuente: Lic. Nahun Frett (colaborador de Auditool), "Guía COSO: Logrando un control interno eficaz sobre la
+      IA generativa" —
+      <a href="https://www.auditool.org/blog/control-interno/guia-coso-logrando-un-control-interno-eficaz-sobre-la-ia-generativa" target="_blank" rel="noopener">leer artículo completo</a>
+    </div>
+  </div>
+
+  <div class="bloque">
+    <h2>🔒 Si querés ir más a fondo</h2>
+    <p>Auditool tiene una sección completa de kits prácticos ("AuditIA — Diseña con IA") con metodología paso a
+    paso, prompts y plantillas Excel/Word por procedimiento de auditoría (cierre contable, inventarios, controles
+    de TI, continuidad del negocio, segregación de funciones, entre otros). Ese contenido requiere Suscripción
+    PLUS de Auditool y no se reproduce aquí por ser material pagado de terceros — se referencia únicamente para
+    que sepas que existe si querés profundizar.</p>
+  </div>
+
+  <div class="nav-final">
+    <a href="../modulos/mod-27.html" class="volver">← Volver al Módulo 27</a>
+    <a href="../index.html" class="btn">Ir a la ruta completa</a>
+  </div>
+
+</main>
+
+<footer>Aprende IA — recurso complementario, fuera de la ruta de 27 módulos.</footer>
+
+</body>
+</html>
